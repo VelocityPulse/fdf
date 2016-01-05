@@ -10,23 +10,28 @@
 #*                                                                            *#
 #* ************************************************************************** *#
 
-NAME = fdf
+NAME =			fdf
 
-SRC = ./sources/main.c
+SRC =			./sources/main.c
 
-OBJS = ./sources/main.o
+DRAW =			./draw/draw_pixel.c \
+				./draw/new_image.c
 
-LIBFT = ./libft/libft.a
+OBJS =			./main.o \
+				./draw_new_pixel.o \
+				./new_image.o
 
-LIBMLX = ./libmlx/libmlx.a
+LIBFT =			./libft/libft.a
 
-FRAMEWORK = -framework OpenGL -framework AppKit
+LIBMLX =		./libmlx/libmlx.a
 
-FLAGS = -Wall -Wextra -Werror
+FRAMEWORK =		-framework OpenGL -framework AppKit
 
-CC = gcc
+FLAGS =			-Wall -Wextra -Werror
 
-RM = rm -f
+CC =			gcc
+
+RM =			rm -f
 
 all: $(NAME)
 
@@ -34,7 +39,7 @@ $(NAME): $(LIBFT) $(LIBMLX) $(OBJS)
 	$(CC) $(FLAGS) $(FRAMEWORK) $(OBJS) $(LIBT) $(LIBMLX)
 
 $(OBJS): $(LIBFT)
-	$(CC) $(FLAGS) $(SRC) $(LIBFT)
+	$(CC) $(FLAGS) $(SRC) $(DRAW) $(LIBFT)
 
 $(LIBFT):
 	make -C ./libft/

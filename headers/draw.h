@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/04 17:03:46 by                   #+#    #+#             */
-/*   Updated: 2016/01/04 17:30:06 by                  ###   ########.fr       */
+/*   Updated: 2016/01/05 12:04:29 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ typedef struct	s_mlx
 
 void	ft_new_image(t_mlx *mlx);
 void	ft_draw_pixel(t_mlx *mlx, int color, t_pt pt);
+void	ft_init_mlx(int width, int height, t_mlx *mlx, char *name);
 
 #endif
