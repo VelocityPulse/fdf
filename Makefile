@@ -15,11 +15,13 @@ NAME =			fdf
 SRC =			./sources/main.c
 
 DRAW =			./draw/draw_pixel.c \
-				./draw/new_image.c
+				./draw/new_image.c \
+				./draw/init_mlx.c
 
 OBJS =			./main.o \
 				./draw_new_pixel.o \
-				./new_image.o
+				./new_image.o \
+				./init_mlx.o
 
 LIBFT =			./libft/libft.a
 
