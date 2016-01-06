@@ -6,13 +6,13 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/06 12:58:55 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/06 13:28:54 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/01/06 15:39:28 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/draw.h"
 
-void	ft_mlx_init(int height, int width, t_mlx *mlx, char *name)
+void	ft_mlx_init(int width, int height, t_mlx *mlx, char *name)
 {
 	mlx->width = width;
 	mlx->height = height;
