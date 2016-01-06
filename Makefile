@@ -1,4 +1,4 @@
-* ************************************************************************** *#
+#* ************************************************************************** *#
 #*                                                                            *#
 #*                                                        :::      ::::::::   *#
 #*   Makefile                                           :+:      :+:    :+:   *#
@@ -16,18 +16,22 @@ SRC =			./sources/main.c
 
 DRAW =			./draw/draw_pixel.c \
 				./draw/new_image.c \
-				./draw/init_mlx.c
+				./draw/mlx_init.c \
+				./draw/draw_make_line.c \
+				./draw/draw_line.c
 
 OBJS =			./main.o \
-				./draw_new_pixel.o \
+				./draw_pixel.o \
 				./new_image.o \
-				./init_mlx.o
+				./mlx_init.o \
+				./draw_make_line.o \
+				./draw_line.o
 
 LIBFT =			./libft/libft.a
 
 LIBMLX =		./libmlx/libmlx.a
 
-FRAMEWORK =		-framework OpenGL -framework AppKit
+FRAMEWORK =		-lmlx -framework OpenGL -framework AppKit
 
 FLAGS =			-Wall -Wextra -Werror
 
@@ -38,10 +42,10 @@ RM =			rm -f
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(LIBMLX) $(OBJS)
-	$(CC) $(FLAGS) $(FRAMEWORK) $(OBJS) $(LIBT) $(LIBMLX)
+	$(CC) $(FLAGS) $(FRAMEWORK) $(OBJS) $(LIBFT) $(LIBMLX) -o $(NAME)
 
-$(OBJS): $(LIBFT)
-	$(CC) $(FLAGS) $(SRC) $(DRAW) $(LIBFT)
+$(OBJS): $(LIBFT) $(LIBMLX)
+	$(CC) $(FLAGS) -c $(SRC) $(DRAW)
 
 $(LIBFT):
 	make -C ./libft/
@@ -51,12 +55,10 @@ $(LIBMLX):
 
 clean:
 	$(RM) $(OBJS)
-	make fclean -C ./libft/
-	make fclean -C ./libmlx/
+	make clean -C ./libft/
+	make clean -C ./libmlx/
 
 fclean: clean
-	$(RM) $(NAME)
-	make fclean -C ./libft/
-	make fclean -C ./libmlx/
+	$(RM) $(NAME) $(LIBFT) $(LIBMLX)
 
 re: fclean all

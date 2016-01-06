@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/04 17:00:58 by                   #+#    #+#             */
-/*   Updated: 2016/01/04 17:30:12 by                  ###   ########.fr       */
+/*   Updated: 2016/01/06 13:40:21 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	ft_new_image(t_mlx *mlx)
 	t_img	*img;
 	void	*d;
 
-	img = NULL;
 	if (!(img = (t_img *)ft_memalloc(sizeof(t_img))))
 		return ;
 	img->endian = 0;

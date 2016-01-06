@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/04 17:03:46 by                   #+#    #+#             */
-/*   Updated: 2016/01/05 14:08:50 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/01/06 13:18:23 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,12 @@ typedef struct	s_mlx
 	t_img	*mlx_img;
 }				t_mlx;
 
-void	ft_init_mlx(int height, int width, t_mlx *mlx, char *name);
+void	ft_mlx_init(int height, int width, t_mlx *mlx, char *name);
 void	ft_new_image(t_mlx *mlx);
 void	ft_draw_pixel(t_mlx *mlx, int color, t_pt pt);
 t_line	ft_draw_make_line(int x1, int y1, int x2, int y2);
+void	ft_draw_line(t_line, t_mlx *mlx, int color);
+void	ft_draw_horizontal(t_line line, t_mlx *mlx, int variance, int color);
+void	ft_draw_vertical(t_line line, t_mlx *mlx, int variane, int color);
 
 #endif
