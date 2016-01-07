@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 13:45:56 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/06 15:41:55 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/01/07 23:53:16 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,40 @@ void	ft_draw_vertical(t_line line, t_mlx *mlx, int variance, int color)
 	}
 }
 
+void	ft_draw_bresenham(t_line line, t_mlx *mlx, int color, t_pt variance)
+{
+	int		err;
+	
+	if (line.dx < 0)
+		line.dx = -line.dx;
+	if (line.dy < 0)
+		line.dy = -line.dy;
+	err = -line.dx>>1; // -(dx / 2)
+	while (line.start.x != line.end.x)
+	{
+		ft_draw_pixel(mlx, color, line.start);
+		err += line.dy;
+		while (err > 0)
+		{
+			ft_draw_pixel(mlx, color, line.start);
+			err -= line.dx;
+			line.start.y += variance.y;
+		}
+		line.start.x += variance.x;
+	}
+}
 void	ft_draw_line(t_line line, t_mlx *mlx, int color)
 {
 	t_pt variance;
 
 	variance.x = (line.dx < 0) ? -1 : 1;
 	variance.y = (line.dy < 0) ? -1 : 1;
-	ft_putchar(' ');ft_putnbr(variance.x);ft_putchar(' ');
 	if (line.dx == 0 && line.dy == 0)
 		ft_draw_pixel(mlx, color, line.start);
 	else if (line.dy == 0)
 		ft_draw_horizontal(line, mlx, variance.x, color);
 	else if (line.dx == 0)
 		ft_draw_vertical(line, mlx, variance.y, color);
-//	else
-//		ft_draw_basenham(line, mlx, variance, color);
+	else
+		ft_draw_bresenham(line, mlx, color, variance);
 }
