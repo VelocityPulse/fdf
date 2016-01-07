@@ -6,7 +6,7 @@
 #*   By:  <>                                        +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2015/12/26 15:16:47 by                   #+#    #+#             *#
-#*   Updated: 2016/01/04 17:00:25 by                  ###   ########.fr       *#
+#*   Updated: 2016/01/07 23:16:56 by                  ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -31,7 +31,9 @@ LIBFT =			./libft/libft.a
 
 LIBMLX =		./libmlx/libmlx.a
 
-FRAMEWORK =		-lmlx -framework OpenGL -framework AppKit
+LMLX =			#-lmlx
+
+FRAMEWORK =		$(LMLX) -framework OpenGL -framework AppKit
 
 FLAGS =			-Wall -Wextra -Werror
 
