@@ -18,14 +18,18 @@ DRAW =			./draw/draw_pixel.c \
 				./draw/new_image.c \
 				./draw/mlx_init.c \
 				./draw/draw_make_line.c \
-				./draw/draw_line.c
+				./draw/draw_line.c \
+				./draw/draw_make_area.c \
+				./draw/draw_rect.c
 
 OBJS =			./main.o \
 				./draw_pixel.o \
 				./new_image.o \
 				./mlx_init.o \
 				./draw_make_line.o \
-				./draw_line.o
+				./draw_line.o \
+				./draw_make_area.o \
+				./draw_rect.o
 
 LIBFT =			./libft/libft.a
 
