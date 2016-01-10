@@ -6,7 +6,7 @@
 #*   By:  <>                                        +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2015/12/26 15:16:47 by                   #+#    #+#             *#
-#*   Updated: 2016/01/07 23:16:56 by                  ###   ########.fr       *#
+#*   Updated: 2016/01/09 23:24:35 by                  ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -20,7 +20,9 @@ DRAW =			./draw/draw_pixel.c \
 				./draw/draw_make_line.c \
 				./draw/draw_line.c \
 				./draw/draw_make_area.c \
-				./draw/draw_rect.c
+				./draw/draw_rect.c \
+				./draw/draw_losange.c \
+				./draw/draw_isocele.c
 
 OBJS =			./main.o \
 				./draw_pixel.o \
@@ -29,13 +31,15 @@ OBJS =			./main.o \
 				./draw_make_line.o \
 				./draw_line.o \
 				./draw_make_area.o \
-				./draw_rect.o
+				./draw_rect.o \
+				./draw_losange.o \
+				./draw_isocele.o
 
 LIBFT =			./libft/libft.a
 
 LIBMLX =		./libmlx/libmlx.a
 
-LMLX =			-lmlx
+LMLX =			#-lmlx
 
 FRAMEWORK =		$(LMLX) -framework OpenGL -framework AppKit
 

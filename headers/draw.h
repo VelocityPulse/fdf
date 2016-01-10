@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:41:53 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/08 17:27:27 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/01/09 23:24:27 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	ft_draw_horizontal(t_line line, t_mlx *mlx, int variance, int color);
 void	ft_draw_vertical(t_line line, t_mlx *mlx, int variane, int color);
 void	ft_draw_bresenham(t_line line, t_mlx *mlx, int color, t_pt variance);
 void	ft_draw_rect(t_area area, t_mlx *mlx, int color);
-void	ft_draw_losange(t_area area, int width, t_mlx *mlx, int color);
+void	ft_draw_losange(t_area area, int mediane, t_mlx *mlx, int color);
+void	ft_draw_isocele(t_area area, int mediane, t_mlx *mlx, int color);
 
 #endif
