@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 17:06:53 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/11 15:07:24 by                  ###   ########.fr       */
+/*   Updated: 2016/01/11 16:27:09 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,19 @@ void	ft_draw_losange(t_line line, int mediane, t_mlx *mlx, int color)
 	ft_draw_line(ft_draw_make_line(line.start.x, line.start.y, line.end.x, line.end.y), mlx,
 	(int)0xffff00);
 
-	mediane = 10;
+	mediane = 0;
 	ao = sqrtf((line.dx / 2) * (line.dx / 2) + ((line.dy / 2) * (line.dy / 2)));
-	coef = (float)(ao / mediane);
-	
+
+	if (ao > (float)mediane)
+	{
+		coef = (float)(ao / (float)mediane);
+	}
+	else
+	{
+		coef = (float)((float)mediane / ao);
+		coef = 1 / coef;
+	}
+
 	printf("coordonnee A : %d;%d\n", line.start.x, line.start.y);
 	printf("coordonnee C : %d;%d\n", line.end.x, line.end.y);
 	printf("longueur AO : %d\n", ao);
