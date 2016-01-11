@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 17:06:53 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/10 16:20:13 by                  ###   ########.fr       */
+/*   Updated: 2016/01/11 15:07:24 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,31 +25,35 @@ void	ft_draw_draw_losange(t_pt a, t_pt c, t_pt b, t_pt d, t_mlx *mlx, int color)
 
 #include <stdio.h>
 
-void	ft_draw_losange(t_area area, int mediane, t_mlx *mlx, int color)
+void	ft_draw_losange(t_line line, int mediane, t_mlx *mlx, int color)
 {
 	t_pt	intersection;
 	t_pt	d;
 	t_pt	b;
-	float	a;
+	int		ao;
+	float	coef;
 
-	intersection.x = (area.start.x + area.end.x) / 2;
-	intersection.y = (area.start.y + area.end.y) / 2;
-	a = 1 / ((float)(area.end.x - area.start.x) / (float)(area.end.y - area.start.y));
-	ft_draw_line(ft_draw_make_line(area.start.x, area.start.y, area.end.x, area.end.y), mlx,
+	intersection.x = (line.start.x + line.end.x) / 2;
+	intersection.y = (line.start.y + line.end.y) / 2;
+	
+
+	ft_draw_line(ft_draw_make_line(line.start.x, line.start.y, line.end.x, line.end.y), mlx,
 	(int)0xffff00);
 
 	mediane = 10;
+	ao = sqrtf((line.dx / 2) * (line.dx / 2) + ((line.dy / 2) * (line.dy / 2)));
+	coef = (float)(ao / mediane);
 	
-	printf("coordonnee de A : %f\n", ((float)mediane * a));
-	d.x = intersection.x - (mediane * (int)a);
-	d.y = intersection.y - (mediane * (int)a);
+	printf("coordonnee A : %d;%d\n", line.start.x, line.start.y);
+	printf("coordonnee C : %d;%d\n", line.end.x, line.end.y);
+	printf("longueur AO : %d\n", ao);
+	printf("coeficien proportionnel : %f\n", coef);
 
-	d.x = ((area.start.x + intersection.x) - mediane / 2) / 2;
-	d.y = ((area.end.y + intersection.y) + mediane / 2) / 2;
-	b.x = ((area.end.x + intersection.x) + mediane / 2) / 2;
-	b.y = ((area.start.y + intersection.y) - mediane / 2) / 2;
+	d.x = intersection.x - (int)((float)(line.dy / 2) / coef);
+	d.y = intersection.y + (int)((float)(line.dx / 2) / coef);
+	b.x = intersection.x + (int)((float)(line.dy / 2) / coef);
+	b.y = intersection.y - (int)((float)(line.dx / 2) / coef);
+	ft_draw_draw_losange(line.start, line.end, b, d, mlx, color);
 
-
-	ft_draw_draw_losange(area.start, area.end, b, d, mlx, color);
 }
 
