@@ -6,19 +6,23 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 17:08:16 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/08 17:08:27 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/01/12 13:49:06 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/draw.h"
 
-t_area	ft_draw_make_area(int x1, int y1, int x2, int y2)
+t_area	ft_draw_make_area(t_pt a, t_pt b, t_pt c, t_pt d)
 {
 	t_area area;
 
-	area.start.x = x1;
-	area.start.y = y1;
-	area.end.x = x2;
-	area.end.y = y2;
+	area.a.x = a.x;
+	area.a.y = a.y;
+	area.b.x = b.x;
+	area.b.y = b.y;
+	area.c.x = c.x;
+	area.c.y = c.y;
+	area.d.x = d.x;
+	area.d.y = d.y;
 	return (area);
 }
