@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 17:06:53 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/12 14:03:23 by                  ###   ########.fr       */
+/*   Updated: 2016/01/12 15:38:52 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	ft_draw_losange(t_area l, t_mlx *mlx, int color)
 {
-	color = 1;
 	ft_draw_line(ft_draw_make_line(l.a.x, l.a.y, l.b.x, l.b.y), mlx, color);
 	ft_draw_line(ft_draw_make_line(l.b.x, l.b.y, l.c.x, l.c.y), mlx, color);
 	ft_draw_line(ft_draw_make_line(l.c.x, l.c.y, l.d.x, l.d.y), mlx, color);
@@ -50,8 +49,8 @@ t_area	ft_draw_make_losange(t_line line, int mediane)
 }
 
 /**
-*	printf("coordonnee A : %d;%d\n", line.start.x, line.start.y);
-*	printf("coordonnee C : %d;%d\n", line.end.x, line.end.y);
-*	printf("longueur AO : %d\n", ao);
-*	printf("coeficien proportionnel : %f\n", coef);
-**/
+ *	printf("coordonnee A : %d;%d\n", line.start.x, line.start.y);
+ *	printf("coordonnee C : %d;%d\n", line.end.x, line.end.y);
+ *	printf("longueur AO : %d\n", ao);
+ *	printf("coeficien proportionnel : %f\n", coef);
+ **/

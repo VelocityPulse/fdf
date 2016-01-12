@@ -22,7 +22,8 @@ DRAW =			./draw/draw_pixel.c \
 				./draw/draw_make_area.c \
 				./draw/draw_rect.c \
 				./draw/draw_losange.c \
-				./draw/draw_isocele.c
+				./draw/draw_isocele.c \
+				./draw/draw_make_isocele.c
 
 OBJS =			./main.o \
 				./draw_pixel.o \
@@ -33,13 +34,14 @@ OBJS =			./main.o \
 				./draw_make_area.o \
 				./draw_rect.o \
 				./draw_losange.o \
-				./draw_isocele.o
+				./draw_isocele.o \
+				./draw_make_isocele.o
 
 LIBFT =			./libft/libft.a
 
 LIBMLX =		./libmlx/libmlx.a
 
-LMLX =			#-lmlx
+LMLX =			-lmlx
 
 FRAMEWORK =		$(LMLX) -framework OpenGL -framework AppKit
 
