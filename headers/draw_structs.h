@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:49:38 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/11 14:16:29 by                  ###   ########.fr       */
+/*   Updated: 2016/01/12 09:47:54 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@
 
 typedef struct	s_area
 {
-	t_pt	start;
-	t_pt	end;
+	t_pt	a;
+	t_pt	b;
+	t_pt	c;
+	t_pt	d;
 }				t_area;
 
 typedef struct	s_line

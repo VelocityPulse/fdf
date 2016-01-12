@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 13:40:00 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/11 16:01:08 by                  ###   ########.fr       */
+/*   Updated: 2016/01/12 09:35:09 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		main()
 //	ft_draw_rect(ft_draw_make_area(100, 450, 200, 500), mlx, (int)0x0000ff);
 //	ft_draw_rect(ft_draw_make_area(210, 510, 110, 460), mlx, (int)0x00ff00);
 
-	ft_draw_losange(ft_draw_make_line(100, 200, 300, 300), 80, mlx, (int)0xffffff);
+	ft_draw_losange(ft_draw_make_line(300, 10, 300, 200), 50, mlx, (int)0xffffff);
 //	ft_draw_isocele(ft_draw_make_area(300, 200, 400, 350), 30, mlx, (int)0xff0000);
 	mlx_put_image_to_window(mlx->p_mlx, mlx->p_win, mlx->mlx_img->p_img, 0, 0);
 	mlx_loop(mlx->p_mlx);
