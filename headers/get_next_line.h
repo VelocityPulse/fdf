@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/13 11:26:58 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/13 14:35:18 by cchameyr         ###   ########.fr       */
+/*   Created: 2015/12/18 14:44:27 by cchameyr          #+#    #+#             */
+/*   Updated: 2016/01/13 13:24:49 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/header.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-int		main(int argc, char **argv)
-{
-	t_mlx		*mlx;
-	int			fd;
-	t_array		*array;
+# include <fcntl.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include "./libft/libft.h"
 
-	array = NULL;
-	if (argc == 2)
-	{
-		if ((fd = open(argv[1], O_RDONLY)) == -1)
-			return (0);
-		if (!(array = ft_get_array(fd, array)))
-			return (0);
-		ft_mlx_init(700, 600, mlx, "fdf");
-		
-	}
-	return (0);
-}
+# define BUFF_SIZE 50
+
+int		get_next_line(const int fd, char **line);
+
+#endif
