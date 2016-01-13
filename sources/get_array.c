@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/13 13:21:06 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/13 14:44:35 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/01/13 15:53:35 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ t_array		*ft_get_array(int fd, t_array *array)
 	list_line = ft_free_gline(list_line);
 	if (ft_check_tab(tab, nbr_line))
 		array = ft_convert_to_array(tab);
+	ft_free_tab(tab, nbr_line);
 	return (array);
 }
 
@@ -67,4 +68,14 @@ t_array		*ft_free_array(t_array *array)
 		ft_memdel((void **)&array->tab[i]);
 	ft_memdel((void **)&array);
 	return (array);
+}
+
+void		*ft_free_tab(char **tab, int nbr_line)
+{
+	int		i;
+
+	i = 0;
+	while (i <= nbr_line)
+		ft_memdel((void **)&tab[i++]);
+	ft_memdel((void **)tab);
 }
