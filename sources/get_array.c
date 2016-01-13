@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/13 13:21:06 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/13 21:00:56 by                  ###   ########.fr       */
+/*   Updated: 2016/01/13 22:28:59 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,5 @@ void		*ft_free_tab(char **tab, int nbr_line)
 	while (i <= nbr_line)
 		ft_memdel((void **)&tab[i++]);
 	ft_memdel((void **)tab);
+	return (NULL);
 }
