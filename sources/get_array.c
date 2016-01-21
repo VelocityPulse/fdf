@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/13 13:21:06 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/13 22:28:59 by                  ###   ########.fr       */
+/*   Updated: 2016/01/21 12:11:39 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,15 @@ t_array		*ft_get_array(int fd, t_array *array)
 	}
 	tab = ft_export_gline(list_line);
 	list_line = ft_free_gline(list_line);
-	if (ft_check_tab(tab, nbr_line))
+	if (ft_check_tab(tab, nbr_line) == 1)
 		array = ft_convert_to_array(tab, nbr_line);
+	if (ft_check_array(array, nbr_line) == 0)
+		ft_free_array(array);
 	ft_free_tab(tab, nbr_line);
 	return (array);
 }
 
-int			ft_check_tab(char **tab, int nbr_line)
+int			ft_check_tab(char **tab, const int nbr_line)
 {
 	int		line;
 	int		i;
@@ -57,6 +59,23 @@ int			ft_check_tab(char **tab, int nbr_line)
 	return (1);
 }
 
+int			ft_check_array(t_array *array, const int nbr_line)
+{
+	int		len;
+	int		i;
+
+	len = 0;
+	i = 0;
+	len = ft_strlen((char *)array->tab[i++]);
+	while (i < nbr_line)
+	{
+		if (len != ft_strlen((char *)array->tab[i++]))
+			return (0);
+	}
+	array->size.x = len;
+	return (1);
+}
+
 t_array		*ft_free_array(t_array *array)
 {
 	int		i;
@@ -70,7 +89,7 @@ t_array		*ft_free_array(t_array *array)
 	return (array);
 }
 
-void		*ft_free_tab(char **tab, int nbr_line)
+void		*ft_free_tab(char **tab, const int nbr_line)
 {
 	int		i;
 
