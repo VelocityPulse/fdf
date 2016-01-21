@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/13 13:21:06 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/21 12:11:39 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/01/21 12:15:46 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,23 +56,6 @@ int			ft_check_tab(char **tab, const int nbr_line)
 		}
 		line++;
 	}
-	return (1);
-}
-
-int			ft_check_array(t_array *array, const int nbr_line)
-{
-	int		len;
-	int		i;
-
-	len = 0;
-	i = 0;
-	len = ft_strlen((char *)array->tab[i++]);
-	while (i < nbr_line)
-	{
-		if (len != ft_strlen((char *)array->tab[i++]))
-			return (0);
-	}
-	array->size.x = len;
 	return (1);
 }
 
