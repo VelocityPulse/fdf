@@ -6,13 +6,13 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/13 15:53:52 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/21 12:52:30 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/01/21 15:45:19 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/header.h"
 
-t_array		*ft_convert_to_array(char **tab, const int nbr_line)
+t_array		*ft_convert_to_array(char **tab, const int nb_line, t_array *a)
 {
 	t_array		*array;
 	char		**tab_values;
@@ -21,16 +21,11 @@ t_array		*ft_convert_to_array(char **tab, const int nbr_line)
 	int			cpt;
 
 	i = -1;
-	array = (t_array *)malloc(sizeof(t_array));
-	array->tab = (int **)ft_memalloc(sizeof(int *) * nbr_line);
-	while (++i < nbr_line  && !(cpt = 0))
+	while (++i < nb_line  && !(cpt = 0))
 	{
 		array->size.y = i;
 		if (!(tab_values = ft_tab_strsplit(tab[i], ' ')))
-		{
-			ft_free_array(array);
-			break ;
-		}
+			return (ft_free_array(array));
 		cpt = ft_strlen((char *)tab_values);
 		array->tab[i] = (int *)ft_memalloc(sizeof(int) * (cpt + 1));
 		i2 = -1;
