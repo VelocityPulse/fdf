@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:55:43 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/21 12:15:55 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/01/21 12:37:40 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ int				ft_check_tab(char **tab, const int nbr_line);
 void			*ft_free_tab(char **tab, const int nbr_line);
 
 t_array			*ft_convert_to_array(char **tab, const int nbr_line);
+char			**ft_tab_strsplit(char *tab, char c);
 
 #endif
