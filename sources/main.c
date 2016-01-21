@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/13 11:26:58 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/21 12:50:39 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/01/21 19:27:06 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int		main(int argc, char **argv)
 	int			fd;
 	t_array		*array;
 
+	mlx = NULL;
 	array = NULL;
 	if (argc == 2)
 	{
