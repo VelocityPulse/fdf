@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:49:38 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/21 19:38:53 by                  ###   ########.fr       */
+/*   Updated: 2016/01/21 19:42:22 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ typedef struct	s_matrix
 	t_vector	x;
 	t_vector	y;
 	t_vector	z;
-	t_vector	offset;
+	t_vector	pos;
 }				t_matrix;
 
 typedef struct	s_img
