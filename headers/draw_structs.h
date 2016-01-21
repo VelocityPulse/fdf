@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:49:38 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/21 16:13:45 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/01/21 19:38:53 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,37 +18,52 @@
 
 typedef struct	s_area
 {
-	t_pt	a;
-	t_pt	b;
-	t_pt	c;
-	t_pt	d;
+	t_pt		a;
+	t_pt		b;
+	t_pt		c;
+	t_pt		d;
 }				t_area;
 
 typedef struct	s_line
 {
-	t_pt	start;
-	t_pt	end;
-	int		dx;
-	int		dy;
+	t_pt		start;
+	t_pt		end;
+	int			dx;
+	int			dy;
 }				t_line;
+
+typedef struct	s_vector
+{
+	float		x;
+	float		y;
+	float		z;
+}				t_vector;
+
+typedef struct	s_matrix
+{
+	t_vector	x;
+	t_vector	y;
+	t_vector	z;
+	t_vector	offset;
+}				t_matrix;
 
 typedef struct	s_img
 {
-	char	*data;
-	void	*p_img;
-	int		width;
-	int		bpp;
-	int		endian;
-	int		max_size;
+	char		*data;
+	void		*p_img;
+	int			width;
+	int			bpp;
+	int			endian;
+	int			max_size;
 }				t_img;
 
 typedef struct	s_mlx
 {
-	void	*p_mlx;
-	void	*p_win;
-	int		height;
-	int		width;
-	t_img	*mlx_img;
+	void		*p_mlx;
+	void		*p_win;
+	int			height;
+	int			width;
+	t_img		*mlx_img;
 }				t_mlx;
 
 #endif
