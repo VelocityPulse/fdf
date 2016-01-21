@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/21 15:30:41 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/21 15:37:39 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/01/21 15:44:00 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_array		*ft_free_array(t_array *array)
 	i = 0;
 	if (!array)
 		return (NULL);
-	while (i <- array->size.y)
+	while (i <= array->size.y)
 		ft_memdel((void **)&array->tab[i++]);
 	ft_memdel((void **)array->tab);
 	ft_memdel((void **)&array);
