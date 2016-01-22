@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_make_vector.c                                 :+:      :+:    :+:   */
+/*   draw_make_pt.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/21 19:36:29 by                   #+#    #+#             */
-/*   Updated: 2016/01/22 23:37:39 by                  ###   ########.fr       */
+/*   Created: 2016/01/22 23:36:19 by                   #+#    #+#             */
+/*   Updated: 2016/01/22 23:37:15 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/draw.h"
 
-t_vector	ft_make_vector(float x, float y, float z)
+t_pt	ft_make_pt(int x, int y)
 {
-	t_vector	vector;
+	t_pt	pt;
 
-	vector.x = x;
-	vector.y = y;
-	vector.z = z;
-	return (vector);
+	pt.x = x;
+	pt.y = y;
+	return (pt);
 }

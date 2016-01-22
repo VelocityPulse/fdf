@@ -6,13 +6,13 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/12 15:44:06 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/12 15:44:44 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/01/22 23:38:33 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/draw.h"
 
-t_area	ft_draw_make_losange(t_line line, int mediane)
+t_area	ftmake_losange(t_line line, int mediane)
 {
 	t_pt	intersection;
 	t_area	losange;
@@ -39,10 +39,3 @@ t_area	ft_draw_make_losange(t_line line, int mediane)
 	losange.b.y = intersection.y - (int)((float)(line.dx / 2) / coef);
 	return (losange);
 }
-
-/**
- *	printf("coordonnee A : %d;%d\n", line.start.x, line.start.y);
- *	printf("coordonnee C : %d;%d\n", line.end.x, line.end.y);
- *	printf("longueur AO : %d\n", ao);
- *	printf("coeficien proportionnel : %f\n", coef);
- **/

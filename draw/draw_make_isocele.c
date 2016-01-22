@@ -6,13 +6,13 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 22:33:59 by                   #+#    #+#             */
-/*   Updated: 2016/01/12 15:38:25 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/01/22 23:37:57 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/draw.h"
 
-t_area	ft_draw_make_isocele(t_line line, int mediane)
+t_area	ft_make_isocele(t_line line, int mediane)
 {
 	t_pt	intersection;
 	t_area	triangle;
