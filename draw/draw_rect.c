@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 13:33:08 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/12 13:33:42 by                  ###   ########.fr       */
+/*   Updated: 2016/01/22 23:55:18 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	ft_draw_rect(t_line line, t_mlx *mlx, int color)
 	y1 = line.start.y;
 	x2 = line.end.x;
 	y2 = line.end.y;
-	ft_draw_line(ft_draw_make_line(x1, y1, x2, y1), mlx, color);
-	ft_draw_line(ft_draw_make_line(x1, y1, x1, y2), mlx, color);
-	ft_draw_line(ft_draw_make_line(x2, y2, x1, y2), mlx, color);
-	ft_draw_line(ft_draw_make_line(x2, y2, x2, y1), mlx, color);
+	ft_draw_line(ft_make_line(x1, y1, x2, y1), mlx, color);
+	ft_draw_line(ft_make_line(x1, y1, x1, y2), mlx, color);
+	ft_draw_line(ft_make_line(x2, y2, x1, y2), mlx, color);
+	ft_draw_line(ft_make_line(x2, y2, x2, y1), mlx, color);
 }

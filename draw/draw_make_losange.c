@@ -6,13 +6,13 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/12 15:44:06 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/22 23:38:33 by                  ###   ########.fr       */
+/*   Updated: 2016/01/22 23:59:40 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/draw.h"
 
-t_area	ftmake_losange(t_line line, int mediane)
+t_area	ft_make_losange(t_line line, int mediane)
 {
 	t_pt	intersection;
 	t_area	losange;

@@ -6,13 +6,14 @@
 #*   By:  <>                                        +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2015/12/26 15:16:47 by                   #+#    #+#             *#
-#*   Updated: 2016/01/22 23:50:33 by                  ###   ########.fr       *#
+#*   Updated: 2016/01/22 23:58:03 by                  ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
 NAME =			fdf
 
-SRC =			./sources/main.c
+SRC =			./sources/_maintest.c \
+				#./sources/main.c
 
 DRAW =			./draw/draw_pixel.c \
 				./draw/new_image.c \
@@ -30,7 +31,7 @@ DRAW =			./draw/draw_pixel.c \
 				./draw/draw_make_vector.c \
 				./draw/draw_add_vector.c
 
-OBJS =			./main.o \
+OBJS =			./_maintest.o \
 				./draw_pixel.o \
 				./new_image.o \
 				./mlx_init.o \
