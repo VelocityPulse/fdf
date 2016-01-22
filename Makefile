@@ -6,7 +6,7 @@
 #*   By:  <>                                        +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2015/12/26 15:16:47 by                   #+#    #+#             *#
-#*   Updated: 2016/01/21 19:27:25 by                  ###   ########.fr       *#
+#*   Updated: 2016/01/22 23:50:33 by                  ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -24,7 +24,11 @@ DRAW =			./draw/draw_pixel.c \
 				./draw/draw_losange.c \
 				./draw/draw_make_losange.c \
 				./draw/draw_isocele.c \
-				./draw/draw_make_isocele.c
+				./draw/draw_make_isocele.c \
+				./draw/draw_make_matrix.c \
+				./draw/draw_make_pt.c \
+				./draw/draw_make_vector.c \
+				./draw/draw_add_vector.c
 
 OBJS =			./main.o \
 				./draw_pixel.o \
@@ -37,7 +41,11 @@ OBJS =			./main.o \
 				./draw_losange.o \
 				./draw_make_losange.o \
 				./draw_isocele.o \
-				./draw_make_isocele.o
+				./draw_make_isocele.o \
+				./draw_make_matrix.o \
+				./draw_make_pt.o \
+				./draw_make_vector.o \
+				./draw_add_vector.o
 
 LIBFT =			./libft/libft.a
 
