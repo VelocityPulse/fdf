@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 13:40:00 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/22 23:46:04 by                  ###   ########.fr       */
+/*   Updated: 2016/01/23 00:39:45 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,5 @@ int		main()
 	ft_draw_isocele(ft_make_isocele(line, -100), mlx, (int)0xff0000);
 	mlx_put_image_to_window(mlx->p_mlx, mlx->p_win, mlx->mlx_img->p_img, 0, 0);
 	mlx_loop(mlx->p_mlx);
+	return (0);
 }

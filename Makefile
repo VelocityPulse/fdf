@@ -6,7 +6,7 @@
 #*   By:  <>                                        +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2015/12/26 15:16:47 by                   #+#    #+#             *#
-#*   Updated: 2016/01/22 23:58:03 by                  ###   ########.fr       *#
+#*   Updated: 2016/01/23 00:40:24 by                  ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -15,38 +15,9 @@ NAME =			fdf
 SRC =			./sources/_maintest.c \
 				#./sources/main.c
 
-DRAW =			./draw/draw_pixel.c \
-				./draw/new_image.c \
-				./draw/mlx_init.c \
-				./draw/draw_make_line.c \
-				./draw/draw_line.c \
-				./draw/draw_make_area.c \
-				./draw/draw_rect.c \
-				./draw/draw_losange.c \
-				./draw/draw_make_losange.c \
-				./draw/draw_isocele.c \
-				./draw/draw_make_isocele.c \
-				./draw/draw_make_matrix.c \
-				./draw/draw_make_pt.c \
-				./draw/draw_make_vector.c \
-				./draw/draw_add_vector.c
+OBJS =			./_maintest.o
 
-OBJS =			./_maintest.o \
-				./draw_pixel.o \
-				./new_image.o \
-				./mlx_init.o \
-				./draw_make_line.o \
-				./draw_line.o \
-				./draw_make_area.o \
-				./draw_rect.o \
-				./draw_losange.o \
-				./draw_make_losange.o \
-				./draw_isocele.o \
-				./draw_make_isocele.o \
-				./draw_make_matrix.o \
-				./draw_make_pt.o \
-				./draw_make_vector.o \
-				./draw_add_vector.o
+DRAW =			./draw/draw.a
 
 LIBFT =			./libft/libft.a
 
@@ -64,11 +35,11 @@ RM =			rm -f
 
 all: $(NAME)
 
-$(NAME): $(LIBFT) $(LIBMLX) $(OBJS)
-	$(CC) $(FLAGS) $(FRAMEWORK) $(OBJS) $(LIBFT) $(LIBMLX) -o $(NAME)
+$(NAME): $(LIBFT) $(LIBMLX) $(DRAW) $(OBJS)
+	$(CC) $(FLAGS) $(FRAMEWORK) $(OBJS) $(LIBFT) $(LIBMLX) $(DRAW) -o $(NAME)
 
-$(OBJS): $(LIBFT) $(LIBMLX)
-	$(CC) $(FLAGS) -c $(SRC) $(DRAW)
+$(OBJS): $(LIBFT) $(LIBMLX) $(DRAW)
+	$(CC) $(FLAGS) -c $(SRC)
 
 $(LIBFT):
 	make -C ./libft/
@@ -76,12 +47,16 @@ $(LIBFT):
 $(LIBMLX):
 	make -C ./libmlx/
 
+$(DRAW):
+	make -C ./draw/
+
 clean:
 	$(RM) $(OBJS)
 	make clean -C ./libft/
 	make clean -C ./libmlx/
+	make clean -C ./draw/
 
 fclean: clean
-	$(RM) $(NAME) $(LIBFT) $(LIBMLX)
+	$(RM) $(NAME) $(LIBFT) $(LIBMLX) $(DRAW)
 
 re: fclean all
