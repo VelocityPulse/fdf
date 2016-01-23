@@ -6,13 +6,13 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/22 23:26:59 by                   #+#    #+#             */
-/*   Updated: 2016/01/22 23:30:24 by                  ###   ########.fr       */
+/*   Updated: 2016/01/23 14:55:06 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/draw.h"
 
-t_matrix	ft_init_matrix(t_vector pos)
+t_matrix	ft_init_matrix(t_pt3d pos)
 {
 	t_matrix	m;
 

@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:41:53 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/23 13:19:24 by                  ###   ########.fr       */
+/*   Updated: 2016/01/23 14:53:08 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ t_area		ft_make_losange(t_line line, int mediane);
 t_area		ft_make_isocele(t_line line, int mediane);
 t_vector	ft_make_vector(float x, float y, float z);
 
-t_matrix	ft_init_matrix(t_vector pos);
+t_matrix	ft_init_matrix(t_pt3d pos);
 t_vector	ft_add_vector(t_vector v, float x, float y, float z);
 
-t_matrix	ft_rotate_matrix_x(t_matrix m, float rot, t_vector scale);
-t_matrix	ft_rotate_matrix_y(t_matrix m, float rot, t_vector scale);
-t_matrix	ft_rotate_matrix_z(t_matrix m, float rot, t_vector scale);
+t_matrix	ft_rotate_matrix_x(t_matrix m, float rot, t_pt3d scale);
+t_matrix	ft_rotate_matrix_y(t_matrix m, float rot, t_pt3d scale);
+t_matrix	ft_rotate_matrix_z(t_matrix m, float rot, t_pt3d scale);
 
 t_pt		ft_multiply_matrix(t_pt pt, t_matrix t);
 t_pt		*ft_array_layout(t_pt *pts, int size, t_matrix t);
