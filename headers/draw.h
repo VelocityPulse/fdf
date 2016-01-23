@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:41:53 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/22 23:40:45 by                  ###   ########.fr       */
+/*   Updated: 2016/01/23 13:19:24 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,13 @@ t_matrix	ft_rotate_matrix_x(t_matrix m, float rot, t_vector scale);
 t_matrix	ft_rotate_matrix_y(t_matrix m, float rot, t_vector scale);
 t_matrix	ft_rotate_matrix_z(t_matrix m, float rot, t_vector scale);
 
+t_pt		ft_multiply_matrix(t_pt pt, t_matrix t);
+t_pt		*ft_array_layout(t_pt *pts, int size, t_matrix t);
+
 void		ft_draw_line(t_line line, t_mlx *mlx, int color);
+//corriger les prototypes ici
 void		ft_draw_horizontal(t_line line, t_mlx *mlx, int variance, int color);
-void		ft_draw_vertical(t_line line, t_mlx *mlx, int variane, int color);
+void		ft_draw_vertical(t_line line, t_mlx *mlx, int variance, int color);
 void		ft_draw_bresenham(t_line line, t_mlx *mlx, int color, t_pt variance);
 
 void		ft_draw_rect(t_line line, t_mlx *mlx, int color);

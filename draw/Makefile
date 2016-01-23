@@ -6,7 +6,7 @@
 #*   By:  <>                                        +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2016/01/23 00:01:04 by                   #+#    #+#             *#
-#*   Updated: 2016/01/23 00:43:02 by                  ###   ########.fr       *#
+#*   Updated: 2016/01/23 12:14:20 by                  ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -26,7 +26,9 @@ SRCS =			./draw_pixel.c \
 				./draw_make_matrix.c \
 				./draw_make_pt.c \
 				./draw_make_vector.c \
-				./draw_add_vector.c
+				./draw_add_vector.c \
+				./draw_multiply_matrix.c \
+				./draw_array_layout.c
 
 OBJS =			./draw_pixel.o \
 				./new_image.o \
@@ -42,7 +44,9 @@ OBJS =			./draw_pixel.o \
 				./draw_make_matrix.o \
 				./draw_make_pt.o \
 				./draw_make_vector.o \
-				./draw_add_vector.o
+				./draw_add_vector.o \
+				./draw_multiply_matrix.o \
+				./draw_array_layout.o
 
 FRAMEWORK =		-framework OpenGL -framework AppKit
 
