@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:55:43 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/23 13:20:20 by                  ###   ########.fr       */
+/*   Updated: 2016/01/23 17:45:15 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@
 typedef struct	s_array
 {
 	int		**tab;
-	t_pt	**tab_pts;
-	t_pt	**layout_pts;
+	t_pt3d	**tab_pts;
+	t_pt3d	**layout_pts;
 	t_pt	size;
 }				t_array;
 
@@ -46,9 +46,12 @@ int				ft_check_tab(char **tab, const int nbr_line);
 void			*ft_free_tab(char **tab, const int nbr_line);
 
 t_array			*ft_convert_to_array(char **tab, const int nb_line, t_array *a);
-char			**ft_tab_strsplit(char *tab, char c);
+char			**ft_tab_strsplit(char *tab, char c, t_array *array);
 
 t_array			*ft_array_alloc(const int nbr_line);
 t_array			*ft_free_array(t_array *array);
+
+t_pt3d			**ft_tab3d_alloc(t_pt size);
+t_pt3d			**ft_free_tab3d(t_pt3d **tab_pts, t_pt size);
 
 #endif
