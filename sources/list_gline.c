@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/13 13:27:31 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/24 23:58:14 by                  ###   ########.fr       */
+/*   Updated: 2016/01/25 00:23:40 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,10 @@ char		**ft_export_gline(t_gline *begin)
 		return (NULL);
 	list = begin;
 	nbr_line = ft_gline_cpt(list);
-	tab = (char **)ft_memalloc(sizeof(char *) * nbr_line);
+	tab = (char **)ft_memalloc(sizeof(char *) * (nbr_line + 1));
 	while (i <= nbr_line)
 	{
-		tab[i++] = (char *)ft_strdup(list->line);
-//		ft_strdup(list->line); ft_putchar('\n');
+		tab[i++] = ft_strdup(list->line);
 		list = list->next;
 	}
 	ft_putstr(tab[2]); ft_putchar('\n');
