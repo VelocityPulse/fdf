@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/13 15:53:52 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/21 15:53:00 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/01/24 18:31:01 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_array		*ft_convert_to_array(char **tab, const int nb_line, t_array *a)
 	while (++i < nb_line  && !(cpt = 0))
 	{
 		array->size.y = i;
-		if (!(tab_values = ft_tab_strsplit(tab[i], ' ')))
+		if (!(tab_values = ft_tab_strsplit(tab[i], ' ', array)))
 			return (ft_free_array(array));
 		cpt = ft_strlen((char *)tab_values);
 		array->tab[i] = (int *)ft_memalloc(sizeof(int) * (cpt + 1));
@@ -38,7 +38,7 @@ t_array		*ft_convert_to_array(char **tab, const int nb_line, t_array *a)
 	return (array);
 }
 
-char	**ft_tab_strsplit(char *tab, char c)
+char	**ft_tab_strsplit(char *tab, char c, t_array *a)
 {
 	char			**tab_values;
 	static	int 	len = 0;
@@ -48,6 +48,7 @@ char	**ft_tab_strsplit(char *tab, char c)
 	{
 		tab_values = ft_strsplit(tab, c);
 		len = ft_strlen((char *)tab_values);
+		a->size.x = len;
 	}
 	else
 	{
