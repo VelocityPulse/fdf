@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:55:43 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/24 19:35:38 by                  ###   ########.fr       */
+/*   Updated: 2016/01/24 19:42:14 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct	s_array
 {
 	int		**tab;
 	t_pt3d	**tab_pts;
-	t_pt3d	**layout_pts;
+	t_pt	**layout_pts;
 	t_pt	size;
 }				t_array;
 
