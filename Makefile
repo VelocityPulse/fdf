@@ -6,16 +6,33 @@
 #*   By:  <>                                        +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2015/12/26 15:16:47 by                   #+#    #+#             *#
-#*   Updated: 2016/01/23 00:40:24 by                  ###   ########.fr       *#
+#*   Updated: 2016/01/24 21:40:14 by                  ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
 NAME =			fdf
 
-SRC =			./sources/_maintest.c \
-				#./sources/main.c
+MAINTEST =		./maintest/main.c
 
-OBJS =			./_maintest.o
+SRC =			./sources/main.c \
+				./sources/array_alloc.c \
+				./sources/convert_array_to_pts.c \
+				./sources/convert_to_array.c \
+				./sources/fdf.c \
+				./sources/get_array.c \
+				./sources/get_next_line.c \
+				./sources/list_gline.c \
+				./sources/pt3d_alloc.c
+
+OBJS =			./main.o \
+				./array_alloc.o \
+				./convert_array_to_pts.o \
+				./convert_to_array.o \
+				./fdf.o \
+				./get_array.o \
+				./get_next_line.o \
+				./list_gline.o \
+				./pt3d_alloc.o
 
 DRAW =			./draw/draw.a
 
@@ -60,3 +77,9 @@ fclean: clean
 	$(RM) $(NAME) $(LIBFT) $(LIBMLX) $(DRAW)
 
 re: fclean all
+
+test: $(LIBFT) $(LIBMLX) $(DRAW)
+	$(CC) $(FLAGS) -c $(MAINTEST)
+	$(CC) $(FLAGS) $(FRAMEWORK) main.o $(LIBFT) $(LIBMLX) $(DRAW) -o $(NAME)
+	$(RM) main.o
+

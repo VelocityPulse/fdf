@@ -1,37 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tab3d_alloc.c                                      :+:      :+:    :+:   */
+/*   fdf.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/24 18:37:05 by                   #+#    #+#             */
-/*   Updated: 2016/01/24 18:46:23 by                  ###   ########.fr       */
+/*   Created: 2016/01/24 20:13:53 by                   #+#    #+#             */
+/*   Updated: 2016/01/24 21:30:16 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/header.h"
 
-t_pt3d		**ft_tab3d_alloc(t_pt size)
+void	ft_fdf(t_array *a, t_mlx *mlx)
 {
-	t_pt3d		**pt;
-
-	pt = (t_pt3d **)malloc(sizeof(t_pt3d *) * size.y);
-	while (size.y)
-	{
-		pt[size.y] = (t_pt3d *)malloc(sizeof(t_pt3d) * size.x);
-		size.y--;
-	}
-	return (pt);
-}
-
-t_pt3d		**ft_free_tab3d(t_pt3d **tab_pts, t_pt size)
-{
-	if (!tab_pts)
-		return (NULL);
-	size.y++;
-	while (--size.y)
-		ft_memdel((void **)&tab_pts[size.y]);
-	ft_memdel((void **)tab_pts);
-	return (tab_pts);
+	a = ft_convert_array_to_pts(a);
+	ft_draw_perimeter(a->tab_pts, a->size);
 }
