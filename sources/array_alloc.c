@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/21 15:30:41 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/24 18:53:17 by                  ###   ########.fr       */
+/*   Updated: 2016/01/24 20:40:40 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_array		*ft_array_alloc(const int nbr_line)
 {
 	t_array		*array;
 
-	array = (t_array*)malloc(sizeof(t_array));
+	array = (t_array *)malloc(sizeof(t_array));
 	array->tab = (int **)ft_memalloc(sizeof(int *) * nbr_line);
 	array->tab_pts = NULL;
 	array->layout_pts = NULL;
@@ -37,8 +37,8 @@ t_array		*ft_free_array(t_array *array)
 			ft_memdel((void **)&array->tab[i++]);
 	}
 	ft_memdel((void **)array->tab);
-	array->tab_pts = ft_free_tab3d(array->tab_pts, array->size);
-	array->layout_pts = ft_free_tab3d(array->layout_pts, array->size);
+	array->tab_pts = ft_free_pt3d(array->tab_pts, array->size);
+	array->layout_pts = ft_free_pt(array->layout_pts, array->size);
 	ft_memdel((void **)&array);
 	return (array);
 }

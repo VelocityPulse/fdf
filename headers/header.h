@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:55:43 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/24 19:42:14 by                  ###   ########.fr       */
+/*   Updated: 2016/01/24 20:47:46 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ typedef struct	s_gline
 	char			*line;
 }				t_gline;
 
+void			ft_fdf(t_array *a, t_mlx *mlx);
+
 t_gline			*ft_add_line(t_gline *begin, char *line);
 t_gline			*ft_add_gline(void);
 void			*ft_free_gline(t_gline *begin);
@@ -53,7 +55,8 @@ t_array			*ft_convert_array_to_pts(t_array *a);
 t_array			*ft_array_alloc(const int nbr_line);
 t_array			*ft_free_array(t_array *array);
 
-t_pt3d			**ft_tab3d_alloc(t_pt size);
-t_pt3d			**ft_free_tab3d(t_pt3d **tab_pts, t_pt size);
+t_pt3d			**ft_pt3d_alloc(t_pt size);
+t_pt3d			**ft_free_pt3d(t_pt3d **tab_pts, int size);
+t_pt			**ft_free_pt(t_pt **tab_pts, int size);
 
 #endif
