@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:41:53 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/24 19:24:05 by                  ###   ########.fr       */
+/*   Updated: 2016/01/24 20:06:43 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void		ft_draw_pixel(t_mlx *mlx, int color, t_pt pt);
 void		ft_reset_image(t_mlx *mlx, int color);
 
 t_pt		ft_make_pt(int x, int y);
-t_pt3d		ft_make_pt3d(int x, int y, int z);
 t_line		ft_make_line(int x1, int y1, int x2, int y2);
 t_area		ft_make_area(t_pt a, t_pt b, t_pt c, t_pt d);
 t_area		ft_make_losange(t_line line, int mediane);
@@ -48,6 +47,7 @@ void		ft_draw_line(t_line line, t_mlx *mlx, int color);
 void		ft_draw_horizontal(t_line line, t_mlx *mlx, int variance, int color);
 void		ft_draw_vertical(t_line line, t_mlx *mlx, int variance, int color);
 void		ft_draw_bresenham(t_line line, t_mlx *mlx, int color, t_pt variance);
+void		ft_draw_perimeter(t_pt *list, int size, t_mlx *mlx, int color);
 
 void		ft_draw_rect(t_line line, t_mlx *mlx, int color);
 void		ft_draw_losange(t_area l, t_mlx *mlx, int color);
