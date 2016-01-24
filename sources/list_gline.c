@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/13 13:27:31 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/24 21:56:29 by                  ###   ########.fr       */
+/*   Updated: 2016/01/24 23:58:14 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,21 @@ char		**ft_export_gline(t_gline *begin)
 	tab = (char **)ft_memalloc(sizeof(char *) * nbr_line);
 	while (i <= nbr_line)
 	{
-		tab[i++] = list->line;
+		tab[i++] = (char *)ft_strdup(list->line);
+//		ft_strdup(list->line); ft_putchar('\n');
 		list = list->next;
 	}
+	ft_putstr(tab[2]); ft_putchar('\n');
+
+	/*
+	 * si la deuxieme ligne ft_strdup (dans le vide) est commente, 
+	 * alors ft_putstr(tab[2]) n'affiche rien
+	 * dans le cas contraire tout marche
+	 * gros wtf.
+	 * environ 1h que j'y suis
+	 */
+
+	PAUSE
 	return (tab);
 }
 
@@ -83,7 +95,7 @@ int			ft_gline_cpt(t_gline *begin)
 	int			i;
 	t_gline		*list;
 
-	i = 0;
+	i = -1;
 	if (!begin)
 		return (0);
 	list = begin;

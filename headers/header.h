@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:55:43 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/24 20:47:46 by                  ###   ########.fr       */
+/*   Updated: 2016/01/24 22:08:47 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # include "libft.h"
 # include "mlx.h"
 # include "draw.h"
+
+# include "../../../debug.h"
 
 typedef struct	s_array
 {

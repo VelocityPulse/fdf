@@ -6,7 +6,7 @@
 #*   By:  <>                                        +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2015/12/26 15:16:47 by                   #+#    #+#             *#
-#*   Updated: 2016/01/24 21:40:14 by                  ###   ########.fr       *#
+#*   Updated: 2016/01/24 22:16:22 by                  ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -70,7 +70,7 @@ $(DRAW):
 clean:
 	$(RM) $(OBJS)
 	make clean -C ./libft/
-	make clean -C ./libmlx/
+#	make clean -C ./libmlx/
 	make clean -C ./draw/
 
 fclean: clean
