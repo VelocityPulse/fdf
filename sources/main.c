@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/13 11:26:58 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/24 20:13:44 by                  ###   ########.fr       */
+/*   Updated: 2016/01/24 21:43:48 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		main(int argc, char **argv)
 		if (!(array = ft_get_array(fd, array)))
 			return (0);
 		ft_mlx_init(700, 600, mlx, "fdf");
-		ft_fdf(mlx);
+		ft_fdf(array, mlx);
 	}
 	return (0);
 }

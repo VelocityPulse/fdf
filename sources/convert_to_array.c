@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/13 15:53:52 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/24 18:31:01 by                  ###   ########.fr       */
+/*   Updated: 2016/01/24 21:47:12 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 t_array		*ft_convert_to_array(char **tab, const int nb_line, t_array *a)
 {
-	t_array		*array;
 	char		**tab_values;
 	int 		i;
 	int			i2;
@@ -23,19 +22,19 @@ t_array		*ft_convert_to_array(char **tab, const int nb_line, t_array *a)
 	i = -1;
 	while (++i < nb_line  && !(cpt = 0))
 	{
-		array->size.y = i;
-		if (!(tab_values = ft_tab_strsplit(tab[i], ' ', array)))
-			return (ft_free_array(array));
+		a->size.y = i;
+		if (!(tab_values = ft_tab_strsplit(tab[i], ' ', a)))
+			return (ft_free_array(a));
 		cpt = ft_strlen((char *)tab_values);
-		array->tab[i] = (int *)ft_memalloc(sizeof(int) * (cpt + 1));
+		a->tab[i] = (int *)ft_memalloc(sizeof(int) * (cpt + 1));
 		i2 = -1;
 		while (tab_values[++i2])
-			array->tab[i][i2] = ft_atoi(tab_values[i2]);
+			a->tab[i][i2] = ft_atoi(tab_values[i2]);
 		while (--i2)
 			ft_memdel((void **)&tab_values[i2]);
 		ft_memdel((void **)tab_values);
 	}
-	return (array);
+	return (a);
 }
 
 char	**ft_tab_strsplit(char *tab, char c, t_array *a)

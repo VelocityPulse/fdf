@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/13 13:21:06 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/21 15:53:03 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/01/24 21:53:50 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int			ft_check_tab(char **tab, const int nbr_line)
 	int		line;
 	int		i;
 
+	line = 0;
 	while (line <= nbr_line)
 	{
 		i = 0;

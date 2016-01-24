@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/21 15:30:41 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/24 20:40:40 by                  ###   ########.fr       */
+/*   Updated: 2016/01/24 21:44:48 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ t_array		*ft_free_array(t_array *array)
 			ft_memdel((void **)&array->tab[i++]);
 	}
 	ft_memdel((void **)array->tab);
-	array->tab_pts = ft_free_pt3d(array->tab_pts, array->size);
-	array->layout_pts = ft_free_pt(array->layout_pts, array->size);
+	array->tab_pts = ft_free_pt3d(array->tab_pts, array->size.y);
+	array->layout_pts = ft_free_pt(array->layout_pts, array->size.y);
 	ft_memdel((void **)&array);
 	return (array);
 }
