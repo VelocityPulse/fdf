@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/13 13:27:31 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/25 00:23:40 by                  ###   ########.fr       */
+/*   Updated: 2016/01/25 12:04:27 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,17 +59,6 @@ char		**ft_export_gline(t_gline *begin)
 		tab[i++] = ft_strdup(list->line);
 		list = list->next;
 	}
-	ft_putstr(tab[2]); ft_putchar('\n');
-
-	/*
-	 * si la deuxieme ligne ft_strdup (dans le vide) est commente, 
-	 * alors ft_putstr(tab[2]) n'affiche rien
-	 * dans le cas contraire tout marche
-	 * gros wtf.
-	 * environ 1h que j'y suis
-	 */
-
-	PAUSE
 	return (tab);
 }
 
