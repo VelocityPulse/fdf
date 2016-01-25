@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/23 15:47:57 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/25 15:59:58 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/01/25 17:50:58 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ t_array		*ft_convert_array_to_pts(t_array *a)
 	t_pt	p;
 	t_pt	middle;
 
-	p.y = 0;
 	middle = ft_make_pt(a->size.x / 2, a->size.y / 2);
 	a->tab_pts = ft_pt3d_alloc(a->size);
+	p.y = 0;
 	while (p.y <= a->size.y)
 	{
 		p.x = 0;

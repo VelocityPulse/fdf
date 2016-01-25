@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/24 19:58:56 by                   #+#    #+#             */
-/*   Updated: 2016/01/25 16:55:01 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/01/25 18:01:22 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ void	ft_draw_perimeter(t_pt *l, int size, t_mlx *mlx, int color)
 		{
 			line = ft_make_line(l[i].x, l[i].y, l[i + 1].x, l[i + 1].y);
 			ft_draw_line(line, mlx, color);
-			ft_flush_image(mlx);
-			while (1) sleep(10);
 			i++;
 		}
 		line = ft_make_line(l[i].x, l[i].y, l[0].x, l[0].y);

@@ -44,7 +44,7 @@ LMLX =			-lmlx
 
 FRAMEWORK =		$(LMLX) -framework OpenGL -framework AppKit
 
-FLAGS =			-Wall -Wextra -Werror #-fsanitize=address
+FLAGS =			-Wall -Wextra -Werror #fsanitize=address
 
 CC =			gcc
 
