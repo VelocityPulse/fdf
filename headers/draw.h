@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:41:53 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/25 16:18:07 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/01/25 16:27:51 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,14 @@ void		ft_draw_pixel(t_mlx *mlx, int color, t_pt pt);
 void		ft_reset_image(t_mlx *mlx, int color);
 
 t_pt		ft_make_pt(int x, int y);
+t_pt3d		ft_make_pt3d(int x, int y, int z);
 t_line		ft_make_line(int x1, int y1, int x2, int y2);
 t_area		ft_make_area(t_pt a, t_pt b, t_pt c, t_pt d);
 t_area		ft_make_losange(t_line line, int mediane);
 t_area		ft_make_isocele(t_line line, int mediane);
 t_vector	ft_make_vector(float x, float y, float z);
 
-t_matrix	ft_init_matrix(t_pt3d pos);
+t_matrix	ft_init_matrix(t_pt pos);
 t_vector	ft_add_vector(t_vector v, float x, float y, float z);
 
 t_matrix	ft_rotate_matrix_x(t_matrix m, float rot, t_pt3d scale);

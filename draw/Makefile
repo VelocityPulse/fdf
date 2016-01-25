@@ -58,8 +58,6 @@ OBJS =			./draw_pixel.o \
 				./draw_perimeter.o \
 				./draw_flush_image.o
 
-FRAMEWORK =		-framework OpenGL -framework AppKit
-
 FLAGS = 		-Wall -Wextra -Werror
 
 CC =			gcc

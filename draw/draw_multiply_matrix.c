@@ -6,13 +6,13 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/23 11:54:40 by                   #+#    #+#             */
-/*   Updated: 2016/01/23 12:13:15 by                  ###   ########.fr       */
+/*   Updated: 2016/01/25 16:48:06 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/draw.h"
 
-t_pt	draw_multiply_matrix(t_pt pt, t_matrix t)
+t_pt	ft_multiply_matrix(t_pt pt, t_matrix t)
 {
 	t_pt	new_pt;
 
