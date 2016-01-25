@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/13 15:53:52 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/25 13:29:35 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/01/25 13:46:58 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,16 @@ t_array		*ft_convert_to_array(char **tab, const int nb_line, t_array *a)
 	char		**tab_values;
 	int 		i;
 	int			i2;
-	int			cpt;
 
 	i = -1;
-	while (++i <= nb_line  && !(cpt = 0))
+	while (++i <= nb_line)
 	{
 		a->size.y = i;
 		if (!(tab_values = ft_tab_strsplit(tab[i], ' ', a)))
 			return (ft_free_array(a));
-		cpt = ft_strlen((char *)tab_values);
-		a->tab[i] = (int *)ft_memalloc(sizeof(int) * (cpt + 1));
+		a->tab[i] = (int *)ft_memalloc(sizeof(int) * (a->size.x + 1));
 		i2 = -1;
-		while (++i2 < a->size.x)
+		while (++i2 <= a->size.x && (tab_values))
 			a->tab[i][i2] = ft_atoi(tab_values[i2]);
 		while (--i2)
 			ft_memdel((void **)&tab_values[i2]);
@@ -53,11 +51,13 @@ char	**ft_tab_strsplit(char *tab, char c, t_array *a)
 	else
 	{
 		tab_values = ft_strsplit(tab, c);
-		if (len != (len2 = ft_memlen((void **)tab_values)))
+		if ((len + 1) != (len2 = ft_memlen((void **)tab_values)))
 		{
-			while (--len2)
+			len2--;
+			while (len2--)
 				ft_memdel((void **)&tab_values[len2]);
 			ft_memdel((void **)tab_values);
+			YOLOO
 		}
 	}
 	return (tab_values);
