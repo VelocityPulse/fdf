@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/24 18:37:05 by                   #+#    #+#             */
-/*   Updated: 2016/01/25 13:06:36 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/01/25 14:07:03 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,12 @@
 t_pt3d		**ft_pt3d_alloc(t_pt size)
 {
 	t_pt3d		**pt;
+	int			i;
 
+	i = 0;
 	pt = (t_pt3d **)malloc(sizeof(t_pt3d *) * (size.y + 1));
-	size.y++;
-	while (size.y--)
-		pt[size.y] = (t_pt3d *)malloc(sizeof(t_pt3d) * (size.x + 1));
+	while (i <= size.y)
+		pt[i++] = (t_pt3d *)malloc(sizeof(t_pt3d) * (size.x + 1));
 	return (pt);
 }
 
