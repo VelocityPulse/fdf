@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/13 15:53:52 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/25 13:46:58 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/01/25 15:44:58 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ t_array		*ft_convert_to_array(char **tab, const int nb_line, t_array *a)
 	int 		i;
 	int			i2;
 
-	i = -1;
-	while (++i <= nb_line)
+	i = 0;
+	a->size.y = 0;
+	while (i <= nb_line)
 	{
-		a->size.y = i;
 		if (!(tab_values = ft_tab_strsplit(tab[i], ' ', a)))
 			return (ft_free_array(a));
 		a->tab[i] = (int *)ft_memalloc(sizeof(int) * (a->size.x + 1));
@@ -31,6 +31,8 @@ t_array		*ft_convert_to_array(char **tab, const int nb_line, t_array *a)
 		while (--i2)
 			ft_memdel((void **)&tab_values[i2]);
 		ft_memdel((void **)tab_values);
+		a->size.y = i;
+		i++;
 	}
 	return (a);
 }
@@ -57,7 +59,6 @@ char	**ft_tab_strsplit(char *tab, char c, t_array *a)
 			while (len2--)
 				ft_memdel((void **)&tab_values[len2]);
 			ft_memdel((void **)tab_values);
-			YOLOO
 		}
 	}
 	return (tab_values);
