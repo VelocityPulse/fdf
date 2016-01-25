@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:41:53 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/25 12:14:49 by                  ###   ########.fr       */
+/*   Updated: 2016/01/25 16:18:07 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 
 t_mlx		*ft_mlx_init(int width, int height, t_mlx *mlx, char *name);
 void		ft_new_image(t_mlx *mlx);
+void		ft_flush_image(t_mlx *x);
 void		ft_draw_pixel(t_mlx *mlx, int color, t_pt pt);
 void		ft_reset_image(t_mlx *mlx, int color);
 

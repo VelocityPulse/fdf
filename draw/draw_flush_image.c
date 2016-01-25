@@ -1,33 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   draw_flush_image.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/13 11:26:58 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/25 16:09:03 by cchameyr         ###   ########.fr       */
+/*   Created: 2016/01/25 16:13:46 by cchameyr          #+#    #+#             */
+/*   Updated: 2016/01/25 16:16:57 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/header.h"
+#include "../headers/draw.h"
 
-int		main(int argc, char **argv)
+void	ft_flush_image(t_mlx *x)
 {
-	t_mlx		*mlx;
-	int			fd;
-	t_array		*array;
-
-	mlx = NULL;
-	array = NULL;
-	if (argc == 2)
-	{
-		if ((fd = open(argv[1], O_RDONLY)) == -1)
-			return (0);
-		if (!(array = ft_get_array(fd, array)))
-			return (0);
-		mlx = ft_mlx_init(700, 600, mlx, "fdf");
-		ft_fdf(array, mlx);
-	}
-	return (0);
+	mlx_put_image_to_window(x->p_mlx, x->p_win, x->mlx_img->p_img, 0, 0);
 }

@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/24 20:13:53 by                   #+#    #+#             */
-/*   Updated: 2016/01/25 15:45:55 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/01/25 16:12:28 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ void	ft_fdf(t_array *a, t_mlx *mlx)
 		pt[i].y = a->tab_pts[0][i].y;
 		i++;
 	}
-	ft_draw_perimeter(pt, a->size.x + 1, mlx, 0x00ff00);
+	ft_draw_perimeter(pt, a->size.x, mlx, 0x00ff00);
 }

@@ -32,7 +32,8 @@ SRCS =			./draw_pixel.c \
 				./draw_multiply_matrix.c \
 				./draw_array_layout.c \
 				./draw_make_pt3d.c \
-				./draw_perimeter.c
+				./draw_perimeter.c \
+				./draw_flush_image.c
 
 OBJS =			./draw_pixel.o \
 				./new_image.o \
@@ -54,7 +55,8 @@ OBJS =			./draw_pixel.o \
 				./draw_multiply_matrix.o \
 				./draw_array_layout.o \
 				./draw_make_pt3d.o \
-				./draw_perimeter.o
+				./draw_perimeter.o \
+				./draw_flush_image.o
 
 FRAMEWORK =		-framework OpenGL -framework AppKit
 

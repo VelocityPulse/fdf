@@ -6,11 +6,13 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/24 19:58:56 by                   #+#    #+#             */
-/*   Updated: 2016/01/24 20:12:05 by                  ###   ########.fr       */
+/*   Updated: 2016/01/25 16:11:31 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/draw.h"
+
+#include "../../../debug.h"
 
 void	ft_draw_perimeter(t_pt *l, int size, t_mlx *mlx, int color)
 {
@@ -27,11 +29,11 @@ void	ft_draw_perimeter(t_pt *l, int size, t_mlx *mlx, int color)
 	{
 		while (i < size)
 		{
+			YOLO
 			line = ft_make_line(l[i].x, l[i].y, l[i + 1].x, l[i + 1].y);
 			ft_draw_line(line, mlx, color);
 			i++;
 		}
-		i++;
 		line = ft_make_line(l[i].x, l[i].y, l[0].x, l[0].y);
 		ft_draw_line(line, mlx, color);
 	}
