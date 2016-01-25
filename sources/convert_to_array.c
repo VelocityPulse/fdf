@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/13 15:53:52 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/25 13:21:17 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/01/25 13:29:35 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,25 +46,19 @@ char	**ft_tab_strsplit(char *tab, char c, t_array *a)
 	if (len == 0)
 	{
 		tab_values = ft_strsplit(tab, c);
-		len = ft_strlen((char *)tab_values);
+		len = ft_memlen((void **)tab_values);
+		len--;
 		a->size.x = len;
-		printf("tab_values[] :%s\n", tab_values[7]);
-		printf("len :%d\n", a->size.x);
 	}
 	else
 	{
 		tab_values = ft_strsplit(tab, c);
-		if (len != (len2 = ft_strlen((char *)tab_values)))
+		if (len != (len2 = ft_memlen((void **)tab_values)))
 		{
 			while (--len2)
 				ft_memdel((void **)&tab_values[len2]);
 			ft_memdel((void **)tab_values);
 		}
-		int i;
-		i = -1;
-		while (tab_values[++i])
-			printf("tab_values[%d] :%d\n", i, (int)tab_values[i]);
-		TEST
 	}
 	return (tab_values);
 }
