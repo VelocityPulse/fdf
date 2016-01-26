@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/24 20:13:53 by                   #+#    #+#             */
-/*   Updated: 2016/01/25 19:05:44 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/01/26 09:50:56 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@ void	ft_fdf(t_array *a, t_mlx *mlx)
 	a = ft_convert_array_to_pts(a);
 
 	m = ft_init_matrix(ft_make_pt(400, 200));
-	m = ft_rotate_matrix_z(m, 0.70f, ft_make_pt3d(10, 10, 10));
-	m = ft_rotate_matrix_x(m, 0.50f, ft_make_pt3d(10, 10, 10));
+	m = ft_rotate_matrix_z(m, 0.70f, ft_make_pt3d(10, 10, 4));
+	m = ft_rotate_matrix_x(m, 0.30f, ft_make_pt3d(10, 10, 4));
 	m = ft_rotate_matrix_y(m, 0.70f, ft_make_pt3d(2, 2, 2));
+
 
 	y = 0;
 	a->layout_pts = (t_pt **)malloc(sizeof(t_pt *) * (a->size.y + 1));
@@ -61,22 +62,18 @@ void	ft_fdf(t_array *a, t_mlx *mlx)
 		x++;
 	}
 	y = 0;
-		while (y < a->size.y)
-		{
-			ft_draw_line(
-					ft_make_line(	a->layout_pts[y][x].x,
-						a->layout_pts[y][x].y,
-						a->layout_pts[y + 1][x].x,
-						a->layout_pts[y + 1][x].y),
-					mlx,
-					0xffffff
-					);
-			y++;
-		}
-
-
-
-
+	while (y < a->size.y)
+	{
+		ft_draw_line(
+				ft_make_line(	a->layout_pts[y][x].x,
+					a->layout_pts[y][x].y,
+					a->layout_pts[y + 1][x].x,
+					a->layout_pts[y + 1][x].y),
+				mlx,
+				0xffffff
+				);
+		y++;
+	}
 	ft_flush_image(mlx);
 	mlx_loop(mlx);
 }

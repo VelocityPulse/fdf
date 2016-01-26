@@ -6,7 +6,7 @@
 #*   By:  <>                                        +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2015/12/26 15:16:47 by                   #+#    #+#             *#
-#*   Updated: 2016/01/25 12:06:03 by                  ###   ########.fr       *#
+#*   Updated: 2016/01/26 09:41:30 by                  ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -40,7 +40,7 @@ LIBFT =			./libft/libft.a
 
 LIBMLX =		./libmlx/libmlx.a
 
-LMLX =			-lmlx
+LMLX =			#-lmlx
 
 FRAMEWORK =		$(LMLX) -framework OpenGL -framework AppKit
 
