@@ -35,7 +35,8 @@ SRCS =			./draw_pixel.c \
 				./draw_perimeter.c \
 				./draw_flush_image.c \
 				./draw_multiply_vector.c \
-				./draw_add_scale.c
+				./draw_add_scale.c \
+				./draw_matrix_multiply_vector.c
 
 OBJS =			./draw_pixel.o \
 				./new_image.o \
@@ -60,7 +61,8 @@ OBJS =			./draw_pixel.o \
 				./draw_perimeter.o \
 				./draw_flush_image.o \
 				./draw_multiply_vector.o \
-				./draw_add_scale.o
+				./draw_add_scale.o \
+				draw_matrix_multiply_vector.o
 
 FLAGS = 		-Wall -Wextra -Werror
 

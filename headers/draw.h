@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:41:53 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/26 12:43:46 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/01/26 15:17:01 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ t_vector	ft_make_vector(float x, float y, float z);
 t_matrix	ft_init_matrix(t_pt pos);
 t_vector	ft_add_vector(t_vector v, float x, float y, float z);
 t_vector	ft_multiply_vector(t_vector v, float x, float y, float z);
+t_vector	ft_matrix_multiply_vector(t_vector v, float x, float y, float z);
 
 t_matrix	ft_rotate_matrix_x(t_matrix m, float rot);
 t_matrix	ft_rotate_matrix_y(t_matrix m, float rot);
