@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_init_matrix.c                                 :+:      :+:    :+:   */
+/*   draw_multiply_vector.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By:  <>                                        +#+  +:+       +#+        */
+/*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/22 23:26:59 by                   #+#    #+#             */
-/*   Updated: 2016/01/26 12:21:12 by cchameyr         ###   ########.fr       */
+/*   Created: 2016/01/26 12:37:33 by cchameyr          #+#    #+#             */
+/*   Updated: 2016/01/26 12:37:45 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/draw.h"
 
-t_matrix	ft_init_matrix(t_pt pos)
+t_vector	ft_multiply_vector(t_vector v, float x, float y, float z)
 {
-	t_matrix	m;
-
-	m.x = ft_make_vector(0.0f, 0.0f, 0.0f);
-	m.y = ft_make_vector(0.0f, 0.0f, 0.0f);
-	m.z = ft_make_vector(0.0f, 0.0f, 0.0f);
-	m.pos = pos;
-	return (m);
+	v.x *= x;
+	v.y *= y;
+	v.z *= z;
+	return (v);
 }

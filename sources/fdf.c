@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/24 20:13:53 by                   #+#    #+#             */
-/*   Updated: 2016/01/26 09:50:56 by                  ###   ########.fr       */
+/*   Updated: 2016/01/26 12:46:12 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,14 @@ void	ft_fdf(t_array *a, t_mlx *mlx)
 	a = ft_convert_array_to_pts(a);
 
 	m = ft_init_matrix(ft_make_pt(400, 200));
-	m = ft_rotate_matrix_z(m, 0.70f, ft_make_pt3d(10, 10, 4));
-	m = ft_rotate_matrix_x(m, 0.30f, ft_make_pt3d(10, 10, 4));
-	m = ft_rotate_matrix_y(m, 0.70f, ft_make_pt3d(2, 2, 2));
+//	m = ft_rotate_matrix_y(m, 0);
+	m = ft_rotate_matrix_x(m, (3.1415f / 2));
+//	m = ft_rotate_matrix_z(m, (3.1415f / 2));
+	m = ft_add_scale(m, ft_make_pt3d(20, 20, 4));
+
+
+//	m = ft_rotate_matrix_x(m, (3 * 3.1415f) / 2, ft_make_pt3d(10, 10, 2));
+//	m = ft_rotate_matrix_y(m, (3.14f / 2), ft_make_pt3d(10, 10, 2));
 
 
 	y = 0;
@@ -39,9 +44,48 @@ void	ft_fdf(t_array *a, t_mlx *mlx)
 			x++;
 		}
 		a->layout_pts[y] = ft_array_layout(a->tab_pts[y], a->size.x, m);
-		ft_draw_perimeter(a->layout_pts[y], a->size.x, mlx, 0xffffff);
 		y++;
 	}
+
+
+
+
+
+
+	x = 0;
+	y = 0;
+	while (y < a->size.y)
+	{
+		x = 0;
+		while (x < a->size.x)
+		{
+			ft_draw_line(
+					ft_make_line(	a->layout_pts[y][x].x,
+						a->layout_pts[y][x].y,
+						a->layout_pts[y][x + 1].x,
+						a->layout_pts[y][x + 1].y),
+					mlx,
+					0xffffff
+					);
+			x++;
+		}
+		y++;
+	}
+	x = 0;
+	while (x < a->size.x)
+	{
+		ft_draw_line(
+				ft_make_line(	a->layout_pts[y][x].x,
+					a->layout_pts[y][x].y,
+					a->layout_pts[y][x + 1].x,
+					a->layout_pts[y][x + 1].y),
+				mlx,
+				0xffffff
+				);
+		x++;
+	}
+
+
 	x = 0;
 	y = 0;
 	while (x < a->size.x)
