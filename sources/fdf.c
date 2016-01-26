@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/24 20:13:53 by                   #+#    #+#             */
-/*   Updated: 2016/01/26 12:46:12 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/01/26 13:23:05 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void	ft_fdf(t_array *a, t_mlx *mlx)
 	a = ft_convert_array_to_pts(a);
 
 	m = ft_init_matrix(ft_make_pt(400, 200));
-//	m = ft_rotate_matrix_y(m, 0);
-	m = ft_rotate_matrix_x(m, (3.1415f / 2));
+	m = ft_rotate_matrix_y(m, (3.1415f / 2));
 //	m = ft_rotate_matrix_z(m, (3.1415f / 2));
+//	m = ft_rotate_matrix_x(m, (3.1415f / 2));
 	m = ft_add_scale(m, ft_make_pt3d(20, 20, 4));
 
 
@@ -46,11 +46,6 @@ void	ft_fdf(t_array *a, t_mlx *mlx)
 		a->layout_pts[y] = ft_array_layout(a->tab_pts[y], a->size.x, m);
 		y++;
 	}
-
-
-
-
-
 
 	x = 0;
 	y = 0;
