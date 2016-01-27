@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/13 11:26:58 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/27 12:18:44 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/01/27 15:31:34 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		main(int argc, char **argv)
 		if (!(array = ft_get_array(fd, array)))
 			return (0);
 		mlx = ft_mlx_init(700, 600, mlx, "fdf");
-		array = ft_convert_array_to_pts(array);
+//		array = ft_convert_array_to_pts(array);
 		info = (t_info *)malloc(sizeof(t_info));
 		info->mlx = mlx;
 		info->array = array;

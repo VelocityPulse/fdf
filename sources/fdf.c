@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/24 20:13:53 by                   #+#    #+#             */
-/*   Updated: 2016/01/27 12:33:24 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/01/27 16:13:20 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,22 +26,29 @@ int		ft_fdf(t_info *info)
 	mlx = info->mlx;
 	a = info->array;
 
+	YOLO
+
+	a = ft_convert_array_to_pts(a);
+
+
 	y = 0;
 	while (y <= a->size.y)
 	{
 		x = 0;
 		while (x <= a->size.x)
-			printf("%d ", a->tab_pts[y][x++].z);
+		{
+			ft_putnbr(a->tab_pts[y][x++].z);
+			ft_putchar(' ');
+		}
 		printf("\n");
 		y++;
 	}
 
-	PAUSE
 	m = ft_init_matrix(ft_make_pt(400, 200));
-//	m = ft_rotate_matrix_y(m, 0);
-//	m = ft_rotate_matrix_y(m, 0);
+//	m = ft_rotate_matrix_y(m, rad);
+//	m = ft_rotate_matrix_y(m, rad);
 	m = ft_rotate_matrix_x(m, rad);
-	m = ft_add_scale(m, ft_make_pt3d(10, 10, 2));
+	m = ft_add_scale(m, ft_make_pt3d(10, 10, -2));
 
 	a->layout_pts = (t_pt **)malloc(sizeof(t_pt *) * (a->size.y + 1));
 
@@ -118,7 +125,11 @@ int		ft_fdf(t_info *info)
 	}
 	rad += increment;
 	a->layout_pts = ft_free_pt(a->layout_pts, a->size.y);
-	ft_reset_image(mlx, 0x000000);
+	YOLO1
+	a->tab_pts = ft_free_pt3d(a->tab_pts, a->size.y);
+	YOLO2
+	usleep(100000);
 	ft_flush_image(mlx);
+	ft_reset_image(mlx, 0x000000);
 	return (0);
 }
