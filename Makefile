@@ -44,7 +44,7 @@ LMLX =			-lmlx
 
 FRAMEWORK =		$(LMLX) -framework OpenGL -framework AppKit
 
-FLAGS =			-Wall -Wextra -Werror #fsanitize=address
+FLAGS =			-Wall -Wextra -Werror #-fsanitize=address
 
 CC =			gcc
 
@@ -80,6 +80,6 @@ re: fclean all
 
 test: $(LIBFT) $(LIBMLX) $(DRAW)
 	$(CC) $(FLAGS) -c $(MAINTEST)
-	$(CC) $(FLAGS) $(FRAMEWORK) main.o $(LIBFT) $(LIBMLX) $(DRAW) -o $(NAME)
+	$(CC) $(FLAGS) $(FRAMEWORK) main.o $(LIBFT) $(LIBMLX) $(DRAW)
 	$(RM) main.o
 

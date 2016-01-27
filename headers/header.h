@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:55:43 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/24 22:08:47 by                  ###   ########.fr       */
+/*   Updated: 2016/01/27 12:18:40 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 
 typedef struct	s_array
 {
-	int		**tab;
+		int		**tab;
 	t_pt3d	**tab_pts;
 	t_pt	**layout_pts;
 	t_pt	size;
@@ -37,7 +37,13 @@ typedef struct	s_gline
 	char			*line;
 }				t_gline;
 
-void			ft_fdf(t_array *a, t_mlx *mlx);
+typedef struct	s_info
+{
+	t_array		*array;
+	t_mlx		*mlx;
+}				t_info;
+
+int				ft_fdf(t_info *info);
 
 t_gline			*ft_add_line(t_gline *begin, char *line);
 t_gline			*ft_add_gline(void);
