@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:41:53 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/26 15:17:01 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/01/27 17:14:09 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,13 @@ t_vector	ft_matrix_multiply_vector(t_vector v, float x, float y, float z);
 t_matrix	ft_rotate_matrix_x(t_matrix m, float rot);
 t_matrix	ft_rotate_matrix_y(t_matrix m, float rot);
 t_matrix	ft_rotate_matrix_z(t_matrix m, float rot);
-t_matrix	ft_add_scale(t_matrix m, t_pt3d scale);
+t_pt3d		**ft_add_scale(t_pt3d **tab, t_pt size, t_pt3d scale);
+t_pt		**ft_add_pos(t_pt **tab, t_pt size, t_pt pos);
 
 t_pt		ft_multiply_matrix(t_pt3d pt, t_matrix t);
-t_pt		*ft_array_layout(t_pt3d *pts, int size, t_matrix t);
+t_pt		ft_add_pt(t_pt pt1, t_pt pt2);
+t_pt		*ft_array_layout(t_pt3d *pts, int size, t_pt *new_pt, t_matrix t);
+
 
 void		ft_draw_line(t_line line, t_mlx *mlx, int color);
 //corriger les prototypes ici

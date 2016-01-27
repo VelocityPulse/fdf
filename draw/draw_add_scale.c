@@ -6,17 +6,30 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/26 12:35:37 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/26 12:41:03 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/01/27 17:05:37 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/draw.h"
 
-t_matrix	ft_add_scale(t_matrix m, t_pt3d scale)
+t_pt3d		**ft_add_scale(t_pt3d **tab, t_pt size, t_pt3d scale)
 {
-	m.x = ft_multiply_vector(m.x, scale.x, scale.y, scale.z);
-	m.y = ft_multiply_vector(m.y, scale.x, scale.y, scale.z);
-	m.z = ft_multiply_vector(m.z, scale.x, scale.y, scale.z);
-	return (m);
+	int		x;
+	int		y;
+
+	y = 0;
+	while (y <= size.y)
+	{
+		x = 0;
+		while (x <= size.x)
+		{
+			tab[y][x].x *= scale.x;
+			tab[y][x].y *= scale.y;
+			tab[y][x].z *= scale.z;
+			x++;
+		}
+		y++;
+	}
+	return (tab);
 }
 
