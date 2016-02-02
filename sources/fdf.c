@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/24 20:13:53 by                   #+#    #+#             */
-/*   Updated: 2016/01/27 20:28:59 by                  ###   ########.fr       */
+/*   Updated: 2016/02/02 13:08:11 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@ int		ft_fdf(t_info *info)
 	static float	rad = 0;
 	float			increment;
 	t_matrix		m;
+	t_matrix		mx;
+	t_matrix		my;
+	t_matrix		mz;
 	t_mlx			*mlx;
 	t_array			*a;
 
@@ -31,40 +34,35 @@ int		ft_fdf(t_info *info)
 
 	a->tab_pts = ft_add_scale(a->tab_pts, a->size, ft_make_pt3d(20, 20, -4));
 
-	a->layout_pts = (t_pt **)malloc(sizeof(t_pt *) * (a->size.y + 1));
 
+	a->layout_pts = (t_pt **)malloc(sizeof(t_pt *) * (a->size.y + 1));
 	y = 0;
 	while (y <= a->size.y)
 		a->layout_pts[y++] = NULL;
 
-	m = ft_init_matrix(ft_make_pt(300, 300));
 
 
 
+	mx = ft_rotate_matrix_x(m, rad);
 
-//	m = ft_rotate_matrix_z(m, rad);
-//	y = 0;
-//	while (y <= a->size.y)
-//	{
-//		a->layout_pts[y] = ft_array_layout(a->tab_pts[y], a->size.x, a->layout_pts[y], m);
-//		y++;
-//	}
+	my = ft_rotate_matrix_y(m, rad);
 
-	m = ft_rotate_matrix_y(m, rad);
+//	mz = ft_rotate_matrix_z(m, 0);
+	mz.x.x = 0;
+
+//	m = ft_multiply_matrix(ft_multiply_matrix(mx, my), mz);
+	m = ft_multiply_matrix(mx, my);
+	m.pos = ft_make_pt(300, 300);
+
+
 	y = 0;
 	while (y <= a->size.y)
 	{
+		YOLO
 		a->layout_pts[y] = ft_array_layout(a->tab_pts[y], a->size.x, a->layout_pts[y], m);
 		y++;
 	}
-
-//	m = ft_rotate_matrix_x(m, 0);
-//	y = 0;
-//	while (y <= a->size.y)
-//	{
-//		a->layout_pts[y] = ft_array_layout(a->tab_pts[y], a->size.x, a->layout_pts[y], m);
-//		y++;
-//	}
+	YOLO2
 
 
 
@@ -148,6 +146,6 @@ int		ft_fdf(t_info *info)
 	a->tab_pts = ft_free_pt3d(a->tab_pts, a->size.y);
 	usleep(200000);
 	ft_flush_image(mlx);
-	ft_reset_image(mlx, 0x000000);
+//	ft_reset_image(mlx, 0x000000);
 	return (0);
 }

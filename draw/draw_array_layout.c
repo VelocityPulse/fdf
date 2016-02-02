@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/23 15:31:15 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/27 17:48:44 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/02 12:37:53 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_pt	*ft_array_layout(t_pt3d *pts, int size, t_pt *new_pts, t_matrix t)
 	
 
 	while (++i <= size)
-		new_pts[i] = ft_add_pt(new_pts[i], ft_multiply_matrix(pts[i], t));
+		new_pts[i] = ft_add_pt(new_pts[i], ft_apply_matrix(pts[i], t));
 	return (new_pts);
 }
 

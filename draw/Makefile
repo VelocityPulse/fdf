@@ -30,13 +30,13 @@ SRCS =			./draw_pixel.c \
 				./draw_make_vector.c \
 				./draw_add_vector.c \
 				./draw_multiply_matrix.c \
+				./draw_apply_matrix.c \
 				./draw_array_layout.c \
 				./draw_make_pt3d.c \
 				./draw_perimeter.c \
 				./draw_flush_image.c \
 				./draw_multiply_vector.c \
 				./draw_add_scale.c \
-				./draw_matrix_multiply_vector.c \
 				./draw_add_pos.c
 
 OBJS =			./draw_pixel.o \
@@ -57,13 +57,13 @@ OBJS =			./draw_pixel.o \
 				./draw_make_vector.o \
 				./draw_add_vector.o \
 				./draw_multiply_matrix.o \
+				./draw_apply_matrix.o \
 				./draw_array_layout.o \
 				./draw_make_pt3d.o \
 				./draw_perimeter.o \
 				./draw_flush_image.o \
 				./draw_multiply_vector.o \
 				./draw_add_scale.o \
-				./draw_matrix_multiply_vector.o \
 				./draw_add_pos.o
 
 FLAGS = 		-Wall -Wextra -Werror
