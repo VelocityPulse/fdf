@@ -40,7 +40,7 @@ LIBFT =			./libft/libft.a
 
 LIBMLX =		./libmlx/libmlx.a
 
-LMLX =			-lmlx
+LMLX =			#-lmlx
 
 FRAMEWORK =		$(LMLX) -framework OpenGL -framework AppKit
 

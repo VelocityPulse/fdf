@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/24 20:13:53 by                   #+#    #+#             */
-/*   Updated: 2016/02/02 13:08:11 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/02 15:16:20 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int		ft_fdf(t_info *info)
 {
 	int				x;
 	int				y;
-	static float	rad = 0;
 	float			increment;
 	t_matrix		m;
 	t_matrix		mx;
@@ -25,10 +24,21 @@ int		ft_fdf(t_info *info)
 	t_mlx			*mlx;
 	t_array			*a;
 
-	increment = (3.1415f / 48);
+	increment = (3.1415f / 48) * 2;
 	mlx = info->mlx;
 	a = info->array;
 
+	ft_reset_image(mlx, 0x000000);
+	if (info->key == 126)
+		info->rad.x -= increment;
+	else if (info->key == 125)
+		info->rad.x += increment;
+	else if (info->key ==  124)
+		info->rad.y += increment;
+	else if (info->key == 123)
+		info->rad.y -= increment;
+	else
+		return (0);
 
 	a = ft_convert_array_to_pts(a);
 
@@ -41,19 +51,15 @@ int		ft_fdf(t_info *info)
 		a->layout_pts[y++] = NULL;
 
 
+	mx = ft_rotate_matrix_x(m, info->rad.x);
 
+	my = ft_rotate_matrix_y(m, info->rad.y);
 
-	mx = ft_rotate_matrix_x(m, rad);
-
-	my = ft_rotate_matrix_y(m, rad);
-
-//	mz = ft_rotate_matrix_z(m, 0);
-	mz.x.x = 0;
+	mz = ft_rotate_matrix_z(m, info->rad.z);
 
 //	m = ft_multiply_matrix(ft_multiply_matrix(mx, my), mz);
 	m = ft_multiply_matrix(mx, my);
 	m.pos = ft_make_pt(300, 300);
-
 
 	y = 0;
 	while (y <= a->size.y)
@@ -64,13 +70,7 @@ int		ft_fdf(t_info *info)
 	}
 	YOLO2
 
-
-
-
-
 	a->layout_pts = ft_add_pos(a->layout_pts, a->size, m.pos);
-
-
 
 	x = 0;
 	y = 0;
@@ -136,15 +136,9 @@ int		ft_fdf(t_info *info)
 				);
 		y++;
 	}
-	rad += increment;
-	rad += increment;
-	rad += increment;
 
-//	if (rad < 12 || rad > 12)
-//		increment = -increment;
 	a->layout_pts = ft_free_pt(a->layout_pts, a->size.y);
 	a->tab_pts = ft_free_pt3d(a->tab_pts, a->size.y);
-	usleep(200000);
 	ft_flush_image(mlx);
 //	ft_reset_image(mlx, 0x000000);
 	return (0);
