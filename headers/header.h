@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:55:43 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/02 15:05:32 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/02 15:59:44 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ typedef struct	s_info
 
 int				ft_fdf(t_info *info);
 int				ft_key_hook(int keycode, t_info *info);
+t_info			*ft_init_info(t_mlx *mlx, t_array *a);
 
 t_gline			*ft_add_line(t_gline *begin, char *line);
 t_gline			*ft_add_gline(void);
