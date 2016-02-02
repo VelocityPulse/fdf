@@ -22,7 +22,9 @@ SRC =			./sources/main.c \
 				./sources/get_array.c \
 				./sources/get_next_line.c \
 				./sources/list_gline.c \
-				./sources/pt3d_alloc.c
+				./sources/pt3d_alloc.c \
+				./sources/edit_rad.c \
+				./sources/init_info.c
 
 OBJS =			./main.o \
 				./array_alloc.o \
@@ -32,7 +34,9 @@ OBJS =			./main.o \
 				./get_array.o \
 				./get_next_line.o \
 				./list_gline.o \
-				./pt3d_alloc.o
+				./pt3d_alloc.o \
+				./edit_rad.o \
+				./init_info.o
 
 DRAW =			./draw/draw.a
 
@@ -40,7 +44,7 @@ LIBFT =			./libft/libft.a
 
 LIBMLX =		./libmlx/libmlx.a
 
-LMLX =			#-lmlx
+LMLX =			-lmlx
 
 FRAMEWORK =		$(LMLX) -framework OpenGL -framework AppKit
 

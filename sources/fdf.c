@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/24 20:13:53 by                   #+#    #+#             */
-/*   Updated: 2016/02/02 15:16:20 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/02 15:53:30 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,10 @@ int		ft_fdf(t_info *info)
 	else
 		return (0);
 
-	a = ft_convert_array_to_pts(a);
 
-	a->tab_pts = ft_add_scale(a->tab_pts, a->size, ft_make_pt3d(20, 20, -4));
+	//a = ft_convert_array_to_pts(a);
+
+//	a->tab_pts = ft_add_scale(a->tab_pts, a->size, ft_make_pt3d(20, 20, -4));
 
 
 	a->layout_pts = (t_pt **)malloc(sizeof(t_pt *) * (a->size.y + 1));
@@ -57,18 +58,16 @@ int		ft_fdf(t_info *info)
 
 	mz = ft_rotate_matrix_z(m, info->rad.z);
 
-//	m = ft_multiply_matrix(ft_multiply_matrix(mx, my), mz);
-	m = ft_multiply_matrix(mx, my);
+	m = ft_multiply_matrix(ft_multiply_matrix(mx, my), mz);
+
 	m.pos = ft_make_pt(300, 300);
 
 	y = 0;
 	while (y <= a->size.y)
 	{
-		YOLO
 		a->layout_pts[y] = ft_array_layout(a->tab_pts[y], a->size.x, a->layout_pts[y], m);
 		y++;
 	}
-	YOLO2
 
 	a->layout_pts = ft_add_pos(a->layout_pts, a->size, m.pos);
 
@@ -138,8 +137,7 @@ int		ft_fdf(t_info *info)
 	}
 
 	a->layout_pts = ft_free_pt(a->layout_pts, a->size.y);
-	a->tab_pts = ft_free_pt3d(a->tab_pts, a->size.y);
+//	a->tab_pts = ft_free_pt3d(a->tab_pts, a->size.y);
 	ft_flush_image(mlx);
-//	ft_reset_image(mlx, 0x000000);
 	return (0);
 }
