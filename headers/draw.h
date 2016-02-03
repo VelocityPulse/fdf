@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:41:53 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/03 11:59:21 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/03 12:09:14 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ t_matrix	ft_multiply_matrix(t_matrix m1, t_matrix m2);
 t_vector	ft_add_vector(t_vector v, float x, float y, float z);
 t_vector	ft_multiply_vector(t_vector v, float x, float y, float z);
 
-t_matrix	ft_rotate_matrix_x(t_matrix m, float rot);
-t_matrix	ft_rotate_matrix_y(t_matrix m, float rot);
-t_matrix	ft_rotate_matrix_z(t_matrix m, float rot);
+t_matrix	ft_rotate_matrix_x(float rot);
+t_matrix	ft_rotate_matrix_y(float rot);
+t_matrix	ft_rotate_matrix_z(float rot);
 t_pt3d		**ft_add_scale(t_pt3d **tab, t_pt size, t_pt3d scale);
 t_pt		**ft_add_pos(t_pt **tab, t_pt size, t_pt pos);
 

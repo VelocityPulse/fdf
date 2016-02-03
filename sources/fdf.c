@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/24 20:13:53 by                   #+#    #+#             */
-/*   Updated: 2016/02/03 12:07:40 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/03 12:10:32 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ int		ft_fdf(t_info *info)
 	ft_edit_rad(info);
 	a->layout_pts = ft_pt_alloc(a->size);
 
-	rot.mx = ft_rotate_matrix_x(rot.m, info->rad.x);
+	rot.mx = ft_rotate_matrix_x(info->rad.x);
 
-	rot.my = ft_rotate_matrix_y(rot.m, info->rad.y);
+	rot.my = ft_rotate_matrix_y(info->rad.y);
 
-	rot.mz = ft_rotate_matrix_z(rot.m, info->rad.z);
+	rot.mz = ft_rotate_matrix_z(info->rad.z);
 
 	rot.m = ft_multiply_matrix(ft_multiply_matrix(rot.mx, rot.my), rot.mz);
 
