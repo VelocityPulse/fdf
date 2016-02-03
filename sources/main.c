@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/13 11:26:58 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/02 16:00:17 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/03 12:46:42 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int		key_hook(int keycode, t_info *info)
 {
+	if (keycode == 53)
+		ft_exit_fdf(info);
 	info->key = keycode;
 	ft_fdf(info);
 	return (0);

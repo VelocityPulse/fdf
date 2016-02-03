@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/24 20:13:53 by                   #+#    #+#             */
-/*   Updated: 2016/02/03 12:44:15 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/03 12:45:33 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int		ft_fdf(t_info *info)
 	t_mlx			*mlx;
 	t_array			*a;
 
-	ft_exit_fdf(info);
 	increment = (3.1415f / 48) * 2;
 	mlx = info->mlx;
 	a = info->array;
