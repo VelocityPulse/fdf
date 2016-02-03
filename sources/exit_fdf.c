@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/03 12:14:05 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/03 12:44:31 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/03 12:49:15 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ void	ft_exit_fdf(t_info *info)
 	ft_free_pt(info->array->layout_pts, info->array->size.y);
 	ft_memdel((void **)&info->array);
 	ft_clear_mlx(info->mlx);
+	ft_memdel((void **)&info);
 	exit(0);
 }
