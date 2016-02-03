@@ -6,7 +6,7 @@
 #*   By:  <>                                        +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2016/01/23 00:01:04 by                   #+#    #+#             *#
-#*   Updated: 2016/01/24 20:26:07 by                  ###   ########.fr       *#
+#*   Updated: 2016/02/03 23:20:01 by                  ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -38,7 +38,9 @@ SRCS =			./draw_pixel.c \
 				./draw_multiply_vector.c \
 				./draw_add_scale.c \
 				./draw_add_pos.c \
-				./draw_clear_mlx.c
+				./draw_clear_mlx.c \
+				./draw_add_pt.c \
+				./draw_add_pt3d.c
 
 OBJS =			./draw_pixel.o \
 				./new_image.o \
@@ -66,7 +68,9 @@ OBJS =			./draw_pixel.o \
 				./draw_multiply_vector.o \
 				./draw_add_scale.o \
 				./draw_add_pos.o \
-				./draw_clear_mlx.o
+				./draw_clear_mlx.o \
+				./draw_add_pt.o \
+				./draw_add_pt3d.o
 
 FLAGS = 		-Wall -Wextra -Werror
 

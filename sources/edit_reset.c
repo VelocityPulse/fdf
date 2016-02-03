@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_add_pt3d.c                                    :+:      :+:    :+:   */
+/*   edit_reset.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/03 22:48:50 by                   #+#    #+#             */
-/*   Updated: 2016/02/03 23:29:04 by                  ###   ########.fr       */
+/*   Created: 2016/02/03 23:33:51 by                   #+#    #+#             */
+/*   Updated: 2016/02/03 23:59:27 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/draw.h"
+#include "../headers/header.h"
 
-t_pt3d		ft_add_pt3d(t_pt3d pt1, t_pt3d pt2)
+void	ft_edit_reset(t_info *info)
 {
-	t_pt3d	pt3;
-
-	pt3.x = pt1.x + pt2.x;
-	pt3.y = pt1.y + pt2.y;
-	pt3.z = pt1.z + pt2.z;
-	return (pt3);
+	if (info->key == 49)
+	{
+		info->scale = ft_make_pt3d(20, 20, 4);
+		info->rad = ft_make_vector(0, 0, 0);
+		info->pos = ft_make_pt(400, 350);
+		info->array = ft_convert_array_to_pts(info->array);
+		ft_add_scale(info->array->tab_pts, info->array->size, info->scale);
+	}
 }
+
+/*
+** 49 = space
+*/

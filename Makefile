@@ -6,7 +6,7 @@
 #*   By:  <>                                        +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2015/12/26 15:16:47 by                   #+#    #+#             *#
-#*   Updated: 2016/02/03 21:57:31 by                  ###   ########.fr       *#
+#*   Updated: 2016/02/03 23:39:14 by                  ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -26,7 +26,9 @@ SRC =			./sources/main.c \
 				./sources/edit_rad.c \
 				./sources/init_info.c \
 				./sources/exit_fdf.c \
-				./sources/edit_pos.c
+				./sources/edit_pos.c \
+				./sources/edit_scale.c \
+				./sources/edit_reset.c
 
 OBJS =			./main.o \
 				./array_alloc.o \
@@ -40,7 +42,9 @@ OBJS =			./main.o \
 				./edit_rad.o \
 				./init_info.o \
 				./exit_fdf.o \
-				./edit_pos.o
+				./edit_pos.o \
+				./edit_scale.o \
+				./edit_reset.o
 
 DRAW =			./draw/draw.a
 
