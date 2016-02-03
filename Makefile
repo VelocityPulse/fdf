@@ -24,7 +24,8 @@ SRC =			./sources/main.c \
 				./sources/list_gline.c \
 				./sources/pt3d_alloc.c \
 				./sources/edit_rad.c \
-				./sources/init_info.c
+				./sources/init_info.c \
+				./sources/exit_fdf.c
 
 OBJS =			./main.o \
 				./array_alloc.o \
@@ -36,7 +37,8 @@ OBJS =			./main.o \
 				./list_gline.o \
 				./pt3d_alloc.o \
 				./edit_rad.o \
-				./init_info.o
+				./init_info.o \
+				./exit_fdf.o
 
 DRAW =			./draw/draw.a
 

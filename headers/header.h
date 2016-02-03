@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:55:43 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/03 11:40:46 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/03 12:16:50 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,19 @@
 
 # include "debug.h"
 
-typedef struct	s_array
-{
-		int		**tab;
-	t_pt3d	**tab_pts;
-	t_pt	**layout_pts;
-	t_pt	size;
-}				t_array;
-
 typedef struct	s_gline
 {
 	struct s_gline	*next;
 	char			*line;
 }				t_gline;
+
+typedef struct	s_array
+{
+	int		**tab;
+	t_pt3d	**tab_pts;
+	t_pt	**layout_pts;
+	t_pt	size;
+}				t_array;
 
 typedef struct	s_info
 {
@@ -46,6 +46,7 @@ typedef struct	s_info
 }				t_info;
 
 int				ft_fdf(t_info *info);
+void			ft_exit_fdf(t_info *info);
 int				ft_key_hook(int keycode, t_info *info);
 t_info			*ft_init_info(t_mlx *mlx, t_array *a);
 
