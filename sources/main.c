@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/13 11:26:58 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/03 21:22:46 by                  ###   ########.fr       */
+/*   Updated: 2016/02/03 22:01:47 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ int		main(int argc, char **argv)
 			return (0);
 		close(fd);
 		a = ft_convert_array_to_pts(a);
-		a->tab_pts = ft_add_scale(a->tab_pts, a->size, ft_make_pt3d(15, 15, 2));
+		ft_add_scale(a->tab_pts, a->size, ft_make_pt3d(15, 15, 2));
 
-		mlx = ft_mlx_init(700, 600, mlx, "fdf");
+		mlx = ft_mlx_init(800, 700, mlx, "fdf");
 
 		info = ft_init_info(mlx, a);
 
