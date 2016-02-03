@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/13 11:26:58 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/03 17:42:59 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/03 21:22:46 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int		key_hook(int keycode, t_info *info)
 {
 	if (keycode == 53)
 		ft_exit_fdf(info);
+	printf("%d\n", keycode);
 	info->key = keycode;
 	ft_fdf(info);
 	return (0);
@@ -38,7 +39,7 @@ int		main(int argc, char **argv)
 			return (0);
 		close(fd);
 		a = ft_convert_array_to_pts(a);
-		a->tab_pts = ft_add_scale(a->tab_pts, a->size, ft_make_pt3d(5, 5, 2));
+		a->tab_pts = ft_add_scale(a->tab_pts, a->size, ft_make_pt3d(15, 15, 2));
 
 		mlx = ft_mlx_init(700, 600, mlx, "fdf");
 

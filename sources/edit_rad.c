@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/02 16:01:15 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/02 16:05:20 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/03 21:28:36 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,20 @@ void	ft_edit_rad(t_info *info)
 		info->rad.y += increment;
 	else if (info->key == 123)
 		info->rad.y -= increment;
+	else if (info->key == 33)
+		info->rad.z += increment;
+	else if (info->key == 30)
+		info->rad.z -= increment;
 	else
 		return ;
 }
+
+/*
+** 126	= fleche haut
+** 125	= fleche bas
+** 124	= fleche droite
+** 123	= fleche gauche
+**
+** 30	= crochet droit
+** 33	= crochet gauche
+*/
