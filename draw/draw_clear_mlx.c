@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit_fdf.c                                         :+:      :+:    :+:   */
+/*   draw_clear_mlx.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/03 12:14:05 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/03 12:44:31 by cchameyr         ###   ########.fr       */
+/*   Created: 2016/02/03 12:31:57 by cchameyr          #+#    #+#             */
+/*   Updated: 2016/02/03 12:41:22 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/header.h"
+#include "../headers/draw.h"
 
-void	ft_exit_fdf(t_info *info)
+void	ft_clear_mlx(t_mlx *mlx)
 {
-	int		i;
-
-	i = 0;
-	while (i <= info->array->size.y)
-		ft_memdel((void **)&info->array->tab[i++]);
-	ft_free_pt3d(info->array->tab_pts, info->array->size.y);
-	ft_free_pt(info->array->layout_pts, info->array->size.y);
-	ft_memdel((void **)&info->array);
-	ft_clear_mlx(info->mlx);
-	exit(0);
+	mlx_destroy_image(mlx->p_mlx, mlx->mlx_img);
+	mlx_clear_window(mlx->p_mlx, mlx->p_win);
+	mlx_destroy_window(mlx->p_mlx, mlx->p_win);
 }
