@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 17:48:37 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/21 19:26:11 by                  ###   ########.fr       */
+/*   Updated: 2016/02/03 16:07:54 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ static char		*ft_end_chain(char *str)
 	return (end_chain);
 }
 
-static int		ft_alloc_gnl(char **save, char **buff)
+static int		ft_alloc_gnl(char **save, t_gnl *g)
 {
-	if (!(*buff = ft_strnew(BUFF_SIZE + 1)))
+	if (!(g->buff = ft_strnew(BUFF_SIZE + 1)))
 		return (-1);
 	if (!*save)
 	{
@@ -59,28 +59,28 @@ static int		ft_alloc_gnl(char **save, char **buff)
 
 int				get_next_line(const int fd, char **line)
 {
-	static char	*save = NULL;
-	char		*buff;
-	char		*temp;
-	int			ret;
+	static char	*save[256] = {NULL};
+	t_gnl		g;
 
-	if (((ret = 42)) && (ft_alloc_gnl(&save, &buff) == -1))
+	if (((g.ret = 42)) && (ft_alloc_gnl(&save[fd], &g) == -1))
 		return (-1);
-	while (!(ft_strchr(save, '\n')) && ret > 0)
+	while (!(ft_strchr(save[fd], '\n')) && g.ret > 0)
 	{
-		if ((ret = read(fd, buff, BUFF_SIZE)) == -1)
+		if ((g.ret = read(fd, g.buff, BUFF_SIZE)) == -1)
 			return (-1);
-		buff[ret] = 0;
-		temp = save;
-		save = ft_strjoin(save, buff);
-		ft_memdel((void **)&temp);
+		g.buff[g.ret] = 0;
+		g.temp = save[fd];
+		save[fd] = ft_strjoin(save[fd], g.buff);
+		ft_memdel((void **)&g.temp);
 	}
-	ft_memdel((void **)&buff);
-	*line = ft_get_line(save);
-	save = ft_end_chain(save);
-	if (ret == 0 && !save)
+	ft_memdel((void **)&g.buff);
+	*line = ft_get_line(save[fd]);
+	save[fd] = ft_end_chain(save[fd]);
+	if ((int)ft_strlen(*line))
+		return (1);
+	if (g.ret == 0 && !save[fd])
 	{
-		ft_memdel((void **)&save);
+		ft_memdel((void **)&save[fd]);
 		return (0);
 	}
 	return (1);
