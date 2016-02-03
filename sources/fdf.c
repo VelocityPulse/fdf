@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/24 20:13:53 by                   #+#    #+#             */
-/*   Updated: 2016/02/02 15:53:30 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/03 11:29:50 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,22 +29,7 @@ int		ft_fdf(t_info *info)
 	a = info->array;
 
 	ft_reset_image(mlx, 0x000000);
-	if (info->key == 126)
-		info->rad.x -= increment;
-	else if (info->key == 125)
-		info->rad.x += increment;
-	else if (info->key ==  124)
-		info->rad.y += increment;
-	else if (info->key == 123)
-		info->rad.y -= increment;
-	else
-		return (0);
-
-
-	//a = ft_convert_array_to_pts(a);
-
-//	a->tab_pts = ft_add_scale(a->tab_pts, a->size, ft_make_pt3d(20, 20, -4));
-
+	ft_edit_rad(info);
 
 	a->layout_pts = (t_pt **)malloc(sizeof(t_pt *) * (a->size.y + 1));
 	y = 0;
