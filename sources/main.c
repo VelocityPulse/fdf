@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/13 11:26:58 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/03 12:46:42 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/03 12:50:49 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int		main(int argc, char **argv)
 			return (0);
 		if (!(a = ft_get_array(fd, a)))
 			return (0);
-
+		close(fd);
 		a = ft_convert_array_to_pts(a);
 		a->tab_pts = ft_add_scale(a->tab_pts, a->size, ft_make_pt3d(20, 20, 4));
 
