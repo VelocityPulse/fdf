@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/24 20:13:53 by                   #+#    #+#             */
-/*   Updated: 2016/02/03 11:29:50 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/03 11:57:28 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,7 @@ int		ft_fdf(t_info *info)
 
 	ft_reset_image(mlx, 0x000000);
 	ft_edit_rad(info);
-
-	a->layout_pts = (t_pt **)malloc(sizeof(t_pt *) * (a->size.y + 1));
-	y = 0;
-	while (y <= a->size.y)
-		a->layout_pts[y++] = NULL;
-
+	a->layout_pts = ft_pt_alloc(a->size);
 
 	mx = ft_rotate_matrix_x(m, info->rad.x);
 
@@ -50,7 +45,7 @@ int		ft_fdf(t_info *info)
 	y = 0;
 	while (y <= a->size.y)
 	{
-		a->layout_pts[y] = ft_array_layout(a->tab_pts[y], a->size.x, a->layout_pts[y], m);
+		ft_array_layout(a->tab_pts[y], a->size.x, a->layout_pts[y], m);
 		y++;
 	}
 
@@ -121,7 +116,7 @@ int		ft_fdf(t_info *info)
 		y++;
 	}
 
-	a->layout_pts = ft_free_pt(a->layout_pts, a->size.y);
+//	a->layout_pts = ft_free_pt(a->layout_pts, a->size.y);
 //	a->tab_pts = ft_free_pt3d(a->tab_pts, a->size.y);
 	ft_flush_image(mlx);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/24 18:37:05 by                   #+#    #+#             */
-/*   Updated: 2016/01/27 16:11:47 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/03 11:47:42 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,9 @@ t_pt3d		**ft_pt3d_alloc(t_pt size)
 	int			i;
 
 	i = 0;
-	pt = (t_pt3d **)ft_memalloc(sizeof(t_pt3d *) * (size.y + 2));
+	pt = (t_pt3d **)ft_memalloc(sizeof(t_pt3d *) * (size.y + 1));
 	while (i <= size.y)
-	{
-		pt[i] = (t_pt3d *)ft_memalloc(sizeof(t_pt3d) * (size.x + 2));
-		i++;
-	}
-	pt[i] = NULL;
+		pt[i++] = (t_pt3d *)ft_memalloc(sizeof(t_pt3d) * (size.x + 1));
 	return (pt);
 }
 
@@ -37,6 +33,18 @@ t_pt3d		**ft_free_pt3d(t_pt3d **tab_pts, int size)
 		ft_memdel((void **)&tab_pts[size]);
 	ft_memdel((void **)tab_pts);
 	return (tab_pts);
+}
+
+t_pt		**ft_pt_alloc(t_pt size)
+{
+	t_pt	**pt;
+	int		i;
+
+	i = 0;
+	pt = (t_pt **)ft_memalloc(sizeof(t_pt *) * (size.y + 1));
+	while (i <= size.y)
+		pt[i++] = (t_pt *)ft_memalloc(sizeof(t_pt) * (size.x + 1));
+	return (pt);
 }
 
 t_pt		**ft_free_pt(t_pt **tab_pts, int size)
