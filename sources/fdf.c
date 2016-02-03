@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/24 20:13:53 by                   #+#    #+#             */
-/*   Updated: 2016/02/03 11:57:28 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/03 12:07:40 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,7 @@ int		ft_fdf(t_info *info)
 	int				x;
 	int				y;
 	float			increment;
-	t_matrix		m;
-	t_matrix		mx;
-	t_matrix		my;
-	t_matrix		mz;
+	t_matrix_rot	rot;
 	t_mlx			*mlx;
 	t_array			*a;
 
@@ -32,24 +29,23 @@ int		ft_fdf(t_info *info)
 	ft_edit_rad(info);
 	a->layout_pts = ft_pt_alloc(a->size);
 
-	mx = ft_rotate_matrix_x(m, info->rad.x);
+	rot.mx = ft_rotate_matrix_x(rot.m, info->rad.x);
 
-	my = ft_rotate_matrix_y(m, info->rad.y);
+	rot.my = ft_rotate_matrix_y(rot.m, info->rad.y);
 
-	mz = ft_rotate_matrix_z(m, info->rad.z);
+	rot.mz = ft_rotate_matrix_z(rot.m, info->rad.z);
 
-	m = ft_multiply_matrix(ft_multiply_matrix(mx, my), mz);
+	rot.m = ft_multiply_matrix(ft_multiply_matrix(rot.mx, rot.my), rot.mz);
 
-	m.pos = ft_make_pt(300, 300);
+	rot.m.pos = ft_make_pt(300, 300);
 
 	y = 0;
 	while (y <= a->size.y)
 	{
-		ft_array_layout(a->tab_pts[y], a->size.x, a->layout_pts[y], m);
+		ft_array_layout(a->tab_pts[y], a->size.x, a->layout_pts[y], rot.m);
 		y++;
 	}
-
-	a->layout_pts = ft_add_pos(a->layout_pts, a->size, m.pos);
+	a->layout_pts = ft_add_pos(a->layout_pts, a->size, rot.m.pos);
 
 	x = 0;
 	y = 0;
