@@ -6,7 +6,7 @@
 /*   By: cchameyr <cchameyr@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 12:18:50 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/25 13:26:03 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/04 17:48:16 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,4 +97,7 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 void			ft_swap(int *a, int *b);
 int				ft_memlen(void **tab);
+t_pt			**ft_pt_alloc(t_pt size);
+t_pt			**ft_free_pt(t_pt **tab_pts, int size);
+
 #endif

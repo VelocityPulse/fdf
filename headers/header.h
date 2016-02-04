@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:55:43 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/03 23:38:15 by                  ###   ########.fr       */
+/*   Updated: 2016/02/04 18:02:24 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ typedef struct	s_array
 	int		**tab;
 	t_pt3d	**tab_pts;
 	t_pt	**layout_pts;
-	t_pt	size;
+	int		*size_x;
+	t_pt	max_size;
 }				t_array;
 
 typedef struct	s_info
@@ -63,9 +64,11 @@ int				ft_check_tab(char **tab, const int nbr_line);
 void			*ft_free_tab(char **tab, const int nbr_line);
 
 t_array			*ft_convert_to_array(char **tab, const int nb_line, t_array *a);
-char			**ft_tab_strsplit(char *tab, char c, t_array *array);
 
 t_array			*ft_convert_array_to_pts(t_array *a);
+
+t_pt3d			**ft_fdf_pt3d_alloc(t_array *a);
+t_pt3d			**ft_fdf_free_pt3d(t_array *a);
 
 void			ft_edit_rad(t_info *info);
 void			ft_edit_pos(t_info *info, t_matrix_rot *rot);
@@ -74,10 +77,5 @@ void			ft_edit_reset(t_info *info);
 
 t_array			*ft_array_alloc(const int nbr_line);
 t_array			*ft_free_array(t_array *array);
-
-t_pt3d			**ft_pt3d_alloc(t_pt size);
-t_pt3d			**ft_free_pt3d(t_pt3d **tab_pts, int size);
-t_pt			**ft_pt_alloc(t_pt size);
-t_pt			**ft_free_pt(t_pt **tab_pts, int size);
 
 #endif

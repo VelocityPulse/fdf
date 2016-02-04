@@ -22,13 +22,13 @@ SRC =			./sources/main.c \
 				./sources/get_array.c \
 				./sources/get_next_line.c \
 				./sources/list_gline.c \
-				./sources/pt3d_alloc.c \
 				./sources/edit_rad.c \
 				./sources/init_info.c \
 				./sources/exit_fdf.c \
 				./sources/edit_pos.c \
 				./sources/edit_scale.c \
-				./sources/edit_reset.c
+				./sources/edit_reset.c \
+				./sources/fdf_pt3d_alloc.c
 
 OBJS =			./main.o \
 				./array_alloc.o \
@@ -38,13 +38,13 @@ OBJS =			./main.o \
 				./get_array.o \
 				./get_next_line.o \
 				./list_gline.o \
-				./pt3d_alloc.o \
 				./edit_rad.o \
 				./init_info.o \
 				./exit_fdf.o \
 				./edit_pos.o \
 				./edit_scale.o \
-				./edit_reset.o
+				./edit_reset.o \
+				./fdf_pt3d_alloc.c
 
 DRAW =			./draw/draw.a
 
