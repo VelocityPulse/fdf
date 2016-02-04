@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:41:53 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/03 22:42:40 by                  ###   ########.fr       */
+/*   Updated: 2016/02/04 14:42:11 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ t_area		ft_make_area(t_pt a, t_pt b, t_pt c, t_pt d);
 t_area		ft_make_losange(t_line line, int mediane);
 t_area		ft_make_isocele(t_line line, int mediane);
 t_vector	ft_make_vector(float x, float y, float z);
+
+t_line		ft_patch_line(t_line l, t_mlx *mlx);
 
 t_matrix	ft_init_matrix(t_pt pos);
 t_matrix	ft_multiply_matrix(t_matrix m1, t_matrix m2);
