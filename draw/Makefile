@@ -41,7 +41,6 @@ SRCS =			./draw_pixel.c \
 				./draw_clear_mlx.c \
 				./draw_add_pt.c \
 				./draw_add_pt3d.c \
-				./draw_patch_line.c
 
 OBJS =			./draw_pixel.o \
 				./new_image.o \
@@ -72,7 +71,6 @@ OBJS =			./draw_pixel.o \
 				./draw_clear_mlx.o \
 				./draw_add_pt.o \
 				./draw_add_pt3d.o \
-				./draw_patch_line.o
 
 FLAGS = 		-Wall -Wextra -Werror
 

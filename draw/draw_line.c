@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 13:45:56 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/04 14:43:45 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/04 16:56:21 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ void	ft_draw_line(t_line line, t_mlx *mlx, int color)
 {
 	t_pt	variance;
 
-	line = ft_patch_line(line, mlx);
 	variance.x = (line.dx < 0) ? -1 : 1;
 	variance.y = (line.dy < 0) ? -1 : 1;
 	if (line.dx == 0 && line.dy == 0)
