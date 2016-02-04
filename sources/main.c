@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/13 11:26:58 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/03 23:26:57 by                  ###   ########.fr       */
+/*   Updated: 2016/02/04 16:59:37 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,10 @@ int		main(int argc, char **argv)
 		if ((fd = open(argv[1], O_RDONLY)) == -1)
 			return (0);
 		if (!(a = ft_get_array(fd, a)))
+		{
+			close(fd);
 			return (0);
+		}
 		close(fd);
 		a = ft_convert_array_to_pts(a);
 
