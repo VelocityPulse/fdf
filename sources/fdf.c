@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/24 20:13:53 by                   #+#    #+#             */
-/*   Updated: 2016/02/05 11:55:04 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/05 13:29:17 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ int		ft_fdf(t_info *info)
 
 	rot.m = ft_multiply_matrix(ft_multiply_matrix(rot.mx, rot.my), rot.mz);
 
-	
 	
 	ft_edit_pos(info, &rot);
 	a->layout_pts = ft_fdf_pt_alloc(a);

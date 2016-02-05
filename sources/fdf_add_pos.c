@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/05 11:43:40 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/05 11:47:45 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/05 13:28:00 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	ft_fdf_add_pos(t_array *a, t_pt pos)
 		{
 			a->layout_pts[p.y][p.x].x += pos.x;
 			a->layout_pts[p.y][p.x].y += pos.y;
+			p.x++;
 		}
 		p.y++;
 	}

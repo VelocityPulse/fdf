@@ -62,7 +62,7 @@ LMLX =			#-lmlx
 
 FRAMEWORK =		$(LMLX) -framework OpenGL -framework AppKit
 
-FLAGS =			-Wall -Wextra -Werror #-fsanitize=address
+FLAGS =			-Wall -Wextra -Werror -fsanitize=address
 
 CC =			gcc
 
@@ -88,7 +88,7 @@ $(DRAW):
 clean:
 	$(RM) $(OBJS)
 	make clean -C ./libft/
-	make clean -C ./libmlx/
+#	make clean -C ./libmlx/
 	make clean -C ./draw/
 
 fclean: clean
