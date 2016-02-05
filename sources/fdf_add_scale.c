@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_add_scale.c                                   :+:      :+:    :+:   */
+/*   fdf_add_scale.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/26 12:35:37 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/05 11:28:57 by cchameyr         ###   ########.fr       */
+/*   Created: 2016/02/05 11:26:10 by cchameyr          #+#    #+#             */
+/*   Updated: 2016/02/05 11:32:36 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/draw.h"
+#include "../headers/header.h"
 
-t_pt3d		**ft_add_scale(t_pt3d **tab, t_pt size, t_pt3d scale)
+void	ft_fdf_add_scale(t_array *a, t_pt3d scale)
 {
 	t_pt	p;
 
 	p.y = 0;
-	while (p.y <= size.y)
+	while (p.y <= a->max_size.y)
 	{
 		p.x = 0;
-		while (p.x <= size.x)
+		while (p.x <= a->size_x[p.y])
 		{
-			tab[p.y][p.x].x *= scale.x;
-			tab[p.y][p.x].y *= scale.y;
-			tab[p.y][p.x].z *= scale.z;
+			a->tab_pts[p.y][p.x].x *= scale.x;
+			a->tab_pts[p.y][p.x].y *= scale.y;
+			a->tab_pts[p.y][p.x].z *= scale.z;
 			p.x++;
 		}
 		p.y++;
 	}
-	return (tab);
 }
-

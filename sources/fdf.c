@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/24 20:13:53 by                   #+#    #+#             */
-/*   Updated: 2016/02/04 00:01:48 by                  ###   ########.fr       */
+/*   Updated: 2016/02/05 11:34:14 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,9 @@ int		ft_fdf(t_info *info)
 	rot.mz = ft_rotate_matrix_z(info->rad.z);
 
 	rot.m = ft_multiply_matrix(ft_multiply_matrix(rot.mx, rot.my), rot.mz);
-	//
-	//
-	//
-	//
-	//
-	// gerer le seg fault lors d'un enorme zoom
-	//
-	//
-	//
-	//
+
+	
+	
 	ft_edit_pos(info, &rot);
 	a->layout_pts = ft_pt_alloc(a->size);
 	y = 0;
