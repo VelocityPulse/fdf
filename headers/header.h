@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:55:43 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/05 12:00:53 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/05 16:28:34 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ int				ft_fdf(t_info *info);
 void			ft_exit_fdf(t_info *info);
 int				ft_key_hook(int keycode, t_info *info);
 t_info			*ft_init_info(t_mlx *mlx, t_array *a);
+
+void			ft_fdf_draw(t_array *a, t_mlx *mlx);
 
 t_gline			*ft_add_line(t_gline *begin, char *line);
 t_gline			*ft_add_gline(void);

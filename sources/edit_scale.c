@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/04 17:00:46 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/05 11:58:27 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/05 16:15:26 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ static void		ft_scale_z(t_info *info)
 static void		ft_general_scale(t_info *info)
 {
 	if (info->key == 27 || info->key == 78)
-		info->scale = ft_add_pt3d(info->scale, ft_make_pt3d(-3, -3, 0));
+		info->scale = ft_add_pt3d(info->scale, ft_make_pt3d(-3, -3, -1));
 	else
-		info->scale = ft_add_pt3d(info->scale, ft_make_pt3d(3, 3, 0));
+		info->scale = ft_add_pt3d(info->scale, ft_make_pt3d(3, 3, 1));
 }
 
 /*

@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/24 20:13:53 by                   #+#    #+#             */
-/*   Updated: 2016/02/05 13:29:17 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/05 16:58:06 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int		ft_fdf(t_info *info)
 {
-	int				x;
 	int				y;
 	float			increment;
 	t_matrix_rot	rot;
@@ -49,71 +48,8 @@ int		ft_fdf(t_info *info)
 	}
 	ft_fdf_add_pos(a, rot.m.pos);
 
-	x = 0;
-	y = 0;
-	while (y < a->max_size.y)
-	{
-		x = 0;
-		while (x < a->size_x[y])
-		{
-			ft_draw_line(
-					ft_make_line(	a->layout_pts[y][x].x,
-						a->layout_pts[y][x].y,
-						a->layout_pts[y][x + 1].x,
-						a->layout_pts[y][x + 1].y),
-					mlx,
-					0xffffff
-					);
-			x++;
-		}
-		y++;
-	}
-	x = 0;
-	while (x < a->size_x[y])
-	{
-		ft_draw_line(
-				ft_make_line(	a->layout_pts[y][x].x,
-					a->layout_pts[y][x].y,
-					a->layout_pts[y][x + 1].x,
-					a->layout_pts[y][x + 1].y),
-				mlx,
-				0xffffff
-				);
-		x++;
-	}
-/*	x = 0;
-	y = 0;
-	while (x < a->size.x)
-	{
-		y = 0;
-		while (y < a->size.y)
-		{
-			ft_draw_line(
-					ft_make_line(	a->layout_pts[y][x].x,
-						a->layout_pts[y][x].y,
-						a->layout_pts[y + 1][x].x,
-						a->layout_pts[y + 1][x].y),
-					mlx,
-					0xffffff
-					);
-			y++;
-		}
-		x++;
-	}
-	y = 0;
-	while (y < a->size.y)
-	{
-		ft_draw_line(
-				ft_make_line(	a->layout_pts[y][x].x,
-					a->layout_pts[y][x].y,
-					a->layout_pts[y + 1][x].x,
-					a->layout_pts[y + 1][x].y),
-				mlx,
-				0xffffff
-				);
-		y++;
-	}
-*/
+	ft_fdf_draw(a, mlx);
+
 //	a->layout_pts = ft_free_pt(a->layout_pts, a->size.y);
 //	a->tab_pts = ft_free_pt3d(a->tab_pts, a->size.y);
 	ft_flush_image(mlx);
