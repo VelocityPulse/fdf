@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/24 20:13:53 by                   #+#    #+#             */
-/*   Updated: 2016/02/05 17:17:11 by                  ###   ########.fr       */
+/*   Updated: 2016/02/05 17:21:42 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ static void		ft_apply_layout(t_array *a, t_matrix m)
 
 int		ft_fdf(t_info *info)
 {
-	int				y;
 	float			increment;
 	t_matrix_rot	rot;
 	t_mlx			*mlx;

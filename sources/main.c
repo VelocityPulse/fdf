@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/13 11:26:58 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/05 13:01:25 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/05 17:24:12 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int		main(int argc, char **argv)
 		close(fd);
 		a = ft_convert_array_to_pts(a);
 
-		mlx = ft_mlx_init(800, 700, mlx, "fdf");
+		mlx = ft_mlx_init(1000, 700, mlx, "fdf");
 
 		info = ft_init_info(mlx, a);
 		ft_fdf_add_scale(a, info->scale);
