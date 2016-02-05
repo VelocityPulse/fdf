@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:55:43 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/05 11:32:34 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/05 11:48:00 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,11 @@ t_array			*ft_convert_array_to_pts(t_array *a);
 
 t_pt3d			**ft_fdf_pt3d_alloc(t_array *a);
 t_pt3d			**ft_fdf_free_pt3d(t_array *a);
+t_pt			**ft_fdf_pt_alloc(t_array *a);
+t_pt			**ft_fdf_free_pt(t_array *a);
 
 void			ft_fdf_add_scale(t_array *a, t_pt3d scale);
+void			ft_fdf_add_pos(t_array *a, t_pt pos);
 
 void			ft_edit_rad(t_info *info);
 void			ft_edit_pos(t_info *info, t_matrix_rot *rot);

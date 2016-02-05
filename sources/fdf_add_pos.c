@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_add_pos.c                                     :+:      :+:    :+:   */
+/*   fdf_add_pos.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/27 17:11:57 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/05 11:45:15 by cchameyr         ###   ########.fr       */
+/*   Created: 2016/02/05 11:43:40 by cchameyr          #+#    #+#             */
+/*   Updated: 2016/02/05 11:47:45 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/draw.h"
+#include "../headers/header.h"
 
-t_pt	**ft_add_pos(t_pt **tab, t_pt size, t_pt pos)
+void	ft_fdf_add_pos(t_array *a, t_pt pos)
 {
-	t_pt	p;
+	t_pt p;
 
 	p.y = 0;
-	while (p.y <= size.y)
+	while (p.y <= a->max_size.y)
 	{
 		p.x = 0;
-		while (p.x <= size.x)
+		while (p.x <= a->size_x[p.y])
 		{
-			tab[p.y][p.x].x += pos.x;
-			tab[p.y][p.x].y += pos.y;
-			p.x++;
+			a->layout_pts[p.y][p.x].x += pos.x;
+			a->layout_pts[p.y][p.x].y += pos.y;
 		}
 		p.y++;
 	}
-	return (tab);
 }

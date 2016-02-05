@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/24 20:13:53 by                   #+#    #+#             */
-/*   Updated: 2016/02/05 11:34:14 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/05 11:41:46 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,11 @@ int		ft_fdf(t_info *info)
 	
 	
 	ft_edit_pos(info, &rot);
-	a->layout_pts = ft_pt_alloc(a->size);
+	a->layout_pts = ft_fdf_pt_alloc(a);
 	y = 0;
-	while (y <= a->size.y)
+	while (y <= a->max_size.y)
 	{
-		ft_array_layout(a->tab_pts[y], a->size.x, a->layout_pts[y], rot.m);
+		ft_array_layout(a->tab_pts[y], a->size_x[y], a->layout_pts[y], rot.m);
 		y++;
 	}
 	a->layout_pts = ft_add_pos(a->layout_pts, a->size, rot.m.pos);

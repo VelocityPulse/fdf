@@ -28,7 +28,10 @@ SRC =			./sources/main.c \
 				./sources/edit_pos.c \
 				./sources/edit_scale.c \
 				./sources/edit_reset.c \
-				./sources/fdf_pt3d_alloc.c
+				./sources/fdf_pt3d_alloc.c \
+				./sources/fdf_add_pos.c \
+				./sources/fdf_add_scale.c \
+				./sources/fdf_pt_alloc.c
 
 OBJS =			./main.o \
 				./array_alloc.o \
@@ -44,7 +47,10 @@ OBJS =			./main.o \
 				./edit_pos.o \
 				./edit_scale.o \
 				./edit_reset.o \
-				./fdf_pt3d_alloc.c
+				./fdf_pt3d_alloc.o \
+				./fdf_pt_alloc.o \
+				./fdf_add_pos.o \
+				./fdf_add_scale.o
 
 DRAW =			./draw/draw.a
 
