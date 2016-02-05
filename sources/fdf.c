@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/24 20:13:53 by                   #+#    #+#             */
-/*   Updated: 2016/02/05 11:41:46 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/05 11:55:04 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,14 @@ int		ft_fdf(t_info *info)
 		ft_array_layout(a->tab_pts[y], a->size_x[y], a->layout_pts[y], rot.m);
 		y++;
 	}
-	a->layout_pts = ft_add_pos(a->layout_pts, a->size, rot.m.pos);
+	ft_fdf_add_pos(a, rot.m.pos);
 
 	x = 0;
 	y = 0;
-	while (y < a->size.y)
+	while (y < a->max_size.y)
 	{
 		x = 0;
-		while (x < a->size.x)
+		while (x < a->size_x[y])
 		{
 			ft_draw_line(
 					ft_make_line(	a->layout_pts[y][x].x,
@@ -70,7 +70,7 @@ int		ft_fdf(t_info *info)
 		y++;
 	}
 	x = 0;
-	while (x < a->size.x)
+	while (x < a->size_x[y])
 	{
 		ft_draw_line(
 				ft_make_line(	a->layout_pts[y][x].x,
@@ -82,7 +82,7 @@ int		ft_fdf(t_info *info)
 				);
 		x++;
 	}
-	x = 0;
+/*	x = 0;
 	y = 0;
 	while (x < a->size.x)
 	{
@@ -114,7 +114,7 @@ int		ft_fdf(t_info *info)
 				);
 		y++;
 	}
-
+*/
 //	a->layout_pts = ft_free_pt(a->layout_pts, a->size.y);
 //	a->tab_pts = ft_free_pt3d(a->tab_pts, a->size.y);
 	ft_flush_image(mlx);

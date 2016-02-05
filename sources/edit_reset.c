@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/03 23:33:51 by                   #+#    #+#             */
-/*   Updated: 2016/02/03 23:59:27 by                  ###   ########.fr       */
+/*   Updated: 2016/02/05 12:01:39 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_edit_reset(t_info *info)
 		info->rad = ft_make_vector(0, 0, 0);
 		info->pos = ft_make_pt(400, 350);
 		info->array = ft_convert_array_to_pts(info->array);
-		ft_add_scale(info->array->tab_pts, info->array->size, info->scale);
+		ft_fdf_add_scale(info->array, info->scale);
 	}
 }
 

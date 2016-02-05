@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/05 11:35:10 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/05 11:39:29 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/05 12:02:35 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_pt		**ft_fdf_pt_alloc(t_array *a)
 	return (pt);
 }
 
-t_pt3d		**ft_fdf_free_pt(t_array *a)
+t_pt		**ft_fdf_free_pt(t_array *a)
 {
 	int		size;
 

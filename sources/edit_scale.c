@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/04 17:00:46 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/04 17:00:49 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/05 11:58:27 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void			ft_edit_scale(t_info *info)
 	if (!info->array->tab_pts)
 	{
 		info->array = ft_convert_array_to_pts(info->array);
-		ft_add_scale(info->array->tab_pts, info->array->size, info->scale);
+		ft_fdf_add_scale(info->array, info->scale);
 		return ;
 	}
 	else if (key == 12 || key == 14)
@@ -88,5 +88,5 @@ void			ft_edit_scale(t_info *info)
 	else
 		return ;
 	info->array = ft_convert_array_to_pts(info->array);
-	ft_add_scale(info->array->tab_pts, info->array->size, info->scale);
+	ft_fdf_add_scale(info->array, info->scale);
 }
