@@ -102,4 +102,5 @@ test: $(LIBFT) $(LIBMLX) $(DRAW)
 	$(CC) $(FLAGS) -c $(MAINTEST)
 	$(CC) $(FLAGS) $(FRAMEWORK) main.o $(LIBFT) $(LIBMLX) $(DRAW)
 	$(RM) main.o
+	make fclean
 
