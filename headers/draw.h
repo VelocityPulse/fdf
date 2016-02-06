@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:41:53 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/06 12:27:09 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/06 16:13:52 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ t_pt		ft_add_pt(t_pt pt1, t_pt pt2);
 t_pt3d		ft_add_pt3d(t_pt3d pt1, t_pt3d pt2);
 void		ft_array_layout(t_pt3d *pts, int size, t_pt *new_pt, t_matrix t);
 
+t_rgb		ft_get_rgb(int hexa);
+int			ft_get_hexa(t_rgb rgb);
 
 void		ft_draw_line(t_line l, t_mlx *mlx, int color);
 void		ft_draw_horizontal(t_line l, t_mlx *mlx, int variance, int color);

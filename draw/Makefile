@@ -42,7 +42,9 @@ SRCS =			./draw_pixel.c \
 				./draw_add_pt.c \
 				./draw_add_pt3d.c \
 				./draw_pt3d_alloc.c \
-				./draw_color_line.c
+				./draw_color_line.c \
+				./draw_get_rgb.c \
+				./draw_get_hexa.c
 
 OBJS =			./draw_pixel.o \
 				./new_image.o \
@@ -74,7 +76,9 @@ OBJS =			./draw_pixel.o \
 				./draw_add_pt.o \
 				./draw_add_pt3d.o \
 				./draw_pt3d_alloc.o \
-				./draw_color_line.o
+				./draw_color_line.o \
+				./draw_get_rgb.o \
+				./draw_get_hexa.o
 
 FLAGS = 		-Wall -Wextra -Werror
 

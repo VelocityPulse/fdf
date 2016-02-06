@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:49:38 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/06 12:21:56 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/06 15:02:55 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,13 @@ typedef struct	s_color
 	int		c1;
 	int		c2;
 }				t_color;
+
+typedef struct	s_rgb
+{
+	int		r;
+	int		g;
+	int		b;
+}				t_rgb;
 
 typedef struct	s_vector
 {

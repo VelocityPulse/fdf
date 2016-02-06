@@ -90,7 +90,7 @@ $(DRAW):
 clean:
 	$(RM) $(OBJS)
 	make clean -C ./libft/
-	make clean -C ./libmlx/
+#	make clean -C ./libmlx/
 	make clean -C ./draw/
 
 fclean: clean

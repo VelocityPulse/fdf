@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_array_layout.c                                :+:      :+:    :+:   */
+/*   draw_get_rgb.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/23 15:31:15 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/06 16:33:08 by cchameyr         ###   ########.fr       */
+/*   Created: 2016/02/06 15:06:32 by cchameyr          #+#    #+#             */
+/*   Updated: 2016/02/06 16:11:44 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/draw.h"
 
-void	ft_array_layout(t_pt3d *pts, int size, t_pt *new_pts, t_matrix m)
+t_rgb	ft_get_rgb(int hexa)
 {
-	int		i;
+	t_rgb	rgb;
 
-	i = -1;
-	while (++i <= size)
-		new_pts[i] = ft_apply_matrix(pts[i], m);
+	rgb.r = (hexa / (256 * 256)) % 256;
+	rgb.g = (hexa / 256) % 256;
+	rgb.b = hexa % 256;
+	return (rgb);
 }
