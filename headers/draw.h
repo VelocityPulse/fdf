@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:41:53 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/04 17:50:36 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/06 12:05:54 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,10 @@ t_pt3d		ft_add_pt3d(t_pt3d pt1, t_pt3d pt2);
 void		ft_array_layout(t_pt3d *pts, int size, t_pt *new_pt, t_matrix t);
 
 
-void		ft_draw_line(t_line line, t_mlx *mlx, int color);
-//corriger les prototypes ici
-void		ft_draw_horizontal(t_line line, t_mlx *mlx, int variance, int color);
-void		ft_draw_vertical(t_line line, t_mlx *mlx, int variance, int color);
-void		ft_draw_bresenham(t_line line, t_mlx *mlx, int color, t_pt variance);
+void		ft_draw_line(t_line l, t_mlx *mlx, int color);
+void		ft_draw_horizontal(t_line l, t_mlx *mlx, int variance, int color);
+void		ft_draw_vertical(t_line l, t_mlx *mlx, int variance, int color);
+void		ft_draw_bresenham(t_line l, t_mlx *mlx, t_pt variance, int color);
 void		ft_draw_perimeter(t_pt *list, int size, t_mlx *mlx, int color);
 
 void		ft_draw_rect(t_line line, t_mlx *mlx, int color);
