@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:55:43 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/07 18:56:56 by                  ###   ########.fr       */
+/*   Updated: 2016/02/07 23:56:18 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include "mlx.h"
 # include "draw.h"
 
-# define COLOR_MIN 0xff00
+# define COLOR_MIN 0x220077
 # define COLOR_MAX 0xff0000
 
 # include "debug.h"

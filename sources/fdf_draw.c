@@ -6,26 +6,33 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/05 16:17:28 by                   #+#    #+#             */
-/*   Updated: 2016/02/07 18:55:56 by                  ###   ########.fr       */
+/*   Updated: 2016/02/07 23:53:32 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/header.h"
 
-static t_dual_color		ft_define_gradient(t_array *a, int z1, int z2)
+static t_dual_color		ft_fdf_define_gradient(t_array *a, int z1, int z2)
 {
 	t_dual_color	base;
 	t_dual_color	c;
 
+	a->min_z = a->min_z < 0 ? -a->min_z : a->min_z;
+	a->max_z = a->max_z < 0 ? -a->max_z : a->max_z;
 	if (a->theoric_z == 0)
-	{
-		if (-a->min_z > a->max_z)
-			a->theoric_z = -a->min_z * 2;
-		else
-			a->theoric_z = a->max_z * 2;
-	}
+		a->theoric_z = a->min_z + a->max_z;
+	if (a->min_z == 0 && a->max_z == 0)
+		a->theoric_z = 1;
 	base.c1 = ft_get_rgb(COLOR_MIN);
 	base.c2 = ft_get_rgb(COLOR_MAX);
+	if (z1 <= 0)
+		z1 += a->min_z;
+	else if (z1 > 0)
+		z1 += a->max_z;
+	if (z2 <= 0)
+		z2 += a->min_z;
+	else if (z2 > 0)
+		z2 += a->max_z;
 	c.c1 = ft_find_color_gradient(base, a->theoric_z, z1);
 	c.c2 = ft_find_color_gradient(base, a->theoric_z, z2);
 	return (c);
@@ -41,7 +48,7 @@ static void		ft_fdf_draw_color_line(t_fdf_draw f)
 	a = f.a;
 	p = f.p;
 	pp = f.pp;
-	c = ft_define_gradient(a, a->tab[p.y][p.x], a->tab[pp.y][pp.x]);
+	c = ft_fdf_define_gradient(a, a->tab[p.y][p.x], a->tab[pp.y][pp.x]);
 	ft_draw_color_line(f.l, f.mlx, ft_get_hexa(c.c1), ft_get_hexa(c.c2));
 }
 
