@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:41:53 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/07 15:58:34 by                  ###   ########.fr       */
+/*   Updated: 2016/02/07 18:33:58 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void		ft_draw_vertical(t_line l, t_mlx *mlx, int variance, int color);
 void		ft_draw_bresenham(t_line l, t_mlx *mlx, t_pt variance, int color);
 void		ft_draw_perimeter(t_pt *list, int size, t_mlx *mlx, int color);
 
-void		ft_draw_color_line(t_line, t_mlx *mlx, int c1, int c2);
+void		ft_draw_color_line(t_line l, t_mlx *mlx, int c1, int c2);
 void		ft_draw_horizontal_c(t_line l, t_mlx *mlx, int var, t_dual_color c);
 void		ft_draw_vertical_c(t_line l, t_mlx *mlx, int var, t_dual_color c);
 void		ft_draw_bresenham_c(t_line l, t_mlx *mlx, t_pt var, t_dual_color c);

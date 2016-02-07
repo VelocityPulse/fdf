@@ -6,39 +6,67 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/05 16:17:28 by                   #+#    #+#             */
-/*   Updated: 2016/02/07 16:39:30 by                  ###   ########.fr       */
+/*   Updated: 2016/02/07 18:55:56 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/header.h"
-/*
+
 static t_dual_color		ft_define_gradient(t_array *a, int z1, int z2)
 {
 	t_dual_color	base;
+	t_dual_color	c;
 
-	base.c1 = COLOR_MIN;
-	base.c2 = COLOR_MAX;
-//	c.c1 = ft_find_color_gradient(base, )
+	if (a->theoric_z == 0)
+	{
+		if (-a->min_z > a->max_z)
+			a->theoric_z = -a->min_z * 2;
+		else
+			a->theoric_z = a->max_z * 2;
+	}
+	base.c1 = ft_get_rgb(COLOR_MIN);
+	base.c2 = ft_get_rgb(COLOR_MAX);
+	c.c1 = ft_find_color_gradient(base, a->theoric_z, z1);
+	c.c2 = ft_find_color_gradient(base, a->theoric_z, z2);
+	return (c);
 }
-*/
+
+static void		ft_fdf_draw_color_line(t_fdf_draw f)
+{
+	t_dual_color	c;
+	t_array			*a;
+	t_pt			p;
+	t_pt			pp;
+
+	a = f.a;
+	p = f.p;
+	pp = f.pp;
+	c = ft_define_gradient(a, a->tab[p.y][p.x], a->tab[pp.y][pp.x]);
+	ft_draw_color_line(f.l, f.mlx, ft_get_hexa(c.c1), ft_get_hexa(c.c2));
+}
+
 static void		ft_fdf_draw_horizontal(t_array *a, t_mlx *mlx)
 {
 	int			x;
 	int			xx;
 	int			y;
 	t_pt		**p;
-	t_line		l;
+	t_fdf_draw	f;
 
 	p = a->layout_pts;
 	y = 0;
+	f.a = a;
+	f.mlx = mlx;
 	while (y <= a->max_size.y)
 	{
 		x = 0;
 		while (x < a->size_x[y])
 		{
 			xx = x + 1;
-			l = ft_make_line(p[y][x].x, p[y][x].y, p[y][xx].x, p[y][xx].y);
-			ft_draw_line(l, mlx, 0xffffff);
+			f.l = ft_make_line(p[y][x].x, p[y][x].y, p[y][xx].x, p[y][xx].y);
+			f.p = ft_make_pt(x, y);
+			f.pp = ft_make_pt(xx, y);
+			ft_fdf_draw_color_line(f);
 			x++;
 		}
 		y++;
@@ -47,14 +75,16 @@ static void		ft_fdf_draw_horizontal(t_array *a, t_mlx *mlx)
 
 static void		ft_fdf_draw_vertical(t_array *a, t_mlx *mlx)
 {
-	int		x;
-	int		y;
-	int		yy;
-	t_pt	**p;
-	t_line	l;
+	int			x;
+	int			y;
+	int			yy;
+	t_pt		**p;
+	t_fdf_draw	f;
 
 	p = a->layout_pts;
 	x = 0;
+	f.a = a;
+	f.mlx = mlx;
 	while (x <= a->max_size.x)
 	{
 		y = 0;
@@ -63,8 +93,10 @@ static void		ft_fdf_draw_vertical(t_array *a, t_mlx *mlx)
 			if (x <= a->size_x[y] && x <= a->size_x[y + 1])
 			{
 				yy = y + 1;
-				l = ft_make_line(p[y][x].x, p[y][x].y, p[yy][x].x, p[yy][x].y);
-				ft_draw_line(l, mlx, 0xffffff);
+				f.l = ft_make_line(p[y][x].x, p[y][x].y, p[yy][x].x, p[yy][x].y);
+				f.p = ft_make_pt(x, y);
+				f.pp = ft_make_pt(x, yy);
+				ft_fdf_draw_color_line(f);
 			}
 			y++;
 		}

@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:55:43 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/07 16:16:45 by                  ###   ########.fr       */
+/*   Updated: 2016/02/07 18:56:56 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 # include "mlx.h"
 # include "draw.h"
 
-# define COLOR_MIN 0x11ff11
-# define COLOR_MAX 0xffaaaa
+# define COLOR_MIN 0xff00
+# define COLOR_MAX 0xff0000
 
 # include "debug.h"
 
@@ -34,24 +34,33 @@ typedef struct	s_gline
 
 typedef struct	s_array
 {
-	int		**tab;
-	t_pt3d	**tab_pts;
-	t_pt	**layout_pts;
-	int		*size_x;
-	int		max_z;
-	int		min_z;
-	int		theoric_z;
-	t_pt	max_size;
+	int				**tab;
+	t_pt3d			**tab_pts;
+	t_pt			**layout_pts;
+	int				*size_x;
+	int				max_z;
+	int				min_z;
+	int				theoric_z;
+	t_pt			max_size;
 }				t_array;
+
+typedef struct	s_fdf_draw
+{
+	t_array			*a;
+	t_mlx			*mlx;
+	t_line			l;
+	t_pt			p;
+	t_pt			pp;
+}				t_fdf_draw;
 
 typedef struct	s_info
 {
-	t_array		*array;
-	t_mlx		*mlx;
-	int			key;
-	t_vector	rad;
-	t_pt		pos;
-	t_pt3d		scale;
+	t_array			*array;
+	t_mlx			*mlx;
+	int				key;
+	t_vector		rad;
+	t_pt			pos;
+	t_pt3d			scale;
 }				t_info;
 
 int				ft_fdf(t_info *info);
