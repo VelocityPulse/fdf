@@ -6,21 +6,11 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/06 12:32:21 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/07 15:15:23 by                  ###   ########.fr       */
+/*   Updated: 2016/02/07 16:00:01 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/draw.h"
-
-static t_rgb	ft_increment_rgb(t_dual_color c, int n, int x)
-{
-	t_rgb	d;
-
-	d.r = c.c1.r + (int)(((float)(c.c2.r - c.c1.r) / (float)n) * (float)x);
-	d.g = c.c1.g + (int)(((float)(c.c2.g - c.c1.g) / (float)n) * (float)x);
-	d.b = c.c1.b + (int)(((float)(c.c2.b - c.c1.b) / (float)n) * (float)x);
-	return (d);
-}
 
 void	ft_draw_horizontal_c(t_line l, t_mlx *mlx, int var, t_dual_color c)
 {
@@ -34,7 +24,7 @@ void	ft_draw_horizontal_c(t_line l, t_mlx *mlx, int var, t_dual_color c)
 	x = 0;
 	while (l.start.x != l.end.x)
 	{
-		d = ft_increment_rgb(c, n, x++);
+		d = ft_find_color_gradient(c, n, x++);
 		ft_draw_pixel(mlx, ft_get_hexa(d), l.start);
 		l.start.x += var;
 	}
@@ -52,7 +42,7 @@ void	ft_draw_vertical_c(t_line l, t_mlx *mlx, int var, t_dual_color c)
 	x = 0;
 	while (l.start.y != l.end.y)
 	{
-		d = ft_increment_rgb(c, n, x++);
+		d = ft_find_color_gradient(c, n, x++);
 		ft_draw_pixel(mlx, ft_get_hexa(d), l.start);
 		l.start.y += var;
 	}
@@ -73,12 +63,12 @@ void	ft_draw_bresenham_c(t_line l, t_mlx *mlx, t_pt var, t_dual_color c)
 	err = -l.dx>>1;
 	while (l.start.x != l.end.x)
 	{
-		d = ft_increment_rgb(c, n, x++);
+		d = ft_find_color_gradient(c, n, x++);
 		ft_draw_pixel(mlx, ft_get_hexa(d), l.start);
 		err += l.dy;
 		while (err > 0)
 		{
-			d = ft_increment_rgb(c, n, x++);
+			d = ft_find_color_gradient(c, n, x++);
 			ft_draw_pixel(mlx, ft_get_hexa(d), l.start);
 			err -= l.dx;
 			l.start.y += var.y;

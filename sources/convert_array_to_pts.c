@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/23 15:47:57 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/05 13:26:36 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/07 16:16:11 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,10 @@ t_array		*ft_convert_array_to_pts(t_array *a)
 			a->tab_pts[p.y][p.x].x = p.x - middle.x;
 			a->tab_pts[p.y][p.x].y = p.y - middle.y;
 			a->tab_pts[p.y][p.x].z = a->tab[p.y][p.x];
+			if (a->tab[p.y][p.x] > a->max_z)
+				a->max_z = a->tab[p.y][p.x];
+			else if (a->tab[p.y][p.x] < a->min_z)
+				a->min_z = a->tab[p.y][p.x];
 			p.x++;
 		}
 		p.y++;

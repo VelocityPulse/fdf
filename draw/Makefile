@@ -6,7 +6,7 @@
 #*   By:  <>                                        +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2016/01/23 00:01:04 by                   #+#    #+#             *#
-#*   Updated: 2016/02/03 23:20:01 by                  ###   ########.fr       *#
+#*   Updated: 2016/02/07 15:59:05 by                  ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -44,7 +44,8 @@ SRCS =			./draw_pixel.c \
 				./draw_pt3d_alloc.c \
 				./draw_color_line.c \
 				./draw_get_rgb.c \
-				./draw_get_hexa.c
+				./draw_get_hexa.c \
+				./draw_find_color_gradient.c
 
 OBJS =			./draw_pixel.o \
 				./new_image.o \
@@ -78,7 +79,8 @@ OBJS =			./draw_pixel.o \
 				./draw_pt3d_alloc.o \
 				./draw_color_line.o \
 				./draw_get_rgb.o \
-				./draw_get_hexa.o
+				./draw_get_hexa.o \
+				./draw_find_color_gradient.o
 
 FLAGS = 		-Wall -Wextra -Werror
 

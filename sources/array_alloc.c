@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/21 15:30:41 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/04 18:02:26 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/07 16:15:14 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ t_array		*ft_array_alloc(const int nbr_line)
 	array->tab_pts = NULL;
 	array->layout_pts = NULL;
 	array->size_x = NULL;
+	array->max_z = 0;
+	array->min_z = 0;
+	array->theoric_z = 0;
 	array->max_size = ft_make_pt(0, 0);
 	return (array);
 }

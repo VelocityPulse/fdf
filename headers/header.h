@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:55:43 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/05 16:28:34 by                  ###   ########.fr       */
+/*   Updated: 2016/02/07 16:16:45 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@
 # include "libft.h"
 # include "mlx.h"
 # include "draw.h"
+
+# define COLOR_MIN 0x11ff11
+# define COLOR_MAX 0xffaaaa
 
 # include "debug.h"
 
@@ -35,6 +38,9 @@ typedef struct	s_array
 	t_pt3d	**tab_pts;
 	t_pt	**layout_pts;
 	int		*size_x;
+	int		max_z;
+	int		min_z;
+	int		theoric_z;
 	t_pt	max_size;
 }				t_array;
 
