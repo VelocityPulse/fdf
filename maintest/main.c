@@ -6,12 +6,13 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 13:40:00 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/02 18:52:06 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/07 14:38:17 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/header.h"
 
+/*
 int		main()
 {
 	t_mlx *mlx;
@@ -38,7 +39,7 @@ int		main()
 	mlx_loop(mlx->p_mlx);
 	return (0);
 }
-
+*/
 /*
    int main()
    {
@@ -55,3 +56,31 @@ int		main()
    }
 
 */
+
+int		main()
+{
+	t_line	line;
+	t_mlx	*mlx;
+	t_pt	p1;
+
+	mlx = NULL;
+	mlx = ft_mlx_init(400, 400, mlx, "test");
+	p1 = ft_make_pt(250, 100);
+//	while (p1.y < 200)
+//	{
+		line = ft_make_line(100, p1.y, p1.x, p1.y);
+		ft_draw_color_line(line, mlx, 0xff0000, 0xab32);
+//		p1.y++;
+//	}
+	p1 = ft_make_pt(350, 130);
+//		while (p1.y < 200)
+//	{
+		line = ft_make_line(300, p1.y, p1.x, p1.y);
+		ft_draw_color_line(line, mlx, 0xff0000, 0xab32);
+//		p1.y++;
+//	}
+	ft_flush_image(mlx);
+	mlx_loop(mlx->p_mlx);
+}
+
+

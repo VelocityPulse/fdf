@@ -6,13 +6,22 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/06 16:12:09 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/06 16:58:46 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/07 13:05:44 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/draw.h"
 
-#include "../headers/debug.h"
+int		ft_get_hexa_rgb(int r, int g, int b)
+{
+	int		hexa;
+
+	hexa = 0;
+	hexa += r * 0x010000;
+	hexa += g * 0x000100;
+	hexa += b * 0x000001;
+	return (hexa);
+}
 
 int		ft_get_hexa(t_rgb rgb)
 {

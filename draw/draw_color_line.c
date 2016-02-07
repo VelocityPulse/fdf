@@ -6,34 +6,38 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/06 12:32:21 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/06 13:04:52 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/07 14:40:50 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/draw.h"
 
-void	ft_draw_horizontal_c(t_line l, t_mlx *mlx, int var, t_color c)
+void	ft_draw_horizontal_c(t_line l, t_mlx *mlx, int var, t_dual_color c)
 {
-	int		color;
-	int		increment;
+	t_rgb	d;
+	int		n;
+	int		x;
 
-	increment = (l.dx + l.dy) + (c.c1 - c.c2);
-	color = c.c1;
+	n = l.dx + l.dy;
+	x = 0;
 	while (l.start.x != l.end.x)
 	{
-		ft_draw_pixel(mlx, color, l.start);
+		x++;
+		d.r = c.c1.r + (int)(((float)(c.c2.r - c.c1.r) / (float)n) * (float)x);
+		d.g = c.c1.g + (int)(((float)(c.c2.g - c.c1.g) / (float)n) * (float)x);
+		d.b = c.c1.b + (int)(((float)(c.c2.b - c.c1.b) / (float)n) * (float)x);
+		ft_draw_pixel(mlx, ft_get_hexa(d), l.start);
 		l.start.x += var;
-		color = increment;
 	}
 }
 
 void	ft_draw_color_line(t_line l, t_mlx *mlx, int c1, int c2)
 {
-	t_pt		variance;
-	t_color		c;
+	t_pt			variance;
+	t_dual_color	c;
 
-	c.c1 = c1;
-	c.c2 = c2;
+	c.c1 = ft_get_rgb(c1);
+	c.c2 = ft_get_rgb(c2);
 	variance.x = (l.dx < 0) ? -1 : 1;
 	variance.y = (l.dy < 0) ? -1 : 1;
 	if (l.dx == 0 && l.dy == 0)
