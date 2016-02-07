@@ -6,22 +6,21 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/05 16:17:28 by                   #+#    #+#             */
-/*   Updated: 2016/02/07 16:02:21 by                  ###   ########.fr       */
+/*   Updated: 2016/02/07 16:39:30 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/header.h"
-
+/*
 static t_dual_color		ft_define_gradient(t_array *a, int z1, int z2)
 {
-	t_dual_color	c;
+	t_dual_color	base;
 
-	if (z1 == z2)
-	{
-		c.c1 = ft_find_color_gradient()
-	}
+	base.c1 = COLOR_MIN;
+	base.c2 = COLOR_MAX;
+//	c.c1 = ft_find_color_gradient(base, )
 }
-
+*/
 static void		ft_fdf_draw_horizontal(t_array *a, t_mlx *mlx)
 {
 	int			x;
