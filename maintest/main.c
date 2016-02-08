@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 13:40:00 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/07 15:12:39 by                  ###   ########.fr       */
+/*   Updated: 2016/02/08 12:21:12 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int		main()
 
 	mlx = NULL;
 	mlx = ft_mlx_init(600, 600, mlx, "test");
-
+/*
 	ft_draw_color_line(ft_make_line(599, 0, 200, 350), mlx, 0xff0000, 0x00ff00);
 	ft_draw_color_line(ft_make_line(599, 0, 200, 400), mlx, 0xff0000, 0x00ff00);
 	ft_draw_color_line(ft_make_line(300, 200, 300, 400), mlx, 0xff0000, 0x00ff00);
@@ -75,7 +75,21 @@ int		main()
    ft_draw_losange(ft_make_losange(line, 56), mlx, (int)0xff00ff);
    line = ft_make_line(100, 50, 310, 200);
    ft_draw_isocele(ft_make_isocele(line, -100), mlx, (int)0xff0000);
+*/
 
+	t_dual_color c;
+
+	c.c1 = ft_get_rgb(COLOR_MIN);
+	c.c2 = ft_get_rgb(COLOR_MAX);
+
+	line = ft_make_line(100, 100, 100, 200);
+	ft_draw_color_line(line, mlx, ft_get_hexa(c.c1), ft_get_hexa(c.c2));
+
+	line = ft_make_line(150, 150, 250, 250);
+	ft_draw_color_line(line, mlx, 0xff0000, 0x0000ff);
+
+	line = ft_make_line(200, 200, 160, 260);
+	ft_draw_color_line(line, mlx, 0xff0000, 0x0000ff);
 	ft_flush_image(mlx);
 	mlx_loop(mlx->p_mlx);
 }
