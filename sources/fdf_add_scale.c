@@ -6,13 +6,13 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/05 11:26:10 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/11 12:24:46 by                  ###   ########.fr       */
+/*   Updated: 2016/02/11 15:23:55 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/header.h"
 
-void	ft_fdf_add_scale(t_array *a, t_pt3d scale)
+void	ft_fdf_add_scale(t_array *a, t_pt3df scale)
 {
 	t_pt	p;
 

@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/08 12:07:16 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/08 16:12:15 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/11 15:22:12 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 static void		ft_scale_x(t_info *info)
 {
 	if (info->key == 12)
-		info->scale = ft_add_pt3d(info->scale, ft_make_pt3d(-1, 0, 0));
+		info->scale = ft_add_pt3df(info->scale, ft_make_pt3df(-1, 0, 0));
 	else
-		info->scale = ft_add_pt3d(info->scale, ft_make_pt3d(1, 0, 0));
+		info->scale = ft_add_pt3df(info->scale, ft_make_pt3df(1, 0, 0));
 }
 
 /*
@@ -28,9 +28,9 @@ static void		ft_scale_x(t_info *info)
 static void		ft_scale_y(t_info *info)
 {
 	if (info->key == 3)
-		info->scale = ft_add_pt3d(info->scale, ft_make_pt3d(0, -1, 0));
+		info->scale = ft_add_pt3df(info->scale, ft_make_pt3df(0, -1, 0));
 	else
-		info->scale = ft_add_pt3d(info->scale, ft_make_pt3d(0, 1, 0));
+		info->scale = ft_add_pt3df(info->scale, ft_make_pt3df(0, 1, 0));
 }
 
 /*
@@ -41,9 +41,9 @@ static void		ft_scale_y(t_info *info)
 static void		ft_scale_z(t_info *info)
 {
 	if (info->key == 5)
-		info->scale = ft_add_pt3d(info->scale, ft_make_pt3d(0, 0, -1));
+		info->scale = ft_add_pt3df(info->scale, ft_make_pt3df(0, 0, -1));
 	else
-		info->scale = ft_add_pt3d(info->scale, ft_make_pt3d(0, 0, 1));
+		info->scale = ft_add_pt3df(info->scale, ft_make_pt3df(0, 0, 1));
 }
 
 /*
@@ -54,9 +54,9 @@ static void		ft_scale_z(t_info *info)
 static void		ft_general_scale(t_info *info)
 {
 	if (info->key == 27 || info->key == 78)
-		info->scale = ft_add_pt3d(info->scale, ft_make_pt3d(-3, -3, -1));
+		info->scale = ft_add_pt3df(info->scale, ft_make_pt3df(-3, -3, -1));
 	else
-		info->scale = ft_add_pt3d(info->scale, ft_make_pt3d(3, 3, 1));
+		info->scale = ft_add_pt3df(info->scale, ft_make_pt3df(3, 3, 1));
 }
 
 /*

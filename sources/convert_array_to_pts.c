@@ -6,11 +6,21 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/08 12:04:52 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/08 12:04:54 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/11 15:32:57 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/header.h"
+
+static void		ft_theoric_z(t_array *a)
+{
+	a->min_z = a->min_z < 0 ? -a->min_z : a->min_z;
+	a->max_z = a->max_z < 0 ? -a->max_z : a->max_z;
+	if (a->min_z == 0 && a->max_z == 0)
+		a->theoric_z = 1;
+	if (a->theoric_z == 0)
+		a->theoric_z = a->min_z + a->max_z;
+}
 
 t_array		*ft_convert_array_to_pts(t_array *a)
 {
@@ -37,5 +47,6 @@ t_array		*ft_convert_array_to_pts(t_array *a)
 		}
 		p.y++;
 	}
+	ft_theoric_z(a);
 	return (a);
 }
