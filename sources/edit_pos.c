@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/03 21:36:41 by                   #+#    #+#             */
-/*   Updated: 2016/02/08 12:04:06 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/11 14:02:36 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ void	ft_edit_pos(t_info *info, t_matrix_rot *rot)
 		info->pos.y += increment;
 	else if (info->key == 0)
 		info->pos.x -= increment;
-	else 
-		rot->m.pos = info->pos;
 	rot->m.pos = info->pos;
 }
 
