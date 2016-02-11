@@ -16,11 +16,8 @@ t_mlx	*ft_mlx_init(int width, int height, t_mlx *mlx, char *name)
 {
 	if (!mlx)
 		mlx = (t_mlx *)malloc(sizeof(t_mlx));
-	else
-	{
+	else 
 		ft_memdel((void **)mlx);
-		mlx = (t_mlx *)malloc(sizeof(t_mlx));
-	}
 	mlx->width = width;
 	mlx->height = height;
 	mlx->p_mlx = mlx_init();

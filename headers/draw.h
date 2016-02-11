@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:41:53 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/07 18:33:58 by                  ###   ########.fr       */
+/*   Updated: 2016/02/11 11:13:30 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ void		ft_flush_image(t_mlx *x);
 void		ft_draw_pixel(t_mlx *mlx, int color, t_pt pt);
 void		ft_reset_image(t_mlx *mlx, int color);
 
-t_pt		ft_make_pt(int x, int y);
-t_pt3d		ft_make_pt3d(int x, int y, int z);
 t_line		ft_make_line(int x1, int y1, int x2, int y2);
 t_area		ft_make_area(t_pt a, t_pt b, t_pt c, t_pt d);
 t_area		ft_make_losange(t_line line, int mediane);
@@ -50,8 +48,6 @@ t_pt3d		**ft_pt3d_alloc(t_pt size);
 t_pt3d		**ft_free_pt3d(t_pt3d **tab_pts, int size);
 
 t_pt		ft_apply_matrix(t_pt3d pt, t_matrix m);
-t_pt		ft_add_pt(t_pt pt1, t_pt pt2);
-t_pt3d		ft_add_pt3d(t_pt3d pt1, t_pt3d pt2);
 void		ft_array_layout(t_pt3d *pts, int size, t_pt *new_pt, t_matrix t);
 
 t_rgb		ft_get_rgb(int hexa);

@@ -6,7 +6,7 @@
 #*   By:  <>                                        +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2016/01/23 00:01:04 by                   #+#    #+#             *#
-#*   Updated: 2016/02/07 15:59:05 by                  ###   ########.fr       *#
+#*   Updated: 2016/02/11 12:25:46 by                  ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -26,21 +26,17 @@ SRCS =			./draw_pixel.c \
 				./draw_isocele.c \
 				./draw_make_matrix.c \
 				./draw_init_matrix.c \
-				./draw_make_pt.c \
 				./draw_make_vector.c \
 				./draw_add_vector.c \
 				./draw_multiply_matrix.c \
 				./draw_apply_matrix.c \
 				./draw_array_layout.c \
-				./draw_make_pt3d.c \
 				./draw_perimeter.c \
 				./draw_flush_image.c \
 				./draw_multiply_vector.c \
 				./draw_add_scale.c \
 				./draw_add_pos.c \
 				./draw_clear_mlx.c \
-				./draw_add_pt.c \
-				./draw_add_pt3d.c \
 				./draw_pt3d_alloc.c \
 				./draw_color_line.c \
 				./draw_get_rgb.c \
@@ -61,22 +57,17 @@ OBJS =			./draw_pixel.o \
 				./draw_isocele.o \
 				./draw_make_matrix.o \
 				./draw_init_matrix.o \
-				./draw_make_pt.o \
 				./draw_make_vector.o \
 				./draw_add_vector.o \
 				./draw_multiply_matrix.o \
 				./draw_apply_matrix.o \
 				./draw_array_layout.o \
-				./draw_make_pt3d.o \
 				./draw_perimeter.o \
 				./draw_flush_image.o \
 				./draw_multiply_vector.o \
 				./draw_add_scale.o \
 				./draw_add_pos.o \
 				./draw_clear_mlx.o \
-				./draw_add_pt.o \
-				./draw_add_pt3d.o \
-				./draw_pt3d_alloc.o \
 				./draw_color_line.o \
 				./draw_get_rgb.o \
 				./draw_get_hexa.o \
