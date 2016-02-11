@@ -37,7 +37,6 @@ SRCS =			./draw_pixel.c \
 				./draw_add_scale.c \
 				./draw_add_pos.c \
 				./draw_clear_mlx.c \
-				./draw_pt3d_alloc.c \
 				./draw_color_line.c \
 				./draw_get_rgb.c \
 				./draw_get_hexa.c \
