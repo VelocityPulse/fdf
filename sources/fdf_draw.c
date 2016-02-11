@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/08 12:06:46 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/11 15:31:06 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/11 15:46:22 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,6 @@ static t_dual_color		ft_fdf_define_gradient(t_array *a, int z1, int z2)
 	t_dual_color	base;
 	t_dual_color	c;
 
-//	a->min_z = a->min_z < 0 ? -a->min_z : a->min_z;
-//	a->max_z = a->max_z < 0 ? -a->max_z : a->max_z;
-//	if (a->min_z == 0 && a->max_z == 0)
-//		a->theoric_z = 1;
-//	if (a->theoric_z == 0)
-//		a->theoric_z = a->min_z + a->max_z;
 	base.c1 = ft_get_rgb(COLOR_MIN);
 	base.c2 = ft_get_rgb(COLOR_MAX);
 	if (z1 <= 0)
