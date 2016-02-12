@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/08 12:05:26 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/08 12:05:28 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/12 20:58:10 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,10 @@ static void		ft_apply_layout(t_array *a, t_matrix m)
 
 int		ft_fdf(t_info *info)
 {
-	float			increment;
 	t_matrix_rot	rot;
 	t_mlx			*mlx;
 	t_array			*a;
 
-	increment = (3.1415f / 48) * 2;
 	mlx = info->mlx;
 	a = info->array;
 	ft_reset_image(mlx, 0x000000);
@@ -49,5 +47,7 @@ int		ft_fdf(t_info *info)
 	ft_fdf_add_pos(a, rot.m.pos);
 	ft_fdf_draw(a, mlx);
 	ft_flush_image(mlx);
+	// displayer d'information !!!!
+	//  mlx_string_put(mlx->p_mlx, mlx->p_win, 30, 30, 0xffffff, "looool");
 	return (0);
 }
