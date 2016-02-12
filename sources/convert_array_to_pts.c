@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/08 12:04:52 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/12 21:31:45 by                  ###   ########.fr       */
+/*   Updated: 2016/02/12 23:41:16 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void		ft_theoric_z(t_array *a)
 	a->max_z = a->max_z < 0 ? -a->max_z : a->max_z;
 	if (a->min_z == 0 && a->max_z == 0)
 		a->theoric_z = 1;
-	if (a->theoric_z == 0)
+	else
 		a->theoric_z = a->min_z + a->max_z;
 }
 

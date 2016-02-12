@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/02 16:01:15 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/08 12:04:16 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/12 21:59:04 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_edit_rad(t_info *info)
 {
 	float	increment;
 
-	increment = (3.1415f / 24);
+	increment = (M_PI / 24);
 	if (info->key == 126)
 		info->rad.x -= increment;
 	else if (info->key == 125)
