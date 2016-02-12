@@ -6,7 +6,7 @@
 #*   By:  <>                                        +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2015/12/26 15:16:47 by                   #+#    #+#             *#
-#*   Updated: 2016/02/08 23:47:14 by                  ###   ########.fr       *#
+#*   Updated: 2016/02/13 00:39:10 by                  ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -32,7 +32,8 @@ SRC =			./sources/main.c \
 				./sources/fdf_add_pos.c \
 				./sources/fdf_add_scale.c \
 				./sources/fdf_pt_alloc.c \
-				./sources/fdf_draw.c
+				./sources/fdf_draw.c \
+				./sources/fdf_draw_param_info.c
 
 OBJS =			./main.o \
 				./array_alloc.o \
@@ -52,7 +53,8 @@ OBJS =			./main.o \
 				./fdf_pt_alloc.o \
 				./fdf_add_pos.o \
 				./fdf_add_scale.o \
-				./fdf_draw.o
+				./fdf_draw.o \
+				./fdf_draw_param_info.o
 
 DRAW =			./draw/draw.a
 
