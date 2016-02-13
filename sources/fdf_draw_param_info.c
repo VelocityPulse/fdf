@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/12 23:57:41 by                   #+#    #+#             */
-/*   Updated: 2016/02/13 15:26:42 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/13 18:09:32 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,12 +99,15 @@ static void		ft_draw_param_radz(t_mlx *mlx, float rad)
 	ft_memdel((void **)&str);
 }
 
-void	ft_fdf_draw_param_info(t_array *a, t_mlx *mlx, t_vector rad)
+void	ft_fdf_draw_param_info(t_mlx *mlx, t_vector rad)
 {
-
+	if (floor(rad.x) == 0 && rad.x < 0)
+		rad.x = 0;
+	if (floor(rad.y) == 0 && rad.y < 0)
+		rad.y = 0;
+	if (floor(rad.z) == 0 && rad.z < 0)
+		rad.z = 0;
 	ft_draw_param_radx(mlx, rad.x);
 	ft_draw_param_rady(mlx, rad.y);
 	ft_draw_param_radz(mlx, rad.z);
-	a = NULL;
-	rad.x = 2;
 }
