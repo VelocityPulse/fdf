@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/08 12:05:26 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/13 00:40:20 by                  ###   ########.fr       */
+/*   Updated: 2016/02/13 12:01:21 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int		ft_fdf(t_info *info)
 	ft_fdf_add_pos(a, rot.m.pos);
 	ft_fdf_draw(a, mlx);
 //	ft_fdf_draw_param_info(a, mlx, info->rad);
-	mlx_string_put(mlx->p_mlx, mlx->p_win, 100, 100, 0xffff, "looooooool");
 	ft_flush_image(mlx);
+	mlx_string_put(mlx->p_mlx, mlx->p_win, 100, 100, 0xffff, "looooooool");
 	return (0);
 }

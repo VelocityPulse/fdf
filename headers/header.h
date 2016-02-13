@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:55:43 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/13 00:28:28 by                  ###   ########.fr       */
+/*   Updated: 2016/02/13 12:43:12 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ typedef struct	s_info
 int				ft_fdf(t_info *info);
 void			ft_exit_fdf(t_info *info);
 int				ft_key_hook(int keycode, t_info *info);
-t_info			*ft_init_info(t_mlx *mlx, t_array *a);
+t_info			*ft_init_info(t_mlx *mlx, t_array **a);
 
 void			ft_fdf_draw(t_array *a, t_mlx *mlx);
 void			ft_fdf_draw_param_info(t_array *a, t_mlx *mlx, t_vector rad);

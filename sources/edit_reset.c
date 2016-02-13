@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/08 12:06:24 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/12 19:18:41 by                  ###   ########.fr       */
+/*   Updated: 2016/02/13 12:44:50 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	ft_edit_reset(t_info *info)
 {
 	int		graphic_size;
+
 	if (info->key == 49)
 	{
 		info->array = ft_convert_array_to_pts(info->array);

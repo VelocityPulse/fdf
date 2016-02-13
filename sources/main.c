@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/08 12:06:11 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/13 00:09:45 by                  ###   ########.fr       */
+/*   Updated: 2016/02/13 12:44:13 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ int		main(int argc, char **argv)
 			return (0);
 		}
 		close(fd);
+		mlx = ft_mlx_init(1350, 1000, mlx, "fdf");
+		info = ft_init_info(mlx, &a);
 		a = ft_convert_array_to_pts(a);
-		mlx = ft_mlx_init(1400, 700, mlx, "fdf");
-		info = ft_init_info(mlx, a);
 		ft_fdf_add_scale(a, info->scale);
 		ft_fdf(info);
 		mlx_key_hook(mlx->p_win, key_hook, info);
@@ -50,3 +50,10 @@ int		main(int argc, char **argv)
 	}
 	return (0);
 }
+
+/*
+**
+** Resolution pour macbook 13' :	1400, 700
+** Resolution pour mac 42 : 		1350, 1000
+**
+*/

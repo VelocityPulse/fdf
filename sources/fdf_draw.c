@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/08 12:06:46 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/12 23:47:19 by                  ###   ########.fr       */
+/*   Updated: 2016/02/13 12:00:49 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ static void		ft_fdf_draw_color_line(t_fdf_draw f)
 static void		ft_fdf_draw_horizontal(t_array *a, t_mlx *mlx)
 {
 	int			x;
-	int			xx;
 	int			y;
+	int			o;
 	t_pt		**p;
 	t_fdf_draw	f;
 
@@ -57,10 +57,10 @@ static void		ft_fdf_draw_horizontal(t_array *a, t_mlx *mlx)
 		x = 0;
 		while (x < a->size_x[y])
 		{
-			xx = x + 1;
-			f.l = ft_make_line(p[y][x].x, p[y][x].y, p[y][xx].x, p[y][xx].y);
+			o = x + 1;
+			f.l = ft_make_line(p[y][x].x, p[y][x].y, p[y][o].x, p[y][o].y);
 			f.p = ft_make_pt(x, y);
-			f.pp = ft_make_pt(xx, y);
+			f.pp = ft_make_pt(o, y);
 			ft_fdf_draw_color_line(f);
 			x++;
 		}
@@ -72,7 +72,7 @@ static void		ft_fdf_draw_vertical(t_array *a, t_mlx *mlx)
 {
 	int			x;
 	int			y;
-	int			yy;
+	int			o;
 	t_pt		**p;
 	t_fdf_draw	f;
 
@@ -87,10 +87,10 @@ static void		ft_fdf_draw_vertical(t_array *a, t_mlx *mlx)
 		{
 			if (x <= a->size_x[y] && x <= a->size_x[y + 1])
 			{
-				yy = y + 1;
-				f.l = ft_make_line(p[y][x].x, p[y][x].y, p[yy][x].x, p[yy][x].y);
+				o = y + 1;
+				f.l = ft_make_line(p[y][x].x, p[y][x].y, p[o][x].x, p[o][x].y);
 				f.p = ft_make_pt(x, y);
-				f.pp = ft_make_pt(x, yy);
+				f.pp = ft_make_pt(x, o);
 				ft_fdf_draw_color_line(f);
 			}
 			y++;
