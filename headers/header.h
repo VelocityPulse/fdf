@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:55:43 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/13 12:43:12 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/13 14:55:50 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ typedef struct	s_array
 	int				**tab;
 	t_pt3d			**tab_pts;
 	t_pt			**layout_pts;
+	t_pt			max_size;
 	int				*size_x;
 	int				max_z;
 	int				min_z;
 	int				theoric_z;
-	t_pt			max_size;
 }				t_array;
 
 typedef struct	s_fdf_draw
