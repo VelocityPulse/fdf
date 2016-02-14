@@ -62,7 +62,7 @@ LIBFT =			./libft/libft.a
 
 LIBMLX =		./libmlx/libmlx.a
 
-LMLX =			#-lmlx
+LMLX =			-lmlx
 
 FRAMEWORK =		$(LMLX) -framework OpenGL -framework AppKit
 
@@ -92,7 +92,7 @@ $(DRAW):
 clean:
 	$(RM) $(OBJS)
 	make clean -C ./libft/
-#	make clean -C ./libmlx/
+	make clean -C ./libmlx/
 	make clean -C ./draw/
 
 fclean: clean

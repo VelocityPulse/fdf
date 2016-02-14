@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/08 12:06:11 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/13 12:44:13 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/14 11:57:23 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int		main(int argc, char **argv)
 		a = ft_convert_array_to_pts(a);
 		ft_fdf_add_scale(a, info->scale);
 		ft_fdf(info);
-		mlx_key_hook(mlx->p_win, key_hook, info);
+		mlx_hook(mlx->p_win, KeyPress, KeyPressMask, key_hook, info);
 		mlx_loop(mlx);
 	}
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:55:43 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/13 18:07:57 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/14 11:55:09 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include "get_next_line.h"
 # include "libft.h"
 # include "mlx.h"
+# include "X.h"
 # include "draw.h"
 
 # define COLOR_MIN 0x0000ff
