@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/06 12:32:21 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/07 21:31:37 by                  ###   ########.fr       */
+/*   Updated: 2016/02/15 12:26:56 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,11 @@ void	ft_draw_bresenham_c(t_line l, t_mlx *mlx, t_pt var, t_dual_color c)
 	int		n;
 	int		x;
 
-	if (l.dx < 0)
+	if (l.dx < 0 && !(x = 0))
 		l.dx = -l.dx;
 	if (l.dy < 0)
 		l.dy = -l.dy;
 	n = l.dx + l.dy;
-	x = 0;
 	err = -l.dx>>1;
 	while (l.start.x != l.end.x)
 	{
