@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 11:55:43 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/14 11:55:09 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/15 12:13:37 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@
 
 # define COLOR_MIN 0x0000ff
 # define COLOR_MAX 0xff0000
-
-# include "debug.h"
 
 typedef struct	s_gline
 {
