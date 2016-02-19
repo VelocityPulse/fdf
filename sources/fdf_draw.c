@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/08 12:06:46 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/13 12:00:49 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/19 15:00:10 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static t_dual_color		ft_fdf_define_gradient(t_array *a, int z1, int z2)
 	return (c);
 }
 
-static void		ft_fdf_draw_color_line(t_fdf_draw f)
+static void				ft_fdf_draw_color_line(t_fdf_draw f)
 {
 	t_dual_color	c;
 	t_array			*a;
@@ -40,7 +40,7 @@ static void		ft_fdf_draw_color_line(t_fdf_draw f)
 	ft_draw_color_line(f.l, f.mlx, ft_get_hexa(c.c1), ft_get_hexa(c.c2));
 }
 
-static void		ft_fdf_draw_horizontal(t_array *a, t_mlx *mlx)
+static void				ft_fdf_draw_horizontal(t_array *a, t_mlx *mlx)
 {
 	int			x;
 	int			y;
@@ -68,7 +68,7 @@ static void		ft_fdf_draw_horizontal(t_array *a, t_mlx *mlx)
 	}
 }
 
-static void		ft_fdf_draw_vertical(t_array *a, t_mlx *mlx)
+static void				ft_fdf_draw_vertical(t_array *a, t_mlx *mlx)
 {
 	int			x;
 	int			y;
@@ -77,13 +77,13 @@ static void		ft_fdf_draw_vertical(t_array *a, t_mlx *mlx)
 	t_fdf_draw	f;
 
 	p = a->layout_pts;
-	x = 0;
 	f.a = a;
 	f.mlx = mlx;
-	while (x <= a->max_size.x)
+	x = -1;
+	while (++x <= a->max_size.x)
 	{
-		y = 0;
-		while (y < a->max_size.y)
+		y = -1;
+		while (++y < a->max_size.y)
 		{
 			if (x <= a->size_x[y] && x <= a->size_x[y + 1])
 			{
@@ -93,13 +93,11 @@ static void		ft_fdf_draw_vertical(t_array *a, t_mlx *mlx)
 				f.pp = ft_make_pt(x, o);
 				ft_fdf_draw_color_line(f);
 			}
-			y++;
 		}
-		x++;
 	}
 }
 
-void			ft_fdf_draw(t_array *a, t_mlx *mlx)
+void					ft_fdf_draw(t_array *a, t_mlx *mlx)
 {
 	ft_fdf_draw_horizontal(a, mlx);
 	ft_fdf_draw_vertical(a, mlx);

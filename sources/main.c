@@ -6,13 +6,19 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/08 12:06:11 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/14 11:57:23 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/19 15:06:02 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/header.h"
 
-int		key_hook(int keycode, t_info *info)
+static void		ft_start_hook(t_mlx *mlx, t_info *info)
+{
+	mlx_hook(mlx->p_win, KeyPress, KeyPressMask, key_hook, info);
+	mlx_loop(mlx);
+}
+
+int				key_hook(int keycode, t_info *info)
 {
 	if (keycode == 53)
 		ft_exit_fdf(info);
@@ -21,7 +27,7 @@ int		key_hook(int keycode, t_info *info)
 	return (0);
 }
 
-int		main(int argc, char **argv)
+int				main(int argc, char **argv)
 {
 	t_mlx		*mlx;
 	int			fd;
@@ -45,15 +51,13 @@ int		main(int argc, char **argv)
 		a = ft_convert_array_to_pts(a);
 		ft_fdf_add_scale(a, info->scale);
 		ft_fdf(info);
-		mlx_hook(mlx->p_win, KeyPress, KeyPressMask, key_hook, info);
-		mlx_loop(mlx);
+		ft_start_hook(mlx, info);
 	}
 	return (0);
 }
 
 /*
-**
-** Resolution pour macbook 13' :	1400, 700
-** Resolution pour mac 42 : 		1350, 1000
-**
+** Resolution for macbook 13' :		1400, 700
+** Resolution for macbook retina :	800, 700
+** Resolution for mac 42 :			1400, 1000
 */

@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/08 12:05:26 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/13 18:09:53 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/19 15:06:37 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void		ft_apply_layout(t_array *a, t_matrix m)
 	}
 }
 
-int		ft_fdf(t_info *info)
+int				ft_fdf(t_info *info)
 {
 	t_matrix_rot	rot;
 	t_mlx			*mlx;

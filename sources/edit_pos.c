@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   edit_pos.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By:  <>                                        +#+  +:+       +#+        */
+/*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/03 21:36:41 by                   #+#    #+#             */
-/*   Updated: 2016/02/08 12:04:06 by cchameyr         ###   ########.fr       */
+/*   Created: 2016/02/19 14:49:43 by cchameyr          #+#    #+#             */
+/*   Updated: 2016/02/19 14:53:10 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,12 @@ void	ft_edit_pos(t_info *info, t_matrix_rot *rot)
 		info->pos.y += increment;
 	else if (info->key == 0)
 		info->pos.x -= increment;
-	else 
-		rot->m.pos = info->pos;
 	rot->m.pos = info->pos;
 }
 
 /*
-**
 ** 13	= W
 ** 2	= D
 ** 1	= S
 ** 0	= A
-**
 */

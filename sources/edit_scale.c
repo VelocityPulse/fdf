@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/08 12:07:16 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/12 19:50:44 by                  ###   ########.fr       */
+/*   Created: 2016/02/19 14:56:52 by cchameyr          #+#    #+#             */
+/*   Updated: 2016/02/19 14:58:54 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ static void		ft_scale_x(t_info *info)
 }
 
 /*
-** 12	= Q = moins de largeur
-** 14	= E = plus de largeur
+** 12	= Q = less x
+** 14	= E = more x
 */
 
 static void		ft_scale_y(t_info *info)
@@ -34,8 +34,8 @@ static void		ft_scale_y(t_info *info)
 }
 
 /*
-** 3	= D = less de hauteur
-** 15	= E = more de hauteur
+** 3	= D = less y
+** 15	= E = more y
 */
 
 static void		ft_scale_z(t_info *info)
@@ -47,13 +47,12 @@ static void		ft_scale_z(t_info *info)
 }
 
 /*
-** 5	= G = less de profondeur
-** 17	= T = more de profondeur
+** 5	= G = less z
+** 17	= T = more z
 */
 
 static void		ft_general_scale(t_info *info)
 {
-
 	if (info->key == 27 || info->key == 78)
 	{
 		info->scale.x /= 1.1f;

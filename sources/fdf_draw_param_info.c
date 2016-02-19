@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf_draw_param_info.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By:  <>                                        +#+  +:+       +#+        */
+/*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/12 23:57:41 by                   #+#    #+#             */
-/*   Updated: 2016/02/13 18:09:32 by cchameyr         ###   ########.fr       */
+/*   Created: 2016/02/19 15:06:57 by cchameyr          #+#    #+#             */
+/*   Updated: 2016/02/19 15:07:44 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void		ft_draw_param_radx(t_mlx *mlx, float rad)
 	str = ft_strjoin(str, ".");
 	ft_memdel((void **)&temp1);
 	temp1 = str;
-	temp2 = ft_itoa((int)((rad < 0 ? -rad : rad)* 100000));
+	temp2 = ft_itoa((int)((rad < 0 ? -rad : rad) * 100000));
 	str = ft_strjoin(temp1, temp2);
 	ft_memdel((void **)&temp1);
 	ft_memdel((void **)&temp2);
@@ -99,7 +99,7 @@ static void		ft_draw_param_radz(t_mlx *mlx, float rad)
 	ft_memdel((void **)&str);
 }
 
-void	ft_fdf_draw_param_info(t_mlx *mlx, t_vector rad)
+void			ft_fdf_draw_param_info(t_mlx *mlx, t_vector rad)
 {
 	if (floor(rad.x) == 0 && rad.x < 0)
 		rad.x = 0;

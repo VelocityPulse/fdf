@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/08 12:04:52 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/14 11:57:02 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/19 14:58:31 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void		ft_theoric_z(t_array *a)
 		a->theoric_z = a->min_z + a->max_z;
 }
 
-t_array		*ft_convert_array_to_pts(t_array *a)
+t_array			*ft_convert_array_to_pts(t_array *a)
 {
 	t_pt	p;
 	t_pt	middle;

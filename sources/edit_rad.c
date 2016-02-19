@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/02 16:01:15 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/12 21:59:04 by                  ###   ########.fr       */
+/*   Created: 2016/02/19 14:50:33 by cchameyr          #+#    #+#             */
+/*   Updated: 2016/02/19 14:54:58 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,10 @@ void	ft_edit_rad(t_info *info)
 }
 
 /*
-** 126	= fleche haut
-** 125	= fleche bas
-** 124	= fleche droite
-** 123	= fleche gauche
-**
-** 30	= crochet droit
-** 33	= crochet gauche
+** 126	= arrow top
+** 125	= arrow bot
+** 124	= arrow right
+** 123	= arrow left
+** 30	= hook right
+** 33	= hook left
 */
