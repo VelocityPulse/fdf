@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/06 12:32:21 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/15 12:26:56 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/19 15:12:54 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	ft_draw_bresenham_c(t_line l, t_mlx *mlx, t_pt var, t_dual_color c)
 	if (l.dy < 0)
 		l.dy = -l.dy;
 	n = l.dx + l.dy;
-	err = -l.dx>>1;
+	err = -l.dx >> 1;
 	while (l.start.x != l.end.x)
 	{
 		d = ft_find_color_gradient(c, n, x++);

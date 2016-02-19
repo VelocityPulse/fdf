@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 13:45:56 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/06 12:05:25 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/19 15:11:41 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ void	ft_draw_vertical(t_line l, t_mlx *mlx, int variance, int color)
 void	ft_draw_bresenham(t_line l, t_mlx *mlx, t_pt variance, int color)
 {
 	int		err;
-	
+
 	if (l.dx < 0)
 		l.dx = -l.dx;
 	if (l.dy < 0)
 		l.dy = -l.dy;
-	err = -l.dx>>1;
+	err = -l.dx >> 1;
 	while (l.start.x != l.end.x)
 	{
 		ft_draw_pixel(mlx, color, l.start);

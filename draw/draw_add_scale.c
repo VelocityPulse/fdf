@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/26 12:35:37 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/05 11:28:57 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/19 15:09:16 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,3 @@ t_pt3d		**ft_add_scale(t_pt3d **tab, t_pt size, t_pt3d scale)
 	}
 	return (tab);
 }
-

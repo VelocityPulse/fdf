@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/06 12:58:55 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/06 11:58:41 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/19 15:13:16 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_mlx	*ft_mlx_init(int width, int height, t_mlx *mlx, char *name)
 {
 	if (!mlx)
 		mlx = (t_mlx *)malloc(sizeof(t_mlx));
-	else 
+	else
 		ft_memdel((void **)mlx);
 	mlx->width = width;
 	mlx->height = height;
