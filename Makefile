@@ -83,6 +83,9 @@ $(OBJS): $(LIBFT) $(LIBMLX) $(DRAW)
 $(LIBFT):
 	make -C ./libft/
 
+$(LIBMLX):
+	make -C ./libmlx/
+
 $(DRAW):
 	make -C ./draw/
 
@@ -90,9 +93,10 @@ clean:
 	$(RM) $(OBJS)
 	make clean -C ./libft/
 	make clean -C ./draw/
+	make clean -C ./libmlx/
 
 fclean: clean
-	$(RM) $(NAME) $(LIBFT) $(DRAW)
+	$(RM) $(NAME) $(LIBFT) $(LIBMLX) $(DRAW)
 
 re: fclean all
 
