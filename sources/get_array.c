@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/08 12:05:39 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/08 12:05:41 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/25 13:49:08 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ t_array		*ft_get_array(int fd, t_array *array)
 	}
 	if (state == -1)
 		return (ft_free_gline(list_line));
+	if (list_line == NULL)
+		return (NULL);
 	tab = ft_export_gline(list_line);
 	if (!ft_check_tab(tab, nbr_line))
 		return (ft_free_tab(tab, nbr_line));
