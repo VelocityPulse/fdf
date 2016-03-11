@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/13 15:53:52 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/08 12:04:35 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/03/11 12:08:18 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ t_array		*ft_convert_to_array(char **tab, t_array *a)
 		i2 = -1;
 		while (++i2 <= a->size_x[i])
 			a->tab[i][i2] = ft_atoi(tab_values[i2]);
-		while (--i2)
+		while (i2--)
 			ft_memdel((void **)&tab_values[i2]);
 		ft_memdel((void **)tab_values);
 		if (a->max_size.x < a->size_x[i])

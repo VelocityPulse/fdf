@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/08 12:05:39 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/25 13:49:08 by                  ###   ########.fr       */
+/*   Updated: 2016/03/11 13:18:21 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,20 +42,26 @@ t_array		*ft_get_array(int fd, t_array *array)
 
 int			ft_check_tab(char **tab, const int nbr_line)
 {
-	int		line;
-	int		i;
+	int			line;
+	int			i;
+	static int	nb_char = 0;
 
 	line = 0;
 	while (line <= nbr_line)
 	{
 		i = 0;
+		nb_char = 0;
 		while (tab[line][i])
 		{
 			if (!(tab[line][i] >= '0' && tab[line][i] <= '9') &&
 					tab[line][i] != ' ' && tab[line][i] != '-')
 				return (0);
+			if (ft_isalnum(tab[line][i]))
+				nb_char++;
 			i++;
 		}
+		if (nb_char == 0)
+			return (0);
 		line++;
 	}
 	return (1);
