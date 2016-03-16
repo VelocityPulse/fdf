@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/08 12:06:11 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/19 15:06:02 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/03/14 15:39:14 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 static void		ft_start_hook(t_mlx *mlx, t_info *info)
 {
+//	ft_putnbr(info->array->tab[3][2]);
 	mlx_hook(mlx->p_win, KeyPress, KeyPressMask, key_hook, info);
+	ft_putnbr(info->array->tab[3][2]);
 	mlx_loop(mlx);
 }
 
@@ -23,6 +25,7 @@ int				key_hook(int keycode, t_info *info)
 	if (keycode == 53)
 		ft_exit_fdf(info);
 	info->key = keycode;
+	ft_putnbr(info->array->tab[3][2]);
 	ft_fdf(info);
 	return (0);
 }
@@ -51,6 +54,7 @@ int				main(int argc, char **argv)
 		a = ft_convert_array_to_pts(a);
 		ft_fdf_add_scale(a, info->scale);
 		ft_fdf(info);
+//		ft_putnbr(info->array->tab[3][2]);
 		ft_start_hook(mlx, info);
 	}
 	return (0);
