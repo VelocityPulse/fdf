@@ -6,7 +6,7 @@
 /*   By: cchameyr <cchameyr@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 16:34:42 by cchameyr          #+#    #+#             */
-/*   Updated: 2015/11/28 10:58:10 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/03/20 18:38:59 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 int		ft_strequ(char const *s1, char const *s2)
 {
-	int i;
-
-	i = 0;
 	if (s1 && s2)
 	{
 		if (ft_strcmp(s1, s2) == 0)
