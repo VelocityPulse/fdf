@@ -7,7 +7,7 @@ if [ -n "$1" -a "$1" = "--help" ] ; then
 fi
 
 
-conf_inc=NO
+conf_inc=YES
 
 for inc in \
     /usr/X11/include          \

@@ -66,6 +66,10 @@ LMLX =			#-lmlx
 
 FRAMEWORK =		$(LMLX) -framework OpenGL -framework AppKit
 
+LIBMLX_LINUX =		./minilibx/libmlx_Linux.a
+
+F_MINILIBX =		$(LMLX) -lXext -lX11
+
 FLAGS =			-Wall -Wextra -Werror -fsanitize=address
 
 CC =			gcc
@@ -77,7 +81,7 @@ all: $(NAME)
 $(NAME): $(LIBFT) $(LIBMLX) $(DRAW) $(OBJS)
 	$(CC) $(FLAGS) $(FRAMEWORK) $(OBJS) $(LIBFT) $(LIBMLX) $(DRAW) -o $(NAME)
 
-$(OBJS): $(LIBFT) $(LIBMLX) $(DRAW)
+$(OBJS): $(LIBFT) $(DRAW)
 	$(CC) $(FLAGS) -c $(SRC)
 
 $(LIBFT):
@@ -88,6 +92,9 @@ $(LIBMLX):
 
 $(DRAW):
 	make -C ./draw/
+
+linux: $(LIBFT) $(DRAW) $(OBJS)
+	$(CC) $(FLAGS) $(F_MINILIBX) $(OBJS) $(LIBFT) $(LIBMLX_LINUX) $(DRAW) -o $(NAME)
 
 clean:
 	$(RM) $(OBJS)
