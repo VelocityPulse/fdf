@@ -85,12 +85,12 @@ $(NAME): $(OBJS)
 	ranlib $(NAME)
 
 $(OBJS):
-	$(CC) $(FLAGS) -c $(SRCS)
+	$(CC) $(FLAGS) -I /home/oem/clem/fdf/headers/ -c $(SRCS)
 
 clean:
 	$(RM) $(OBJS)
 
 fclean: clean
-	$(RM) $(NAME) $(LIBFT) $(LIBMLX)
+	$(RM) $(NAME) $(LIBFT)
 
 re: fclean all
