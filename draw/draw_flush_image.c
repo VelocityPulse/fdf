@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/25 16:13:46 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/01/25 16:16:57 by cchameyr         ###   ########.fr       */
+/*   Created: 2016/02/15 12:16:12 by cchameyr          #+#    #+#             */
+/*   Updated: 2016/02/23 11:30:55 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/draw.h"
+#include "draw.h"
 
 void	ft_flush_image(t_mlx *x)
 {

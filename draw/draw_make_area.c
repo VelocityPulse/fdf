@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/19 15:12:13 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/19 15:12:14 by cchameyr         ###   ########.fr       */
+/*   Created: 2016/02/15 12:18:01 by cchameyr          #+#    #+#             */
+/*   Updated: 2016/02/15 12:18:06 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/draw.h"
+#include "draw.h"
 
 t_area	ft_make_area(t_pt a, t_pt b, t_pt c, t_pt d)
 {

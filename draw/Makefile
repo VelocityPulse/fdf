@@ -40,7 +40,8 @@ SRCS =			./draw_pixel.c \
 				./draw_color_line.c \
 				./draw_get_rgb.c \
 				./draw_get_hexa.c \
-				./draw_find_color_gradient.c
+				./draw_find_color_gradient.c \
+				./draw_get_pixel.c
 
 OBJS =			./draw_pixel.o \
 				./new_image.o \
@@ -70,7 +71,8 @@ OBJS =			./draw_pixel.o \
 				./draw_color_line.o \
 				./draw_get_rgb.o \
 				./draw_get_hexa.o \
-				./draw_find_color_gradient.o
+				./draw_find_color_gradient.o \
+				./draw_get_pixel.o
 
 FLAGS = 		-Wall -Wextra -Werror
 
@@ -85,12 +87,12 @@ $(NAME): $(OBJS)
 	ranlib $(NAME)
 
 $(OBJS):
-	$(CC) $(FLAGS) -I /home/oem/clem/fdf/headers/ -c $(SRCS)
+	$(CC) $(FLAGS) -c $(SRCS)
 
 clean:
 	$(RM) $(OBJS)
 
 fclean: clean
-	$(RM) $(NAME) $(LIBFT)
+	$(RM) $(NAME) $(LIBFT) $(LIBMLX)
 
 re: fclean all

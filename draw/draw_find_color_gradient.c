@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/19 15:10:00 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/19 15:10:04 by cchameyr         ###   ########.fr       */
+/*   Created: 2016/02/15 12:16:04 by cchameyr          #+#    #+#             */
+/*   Updated: 2016/02/15 12:23:37 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/draw.h"
+#include "draw.h"
 
 t_rgb	ft_find_color_gradient(t_dual_color c, int n, int p)
 {

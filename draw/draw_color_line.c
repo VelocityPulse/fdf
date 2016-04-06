@@ -6,11 +6,11 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/06 12:32:21 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/19 15:12:54 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/15 12:31:28 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/draw.h"
+#include "draw.h"
 
 void	ft_draw_horizontal_c(t_line l, t_mlx *mlx, int var, t_dual_color c)
 {

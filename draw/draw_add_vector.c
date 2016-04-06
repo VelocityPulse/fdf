@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/19 15:08:56 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/19 15:08:58 by cchameyr         ###   ########.fr       */
+/*   Created: 2016/02/15 12:22:13 by cchameyr          #+#    #+#             */
+/*   Updated: 2016/02/15 12:22:15 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/draw.h"
+#include "draw.h"
 
 t_vector	ft_add_vector(t_vector v, float x, float y, float z)
 {

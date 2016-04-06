@@ -5,19 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/06 12:58:55 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/19 15:13:16 by cchameyr         ###   ########.fr       */
+/*   Created: 2016/03/21 12:17:09 by cchameyr          #+#    #+#             */
+/*   Updated: 2016/03/21 12:17:10 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/draw.h"
+#include "draw.h"
 
-t_mlx	*ft_mlx_init(int width, int height, t_mlx *mlx, char *name)
+t_mlx	*ft_mlx_init(int width, int height, char *name)
 {
-	if (!mlx)
-		mlx = (t_mlx *)malloc(sizeof(t_mlx));
-	else
-		ft_memdel((void **)mlx);
+	t_mlx		*mlx;
+
+	mlx = (t_mlx *)malloc(sizeof(t_mlx));
 	mlx->width = width;
 	mlx->height = height;
 	mlx->p_mlx = mlx_init();

@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/19 15:13:54 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/19 15:14:04 by cchameyr         ###   ########.fr       */
+/*   Created: 2016/02/15 12:18:48 by cchameyr          #+#    #+#             */
+/*   Updated: 2016/02/15 12:18:53 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/draw.h"
+#include "draw.h"
 
 t_area	ft_make_losange(t_line line, int mediane)
 {

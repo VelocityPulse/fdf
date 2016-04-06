@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/19 15:15:27 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/19 15:15:29 by cchameyr         ###   ########.fr       */
+/*   Created: 2016/01/08 13:33:08 by cchameyr          #+#    #+#             */
+/*   Updated: 2016/02/15 12:20:42 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/draw.h"
+#include "draw.h"
 
 void	ft_draw_rect(t_line line, t_mlx *mlx, int color)
 {

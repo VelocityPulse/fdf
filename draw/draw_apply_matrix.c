@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/19 15:09:30 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/19 15:09:32 by cchameyr         ###   ########.fr       */
+/*   Created: 2016/02/15 12:22:23 by cchameyr          #+#    #+#             */
+/*   Updated: 2016/02/15 12:22:24 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/draw.h"
+#include "draw.h"
 
 t_pt	ft_apply_matrix(t_pt3d pt, t_matrix t)
 {

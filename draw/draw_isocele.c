@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/19 15:10:26 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/19 15:10:27 by cchameyr         ###   ########.fr       */
+/*   Created: 2016/02/15 12:17:24 by cchameyr          #+#    #+#             */
+/*   Updated: 2016/02/15 12:17:28 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/draw.h"
+#include "draw.h"
 
 void	ft_draw_isocele(t_area t, t_mlx *mlx, int color)
 {

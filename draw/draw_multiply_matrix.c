@@ -6,11 +6,11 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/02 11:41:23 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/02 15:48:55 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/02/15 12:19:54 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/draw.h"
+#include "draw.h"
 
 t_matrix	ft_multiply_matrix(t_matrix m1, t_matrix m2)
 {

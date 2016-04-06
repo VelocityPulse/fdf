@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/19 15:14:56 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/19 15:14:58 by cchameyr         ###   ########.fr       */
+/*   Created: 2016/02/15 12:20:49 by cchameyr          #+#    #+#             */
+/*   Updated: 2016/02/15 12:20:53 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/draw.h"
+#include "draw.h"
 
 void	ft_reset_image(t_mlx *mlx, int color)
 {

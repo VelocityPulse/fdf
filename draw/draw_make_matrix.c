@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/26 13:09:58 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/02/03 12:09:54 by cchameyr         ###   ########.fr       */
+/*   Created: 2016/02/15 12:19:30 by cchameyr          #+#    #+#             */
+/*   Updated: 2016/02/15 12:19:32 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/draw.h"
+#include "draw.h"
 
 t_matrix	ft_rotate_matrix_x(float rot)
 {
